@@ -1,0 +1,64 @@
+ticket_number,employee_id,termination_date,asset_tag,serial_number,return_required,return_due_date,ticket_status,technician_comment
+OFF-00058,E0071,2026-05-24,MD-00058,MD-MO-050058,Yes,2026-07-15,Closed,"Opened return kit after HR closeout. Label printed, waiting on the person. Ref MD-00058."
+OFF-00059,E0072,2026-06-01,MD-00059,MD-MO-050059,Yes,2026-07-15,Closed,Mailed prepaid pouch 6/25. No SCAN-86 yet. Ref MD-00059.
+OFF-00060,E0073,2026-05-02,MD-00060,MD-NE-050060,Yes,2026-07-15,Closed,User said they'd drop at UPS on the way out. Ticket remains open until dock confirms. Ref MD-00060.
+OFF-00061,E0074,2026-06-03,MD-00061,MD-LA-050061,Yes,2026-07-15,Closed,Looping with site ops — laptop still showing assigned post-term. Ref MD-00061.
+OFF-00062,E0075,2026-05-04,MD-00062,MD-MO-050062,Yes,2026-07-15,Closed,Return SLA missed; reminder sent to personal email on file. Ref MD-00062.
+OFF-00063,E0076,2026-06-05,MD-00063,MD-MO-050063,Yes,2026-07-15,Closed,Created 1Z label. Box not in Atlanta inbound as of last check. Ref MD-00063.
+OFF-00064,E0077,2026-05-06,MD-00064,MD-NE-050064,Yes,2026-07-15,Closed,Desk copy of the offboarding packet marked 'ship later.' Ref MD-00064.
+OFF-00065,E0078,2026-06-07,MD-00065,MD-LA-050065,Yes,2026-07-15,Closed,Manager thought IT already had it. We don't. Ref MD-00065.
+OFF-00066,E0079,2026-05-08,MD-00066,MD-MO-050066,Yes,2026-07-15,Closed,Pushed a second reminder. Carrier still has no acceptance. Ref MD-00066.
+OFF-00067,E0080,2026-06-09,MD-00067,MD-MO-050067,Yes,2026-07-15,Closed,WFH return; waiting on tracking to leave 'label created.' Ref MD-00067.
+OFF-00068,E0081,2026-05-10,MD-00068,MD-NE-050068,Yes,2026-07-15,Past Due,Coordinator asked if we can close on the label. No. Ref MD-00068.
+OFF-00069,E0082,2026-06-11,MD-00069,MD-LA-050069,Yes,2026-07-15,Past Due,Requested photo of packed carton. Nothing came back. Ref MD-00069.
+OFF-00070,E0083,2026-05-12,MD-00070,MD-MO-050070,Yes,2026-07-15,Past Due,Past window. Escalated to the PM for that org. Ref MD-00070.
+OFF-00071,E0084,2026-06-13,MD-00071,MD-MO-050071,Yes,2026-07-15,Past Due,Monitor return — bulky; user delayed pickup. Ref MD-00071.
+OFF-00072,E0085,2026-05-14,MD-00072,MD-NE-050072,Yes,2026-07-15,Past Due,Switching to a recovery case if we don't see a pickup this week. Ref MD-00072.
+OFF-00073,E0086,2026-06-15,MD-00073,MD-LA-050073,Yes,2026-07-15,Past Due,Ticket auto-moved to Past Due when due date hit. Ref MD-00073.
+OFF-00074,E0087,2026-05-16,MD-00074,MD-MO-050074,Yes,2026-07-15,Past Due,Left voicemail. Still Label Created in the ship file. Ref MD-00074.
+OFF-00075,E0088,2026-06-17,MD-00075,MD-MO-050075,Yes,2026-07-15,Past Due,They asked for an extra week. Policy doesn't treat that as received. Ref MD-00075.
+OFF-00076,E0089,2026-05-18,MD-00076,MD-NE-050076,Yes,2026-07-15,Past Due,Serial on the label matches register; no dock scan though. Ref MD-00076.
+OFF-00077,E0090,2026-06-19,MD-00077,MD-LA-050077,Yes,2026-07-15,Past Due,Helpdesk queued this with the June RIF batch. Ref MD-00077.
+OFF-00078,E0091,2026-05-20,MD-00078,MD-MO-050078,Yes,2026-07-15,Past Due,Can't close — no delivery event in the carrier file. Ref MD-00078.
+OFF-00079,E0092,2026-06-21,MD-00079,MD-MO-050079,Yes,2026-07-15,Past Due,User claimed inbox full so they missed the ship email. Ref MD-00079.
+OFF-00080,E0093,2026-05-22,MD-00080,MD-NE-050080,Yes,2026-07-15,Shipment Open,Regional stock said they never saw it. Ref MD-00080.
+OFF-00081,E0094,2026-06-23,MD-00081,MD-LA-050081,Yes,2026-07-15,Shipment Open,On hold for HR to confirm last day vs due date. Ref MD-00081.
+OFF-00082,E0095,2026-05-24,MD-00082,MD-MO-050082,Yes,2026-07-15,Shipment Open,Second label requested after the first expired? Still no scan. Ref MD-00082.
+OFF-00083,E0071,2026-05-24,MD-00083,MD-MO-050083,Yes,2026-07-15,Shipment Open,Asset is a network brick; return freight is the delay. Ref MD-00083.
+OFF-00084,E0072,2026-06-01,MD-00084,MD-NE-050084,Yes,2026-07-15,Shipment Open,Noted in Teams: 'I dropped it at the lobby.' Lobby has no intake log. Ref MD-00084.
+OFF-00085,E0073,2026-05-02,MD-00085,MD-LA-050085,Yes,2026-07-15,Shipment Open,Open until receiving matches tag and serial. Ref MD-00085.
+OFF-00086,E0074,2026-06-03,MD-00086,MD-MO-050086,Yes,2026-07-15,Shipment Open,"Closed the chatter, not the ticket — still no receipt. Ref MD-00086."
+OFF-00087,E0075,2026-05-04,MD-00087,MD-MO-050087,Yes,2026-07-15,Shipment Open,Batch with other Chicago exits. This one didn't make the pallet. Ref MD-00087.
+OFF-00088,E0076,2026-06-05,MD-00088,MD-NE-050088,Yes,2026-07-15,Shipment Open,Initiated because status was still In Use after term. Ref MD-00088.
+OFF-00089,E0077,2026-05-06,MD-00089,MD-LA-050089,Yes,2026-07-15,Unresolved,Ex-employee says the laptop stayed in Denver after the lock-up. Ref MD-00089.
+OFF-00090,E0078,2026-06-07,MD-00090,MD-MO-050090,Yes,2026-07-15,Unresolved,Caller thought Chicago surplus had it; no tagged count. Ref MD-00090.
+OFF-00091,E0079,2026-05-08,MD-00091,MD-MO-050091,Yes,2026-07-15,Unresolved,Last badge swipe was the closed floor. Device not in the return pile. Ref MD-00091.
+OFF-00092,E0080,2026-06-09,MD-00092,MD-NE-050088,Yes,2026-07-15,Unresolved,Reported left in a conference room that's since been stripped. Ref MD-00092.
+OFF-00093,E0081,2026-05-10,MD-00093,MD-LA-050093,Yes,2026-07-15,Unresolved,They mailed a note: hardware stayed with furniture. Furniture BOL has no IT. Ref MD-00093.
+OFF-00094,E0082,2026-06-11,MD-00094,MD-MO-050094,Yes,2026-07-15,Unresolved,Couldn't locate during Gemba. Treat as missing until we get a scan. Ref MD-00094.
+OFF-00095,E0083,2026-05-12,MD-00095,MD-MO-050095,Yes,2026-07-15,Unresolved,Claims security held it. Security book doesn't list the tag. Ref MD-00095.
+OFF-00096,E0084,2026-06-13,MD-00096,MD-NE-050096,Yes,2026-07-15,Unresolved,Walkthrough photo of a cage — tag not readable. Still unresolved. Ref MD-00096.
+OFF-00097,E0085,2026-05-14,MD-00097,MD-LA-050097,Yes,2026-07-15,Unresolved,User's last Slack: 'left it in the old MDF.' Unverified. Ref MD-00097.
+OFF-00098,E0086,2026-06-15,MD-00098,MD-MO-050098,Yes,2026-07-15,Unresolved,Ticket parked Unresolved because closed-site access needs facilities. Ref MD-00098.
+OFF-00099,E0087,2026-05-16,MD-00099,MD-MO-050099,Yes,2026-07-15,Unresolved,No transfer out of the closed office on the log that matches this tag. Ref MD-00099.
+OFF-00100,E0088,2026-06-17,MD-00100,MD-NE-050100,Yes,2026-07-15,Unresolved,Asking CRE for cage inventory. Not a substitute for receiving. Ref MD-00100.
+RET-00101,E0089,2026-05-31,MD-00101,MD-LA-050101,No,,Pending Disposal,Parked in pending-disposal bin after warranty died. Ref MD-00101.
+RET-00102,E0090,2026-05-31,MD-00102,MD-MO-050102,No,,Pending Disposal,Staged for July recycler run — cert not attached yet on some of these. Ref MD-00102.
+RET-00103,E0091,2026-05-31,MD-00103,MD-MO-050103,No,,Pending Disposal,HDD pulled; chassis waiting paperwork. Ref MD-00103.
+RET-00104,E0092,2026-05-31,MD-00104,MD-NE-050104,No,,Pending Disposal,Moved off the floor so it wouldn't get redeployed by accident. Ref MD-00104.
+RET-00105,E0093,2026-05-31,MD-00105,MD-LA-050105,No,,Pending Disposal,End-of-life; ticket is retirement not a people-return. Ref MD-00105.
+RET-00106,E0094,2026-05-31,MD-00106,MD-MO-050106,No,,Pending Disposal,Sanitization scheduled. Don't treat as Available. Ref MD-00106.
+RET-00107,E0095,2026-05-31,MD-00107,MD-MO-050107,No,,Pending Disposal,Pallet-side in Atlanta. Matching cert later if vendor lists the tag. Ref MD-00107.
+RET-00108,E0071,2026-05-31,MD-00108,MD-NE-050108,No,,Pending Disposal,Removed from loaner pool. Status should stay pending disposal. Ref MD-00108.
+RET-00109,E0072,2026-05-31,MD-00109,MD-LA-050109,No,,Pending Disposal,Broke hinge; cheaper to retire than repair. Ref MD-00109.
+RET-00110,E0073,2026-05-31,MD-00110,MD-MO-050110,No,,Pending Disposal,Hold for 800-88 wipe before vendor pickup. Ref MD-00110.
+RET-00111,E0074,2026-05-31,MD-00111,MD-MO-050111,No,,Closed,Closed after cert posted — see disposal file. Ref MD-00111.
+RET-00112,E0075,2026-05-31,MD-00112,MD-NE-050112,No,,Closed,Asset aged out of the 3-year laptop cycle. Ref MD-00112.
+RET-00113,E0076,2026-05-31,MD-00113,MD-LA-050113,No,,Closed,Facilities wanted it off the closed site quicker than certs landed. Ref MD-00113.
+RET-00114,E0077,2026-05-31,MD-00114,MD-MO-050114,No,,Closed,I'm not marking Available; it's in the retire queue. Ref MD-00114.
+RET-00115,E0078,2026-05-31,MD-00115,MD-MO-050115,No,,Closed,Need DC match before we call it gone. Ref MD-00115.
+RET-00116,E0079,2026-05-31,MD-00116,MD-NE-050116,No,,Closed,"Battery swollen. Isolated, awaiting vendor. Ref MD-00116."
+RET-00117,E0080,2026-05-31,MD-00117,MD-LA-050117,No,,Closed,Part of Q3 refresh. Return not required (HR). Ref MD-00117.
+RET-00118,E0081,2026-05-31,MD-00118,MD-MO-050118,No,,Closed,Serial confirmed on the pallet list; certificate row may still be missing. Ref MD-00118.
+RET-00119,E0082,2026-05-31,MD-00119,MD-MO-050119,No,,Closed,Don't reassign. Ticket is disposal path. Ref MD-00119.
+RET-00120,E0083,2026-05-31,MD-00120,MD-NE-050120,No,,Closed,Staged 5/31 with the other EOL units. Ref MD-00120.

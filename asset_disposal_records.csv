@@ -1,0 +1,9 @@
+disposal_certificate,asset_tag,serial_number,disposal_date,method,vendor,approved_by_role,certificate_verified
+DC-00111,MD-00111,MD-MO-050111,2026-07-11,NIST 800-88 purge then recycle,GreenLoop Electronics,IT Asset Manager,Yes
+DC-00112,MD-00112,MD-NE-050112,2026-07-14,Certified wipe and e-waste drop,Sims Lifecycle,IT Operations Manager,Yes
+DC-00113,MD-00113,MD-LA-050113,2026-07-16,"Degauss, shred chassis, recycle",Iron Mountain Secure ITAD,IT Asset Manager,Yes
+DC-00115,MD-00115,MD-MO-050115,2026-07-18,Clear sanitization + vendor recycle,Regional E-Waste of Georgia,Director of IT Operations,Yes
+DC-00116,MD-00116,MD-NE-050116,2026-07-21,NIST 800-88 wipe; mixed metals recycle,CloudBlue Recovery,IT Asset Manager,Yes
+DC-00117,MD-00117,MD-LA-050117,2026-07-23,Destroy SSD; recycle remainder,Cascade Asset Mgmt,Finance Controller (disposal batch),Yes
+DC-00119,MD-00119,MD-MO-050119,2026-07-25,Purge and drop at county e-waste,GreenLoop Electronics,IT Asset Manager,Yes
+DC-00120,MD-00120,MD-NE-050120,2026-07-28,Wipe per 800-88; recycler pickup,Atlanta Secure Recycle,IT Operations Manager,Yes

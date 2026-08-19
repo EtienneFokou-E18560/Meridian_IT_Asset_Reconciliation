@@ -1,0 +1,96 @@
+employee_id,employee_name,employment_status,current_location,termination_date,transfer_effective_date,hr_record_updated
+E0001,Priya Shah,Active,Chicago,,,2026-08-05
+E0002,Marcus Ellison,Active,Dallas,,,2026-08-05
+E0003,Elena Kovacs,Active,Denver,,,2026-08-05
+E0004,James Whitaker,Active,New York,,,2026-08-05
+E0005,Aisha Rahman,Active,Seattle,,,2026-08-05
+E0006,Colin Bergstrom,Active,Atlanta,,,2026-08-05
+E0007,Sofia Alvarez,Active,Chicago,,,2026-08-05
+E0008,Derek Nguyen,Active,Dallas,,,2026-08-05
+E0009,Hannah Cole,Active,Denver,,,2026-08-05
+E0010,Owen Patel,Active,New York,,,2026-08-05
+E0011,Maya Fontaine,Active,Seattle,,,2026-08-05
+E0012,Ryan Okonkwo,Active,Atlanta,,,2026-08-05
+E0013,Lauren Briggs,Active,Chicago,,,2026-08-05
+E0014,Nathan Kim,Active,Dallas,,,2026-08-05
+E0015,Camila Ortiz,Active,Denver,,,2026-08-05
+E0016,Patrick Gallagher,Active,New York,,,2026-08-05
+E0017,Irene Cho,Active,Seattle,,,2026-08-05
+E0018,Theo Barnett,Active,Atlanta,,,2026-08-05
+E0019,Jasmine Reed,Active,Chicago,,,2026-08-05
+E0020,Luis Navarro,Active,Dallas,,,2026-08-05
+E0021,Grace Lindholm,Active,Denver,,,2026-08-05
+E0022,Andre Baptiste,Active,New York,,,2026-08-05
+E0023,Nina Kowalski,Active,Seattle,,,2026-08-05
+E0024,Chris Daley,Active,Atlanta,,,2026-08-05
+E0025,Fatima Hussein,Active,Chicago,,,2026-08-05
+E0026,Brendan Walsh,Active,Dallas,,,2026-08-05
+E0027,Yuki Tanaka,Active,Denver,,,2026-08-05
+E0028,Megan Copeland,Active,New York,,,2026-08-05
+E0029,Omar Haddad,Active,Seattle,,,2026-08-05
+E0030,Stephanie Ruiz,Active,Atlanta,,,2026-08-05
+E0031,Keith Moreau,Active,Chicago,,,2026-08-05
+E0032,Diana Voss,Active,Dallas,,,2026-08-05
+E0033,Jordan Blake,Active,Denver,,,2026-08-05
+E0034,Amelia Grant,Active,New York,,,2026-08-05
+E0035,Rafael Mendes,Active,Seattle,,,2026-08-05
+E0036,Kate Sorenson,Active,Atlanta,,,2026-08-05
+E0037,Victor Lang,Active,Chicago,,,2026-08-05
+E0038,Noelle Harper,Active,Dallas,,,2026-08-05
+E0039,Samir Kapoor,Active,Denver,,,2026-08-05
+E0040,Holly Jensen,Active,New York,,,2026-08-05
+E0041,Eric Vann,Active,Seattle,,,2026-08-05
+E0042,Claudia Rossi,Active,Atlanta,,,2026-08-05
+E0043,Tyler Brooks,Active,Chicago,,,2026-08-05
+E0044,Leah Okada,Active,Dallas,,,2026-08-05
+E0045,Darnell Price,Active,Denver,,,2026-08-05
+E0046,Monica Ferreira,Active,New York,,,2026-08-05
+E0047,Gavin Crowe,Active,Seattle,,,2026-08-05
+E0048,Sana Iqbal,Active,Atlanta,,,2026-08-05
+E0049,Brett Holloway,Active,Chicago,,,2026-08-05
+E0050,Paula Chen,Active,Dallas,,,2026-08-05
+E0051,Isaac Moran,Active,Denver,,,2026-08-05
+E0052,Rebecca Sutter,Active,New York,,,2026-08-05
+E0053,Kwame Asante,Active,Seattle,,,2026-08-05
+E0054,Allison Pike,Active,Atlanta,,,2026-08-05
+E0055,Marco DeLuca,Active,Chicago,,,2026-08-05
+E0056,Cynthia Hale,Active,Dallas,,,2026-08-05
+E0057,Noah Frazier,Active,Denver,,,2026-08-05
+E0058,Rina Desai,Active,New York,,,2026-08-05
+E0059,Todd Campbell,Active,Seattle,,,2026-08-05
+E0060,Vanessa Ortega,Active,Atlanta,,,2026-08-05
+E0061,Liam Keane,Transferred,Denver,,2026-04-14,2026-08-05
+E0062,Bianca Silva,Transferred,New York,,2026-04-15,2026-08-05
+E0063,Greg Hollis,Transferred,Seattle,,2026-04-16,2026-08-05
+E0064,Naomi Berger,Transferred,Atlanta,,2026-04-17,2026-08-05
+E0065,Felix Moreno,Transferred,Chicago,,2026-04-18,2026-08-05
+E0066,Sharon Quinlan,Transferred,Dallas,,2026-04-19,2026-08-05
+E0067,Adrian Moss,Transferred,Denver,,2026-04-20,2026-08-05
+E0068,Kelsey Tran,Transferred,New York,,2026-04-21,2026-08-05
+E0069,Malik Jordan,Transferred,Seattle,,2026-04-22,2026-08-05
+E0070,Heidi Volkov,Transferred,Atlanta,,2026-04-23,2026-08-05
+E0071,Sean McCabe,Separated,Denver - Closed,2026-05-24,,2026-08-05
+E0072,Anita Bose,Separated,Chicago - Closed,2026-06-01,,2026-08-05
+E0073,Drew Carmichael,Separated,Denver - Closed,2026-05-02,,2026-08-05
+E0074,Lila Novak,Separated,Chicago - Closed,2026-06-03,,2026-08-05
+E0075,Curtis Bennett,Separated,Denver - Closed,2026-05-04,,2026-08-05
+E0076,Pilar Santos,Separated,Chicago - Closed,2026-06-05,,2026-08-05
+E0077,Jonah Freedman,Separated,Denver - Closed,2026-05-06,,2026-08-05
+E0078,Regina Lowe,Separated,Chicago - Closed,2026-06-07,,2026-08-05
+E0079,Wes Carvalho,Separated,Denver - Closed,2026-05-08,,2026-08-05
+E0080,Tara Singh,Separated,Chicago - Closed,2026-06-09,,2026-08-05
+E0081,Elliott Park,Separated,Denver - Closed,2026-05-10,,2026-08-05
+E0082,Carmen Diaz,Separated,Chicago - Closed,2026-06-11,,2026-08-05
+E0083,Hugh Talbot,Separated,Denver - Closed,2026-05-12,,2026-08-05
+E0084,Mira Adelman,Separated,Chicago - Closed,2026-06-13,,2026-08-05
+E0085,Quincy Rhodes,Separated,Denver - Closed,2026-05-14,,2026-08-05
+E0086,Sloane Richter,Separated,Chicago - Closed,2026-06-15,,2026-08-05
+E0087,Nolan Vega,Separated,Denver - Closed,2026-05-16,,2026-08-05
+E0088,Ivy Chenoweth,Separated,Chicago - Closed,2026-06-17,,2026-08-05
+E0089,Percy Lambert,Separated,Denver - Closed,2026-05-18,,2026-08-05
+E0090,Dana Ghosh,Separated,Chicago - Closed,2026-06-19,,2026-08-05
+E0091,Harlan Smith,Separated,Denver - Closed,2026-05-20,,2026-08-05
+E0092,June Okoye,Separated,Chicago - Closed,2026-06-21,,2026-08-05
+E0093,Rory Phelps,Separated,Denver - Closed,2026-05-22,,2026-08-05
+E0094,Cecilia Hart,Separated,Chicago - Closed,2026-06-23,,2026-08-05
+E0095,Emmett Boyle,Separated,Denver - Closed,2026-05-24,,2026-08-05

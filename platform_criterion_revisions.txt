@@ -1,0 +1,129 @@
+# Platform criterion paste — Meridian rev 2.6
+# No count cap. Weight in weight field only.
+
+P1 Deliverable filename | +5 | Objective | Style/Formatting
+Produces Meridian_IT_Asset_Reconciliation.xlsx.
+
+P2 Corrected register: verified custodian | +5 | Objective | Content
+Corrected asset register includes a verified custodian for reviewed assets.
+
+P3 Corrected register: verified location | +3 | Objective | Content
+Corrected asset register includes a verified location for reviewed assets.
+
+P4 Corrected register: verified lifecycle status | +3 | Objective | Content
+Corrected asset register includes a verified lifecycle status for reviewed assets.
+
+P5 Corrected register: evidence source | +3 | Objective | Content
+Corrected asset register includes an evidence source for reviewed assets.
+
+P6 Corrected register: last verified date | +3 | Objective | Content
+Corrected asset register includes a last verified date for reviewed assets.
+
+P7 Corrected register: acquisition cost | +3 | Objective | Content
+Corrected asset register includes acquisition cost for reviewed assets.
+
+P8 Corrected register: remaining book value | +3 | Objective | Content
+Corrected asset register includes remaining book value for reviewed assets.
+
+P9 Corrected register: confidence | +3 | Objective | Content
+Corrected asset register includes confidence for reviewed assets.
+
+P10 Certification not approved / Critical blockers retained | +5 | Subjective | Content
+States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical blockers remain; does not give an unconditional approval.
+
+P11 Certification page sign-off lines | +4 | Objective | Content
+Includes a certification/sign-off page with sign-off lines for the IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.
+
+P12 Certification page accept / escalate / block structure | +4 | Objective | Content
+The certification page distinguishes what can be accepted (or accepted with conditions), what must escalate, and what blocks signing.
+
+P13 Evidence precedence documented | +4 | Objective | Content
+The deliverable documents a precedence order consistent with policy (ledger / verified disposal certificates / carrier acceptance+delivery+receiving-scan over approved transfers over HR over ticket status over technician notes and dock/exception images) and shows at least one rejected lower-precedence claim with the higher-precedence record that overruled it.
+
+P14 MD-00082 shipment mismatch held | +4 | Objective | Content
+Marks MD-00082 as In Transit - Exception / shipment mismatch / equivalent unresolved custody, citing tracking 1ZMD00000082 and serial mismatch (MISMATCH-0082 vs MD-MO-050082), and does not clear it to Available.
+
+P15 Missing assets MD-00089–MD-00100 (threshold) | +4 | Objective | Content
+Classifies at least 10 of the 12 assets MD-00089 through MD-00100 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+
+P16 Duplicate serials flagged | +3 | Objective | Content
+Flags duplicate serial MD-LA-050021 across MD-00021 and MD-00025, and duplicate serial MD-NE-050088 across MD-00088 and MD-00092.
+
+P17 Unapproved transfers flagged | +3 | Objective | Content
+Flags missing approval on transfers TR-00058, TR-00059, TR-00064, TR-00065, and TR-00127.
+
+P18 Under-threshold ledger absence NOT Critical (MD-00130 / MD-00131) | +5 | Objective | Content
+Does **not** classify MD-00130 ($700) or MD-00131 ($1,175) as Critical inventory-to-ledger certification blockers; treats their FA absence as expected under the $2,500 per-asset capitalization threshold (informational/non-blocking at most).
+
+P19 RN-0132 under-threshold claim rejected | +4 | Objective | Content
+Rejects regional note RN-0132 (or equivalent note claiming MD-00132 was expensed under threshold) as non-authoritative; does not clear MD-00132’s missing FA row on that basis.
+
+P20 Exception rows include related-record citation(s) | +3 | Objective | Content
+Exception rows include related-record citation(s) (employee ID, ticket, transfer, PO, tracking number, certificate, and/or ledger ID as applicable).
+
+P21 Exception rows include financial exposure | +3 | Objective | Content
+Exception rows include financial exposure.
+
+P22 Exception rows include required action | +3 | Objective | Content
+Exception rows include required action.
+
+P23 Exception rows include owner by role | +3 | Objective | Content
+Exception rows include owner by role.
+
+P24 Exception rows include action deadline | +3 | Objective | Content
+Exception rows include an action deadline.
+
+P25 Custody chains for high-risk assets | +3 | Objective | Content
+Provides custody-chain detail for high-risk/unresolved assets across purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+
+P26 Dashboard breakout by verified status | +4 | Objective | Content
+Summary dashboard includes asset counts and book value broken out by verified status.
+
+P27 Dashboard breakout by verified location | +3 | Objective | Content
+Summary dashboard includes asset counts and book value broken out by verified location.
+
+P28 Dashboard breakout by device category | +3 | Objective | Content
+Summary dashboard includes asset counts and book value broken out by device category.
+
+P29 Dashboard breakout by exception type | +3 | Objective | Content
+Summary dashboard includes a breakout by exception type (count and financial exposure or book value).
+
+P30 Ledger reconciliation explains expected vs Critical gaps | +5 | Objective | Content
+Reconciles corrected inventory to the ledger and explains remaining differences with an explicit distinction between expected under-threshold FA absence (MD-00130/MD-00131) and Critical capital-qualifying absence (MD-00132), plus cost-basis mismatches and disposal-status disagreements.
+
+P31 Overdue returns without receiving proof block certification | +4 | Objective | Content
+Treats overdue / label-only returns that lack carrier acceptance + delivery + receiving-scan proof as Critical certification blockers (for example MD-00068).
+
+P32 Shipment serial mismatches treated as Critical blockers | +4 | Objective | Content
+Treats unresolved shipment serial mismatches as Critical certification blockers for at least 3 of these 4 assets: MD-00074, MD-00076, MD-00082, and MD-00084.
+
+P33 Missing disposal certificates block certification | +4 | Objective | Content
+Treats retired/pending-disposal assets lacking a verified disposal certificate as Critical certification blockers (MD-00114 and MD-00118).
+
+P34 Capital-asset ledger gaps block certification | +4 | Objective | Content
+Treats capital-qualifying assets (acquisition cost ≥ $2,500) that are missing from the fixed-asset ledger as Critical certification blockers.
+
+N1 Unconditional certification approval | -5 | Objective | Content
+Approves/certifies the quarterly inventory as complete despite Critical blockers.
+
+N2 Label-created treated as returned | -5 | Objective | Content
+Marks Label Created shipments as Available/returned/completed without carrier acceptance + delivery + receiving scan evidence.
+
+N3 Clears serial mismatches / fails to treat as blockers | -5 | Objective | Content
+Fails to treat unresolved shipment serial mismatches as Critical certification blockers for at least 3 of these 4 assets — MD-00074, MD-00076, MD-00082, and MD-00084 — or clears those mismatches to Available / completed return.
+
+N4 Dock image used as receiving clearance | -4 | Objective | Content
+Uses receiving_exception_scan_1ZMD00000082.png as proof MD-00082 was successfully received/cleared.
+
+N5 Untraceable transfer/return/approval/disposal IDs | -5 | Objective | Content
+The deliverable does not cite or use any transfer IDs, return receipts, approval IDs, or disposal certificates that cannot be traced to a source record.
+
+N6 Missing assets marked verified in use/stock | -4 | Objective | Content
+Treats unresolved MD-00089–MD-00100 assets as verified In Use or Available stock.
+
+N7 Under-threshold absence treated as Critical capital gap | -5 | Objective | Content
+Treats MD-00130 and/or MD-00131 ledger absence as a Critical inventory-to-ledger certification blocker, or uses PO-2023-0022 capitalization_approved=Yes to force FA expectations for those under-threshold lines.
+
+N8 RN-0132 accepted to clear MD-00132 | -5 | Objective | Content
+Accepts the regional note that MD-00132 was expensed under threshold (or equivalent) and clears/omits the Critical missing FA-row finding for MD-00132.
+
