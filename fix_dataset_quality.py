@@ -28,12 +28,12 @@ def strip_inventory_ledger_banners() -> None:
     for path, title, subtitle in [
         (
             ROOT / "it_asset_inventory.xlsx",
-            "Copr & Partners IT Services - IT Asset Inventory",
+            "Yanou & Partners IT Services - IT Asset Inventory",
             "Operational snapshot | As of 2026-08-09",
         ),
         (
             ROOT / "fixed_asset_ledger.xlsx",
-            "Copr & Partners IT Services - Fixed Asset Ledger",
+            "Yanou & Partners IT Services - Fixed Asset Ledger",
             "Accounting extract | As of 2026-08-09",
         ),
     ]:
@@ -146,7 +146,7 @@ def rebuild_policy_pdf() -> None:
     story.append(Paragraph("IT Asset Management Policy", title))
     story.append(
         Paragraph(
-            "Copr & Partners IT Services | Policy ITAM-001 | Version 3.2 | Effective 2026-01-01",
+            "Yanou & Partners IT Services | Policy ITAM-001 | Version 3.2 | Effective 2026-01-01",
             small,
         )
     )

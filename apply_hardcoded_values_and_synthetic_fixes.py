@@ -22,7 +22,7 @@ from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parent
 
-NEW_COMPANY = "Copr & Partners IT Services"
+NEW_COMPANY = "Yanou & Partners IT Services"
 
 
 def replace_company_text_in_prompt() -> None:

@@ -77,7 +77,7 @@ def render_control_matrix() -> None:
     cell_f = font(18)
     foot_f = font(16)
 
-    d.text((48, 42), "Copr & Partners IT Services — ITAM-001 Appendix A Control Matrix", font=title_f, fill=(52, 42, 36))
+    d.text((48, 42), "Yanou & Partners IT Services — ITAM-001 Appendix A Control Matrix", font=title_f, fill=(52, 42, 36))
     d.text((48, 92), "Effective with Policy ITAM-001. Read with the narrative controls.", font=sub_f, fill=(92, 82, 74))
 
     headers = ["Control", "Required Evidence", "Failure Classification", "Owner"]
@@ -201,7 +201,7 @@ def rebuild_policy_pdf() -> None:
     small = ParagraphStyle("S", parent=styles["Normal"], fontSize=8, leading=10, textColor=colors.HexColor("#333333"))
     story = []
     story.append(Paragraph("IT Asset Management Policy", title))
-    story.append(Paragraph("Copr & Partners IT Services | Policy ITAM-001 | Version 3.3 | Effective 2026-01-01", small))
+    story.append(Paragraph("Yanou & Partners IT Services | Policy ITAM-001 | Version 3.3 | Effective 2026-01-01", small))
     story.append(Spacer(1, 0.12 * inch))
     sections = [
         (
