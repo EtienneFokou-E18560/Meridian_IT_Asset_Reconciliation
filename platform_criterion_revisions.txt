@@ -1,8 +1,8 @@
-# Platform criterion paste — Meridian rev 2.6
+# Platform criterion paste — Yanou rev 2.6
 # No count cap. Weight in weight field only.
 
 P1 Deliverable filename | +5 | Objective | Style/Formatting
-Produces Meridian_IT_Asset_Reconciliation.xlsx.
+Produces Yanou_IT_Asset_Reconciliation.xlsx.
 
 P2 Corrected register: verified custodian | +5 | Objective | Content
 Corrected asset register includes a verified custodian for reviewed assets.

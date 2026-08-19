@@ -1,8 +1,8 @@
-# Meridian IT Asset Reconciliation Rubric (rev 2.6 — PLATFORM PASTE)
+# Yanou IT Asset Reconciliation Rubric (rev 2.6 — PLATFORM PASTE)
 
 Rev 2.6: no count cap. P9 confidence restored. P10 hold vs approve only. P11 certification sign-off lines (four named roles). P12 accept / escalate / block structure. P23 exception deadline restored. Do not conflate P10 with the page-component requirements.
 
-Score `Meridian_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
+Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
 **Counts:** 34 positive + 8 negative = **42**.
 
@@ -10,7 +10,7 @@ Score `Meridian_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weight
 
 ## Positive criteria
 
-1. **Deliverable filename** (weight +5) — Produces Meridian_IT_Asset_Reconciliation.xlsx.  
+1. **Deliverable filename** (weight +5) — Produces Yanou_IT_Asset_Reconciliation.xlsx.  
    *Objective · Style/Formatting (identity; exclude from style share)*
 
 2. **Corrected register: verified custodian** (weight +5) — Corrected asset register includes a verified custodian for reviewed assets.  
