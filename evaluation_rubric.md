@@ -1,6 +1,6 @@
-# Yanou IT Asset Reconciliation Rubric (rev 2.9 — PLATFORM PASTE)
+# Yanou IT Asset Reconciliation Rubric (rev 2.10 — PLATFORM PASTE)
 
-Rev 2.9: P24 rewritten to instruction language (no Exception Register / Certification Impact tokens). Rev 2.8: N5 negative polarity fixed — cites untraceable IDs as the prohibited condition. Rev 2.7: removed redundant P18; P19 citation rule concrete; Critical certification blocker wording aligned.
+Rev 2.10: P23 rewritten as a complete declarative sentence for certification-blocking exception deadlines. Rev 2.9: P24 rewritten to instruction language (no Exception Register / Certification Impact tokens). Rev 2.8: N5 negative polarity fixed.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
@@ -76,7 +76,7 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 22. **Exception rows include owner by role** (weight +3) — Exception rows include owner by role.  
     *Objective · Content*
 
-23. **Exception rows include action deadline** (weight +3) — Exception rows include an action deadline.  
+23. **Exception rows include action deadline** (weight +3) — Each certification-blocking unresolved exception row includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).  
     *Objective · Content*
 
 24. **Custody chains for certification-blocking assets** (weight +3) — Provides custody-chain detail for each high-risk / certification-blocking unresolved asset, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.  

@@ -1,4 +1,4 @@
-# Platform criterion paste — Yanou rev 2.9
+# Platform criterion paste — Yanou rev 2.10
 # No count cap. Weight in weight field only.
 
 P1 Deliverable filename | +5 | Objective | Style/Formatting
@@ -68,7 +68,7 @@ P22 Exception rows include owner by role | +3 | Objective | Content
 Exception rows include owner by role.
 
 P23 Exception rows include action deadline | +3 | Objective | Content
-Exception rows include an action deadline.
+Each certification-blocking unresolved exception row includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).
 
 P24 Custody chains for certification-blocking assets | +3 | Objective | Content
 Provides custody-chain detail for each high-risk / certification-blocking unresolved asset, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
