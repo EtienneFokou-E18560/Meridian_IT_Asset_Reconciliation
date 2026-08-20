@@ -1,6 +1,6 @@
-# Yanou IT Asset Reconciliation Rubric (rev 2.7 — PLATFORM PASTE)
+# Yanou IT Asset Reconciliation Rubric (rev 2.9 — PLATFORM PASTE)
 
-Rev 2.7: removed redundant P18 (subsumed by ledger-rec criterion). P19 citation rule made concrete (no “as applicable”). P24 custody scope tied to Certification Impact = Blocks certification. “Critical certification blocker” wording aligned across criteria.
+Rev 2.9: P24 rewritten to instruction language (no Exception Register / Certification Impact tokens). Rev 2.8: N5 negative polarity fixed — cites untraceable IDs as the prohibited condition. Rev 2.7: removed redundant P18; P19 citation rule concrete; Critical certification blocker wording aligned.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
@@ -79,7 +79,7 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 23. **Exception rows include action deadline** (weight +3) — Exception rows include an action deadline.  
     *Objective · Content*
 
-24. **Custody chains for certification-blocking assets** (weight +3) — Provides custody-chain detail for each asset that has at least one open Exception Register row with Certification Impact = Blocks certification, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.  
+24. **Custody chains for certification-blocking assets** (weight +3) — Provides custody-chain detail for each high-risk / certification-blocking unresolved asset, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.  
     *Objective · Content*
 
 25. **Dashboard breakout by verified status** (weight +4) — Summary dashboard includes asset counts and book value broken out by verified status.  
@@ -123,7 +123,7 @@ N3. **Clears serial mismatches / fails to treat as blockers** (weight -5) — Fa
 N4. **Dock image used as receiving clearance** (weight -4) — Uses receiving_exception_scan_1ZMD00000082.png as proof MD-00082 was successfully received/cleared.  
 *Objective · Content*
 
-N5. **Untraceable transfer/return/approval/disposal IDs** (weight -5) — The deliverable does not cite or use any transfer IDs, return receipts, approval IDs, or disposal certificates that cannot be traced to a source record.  
+N5. **Untraceable transfer/return/approval/disposal IDs** (weight -5) — Cites or uses transfer IDs, return receipts, approval IDs, or disposal certificates that cannot be traced to a source record in the provided files.  
 *Objective · Content*
 
 N6. **Missing assets marked verified in use/stock** (weight -4) — Treats unresolved MD-00089–MD-00100 assets as verified In Use or Available stock.  

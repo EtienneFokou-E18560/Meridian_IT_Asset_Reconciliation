@@ -1,0 +1,14 @@
+# Yanou IT Asset Reconciliation — Geranium / platform metadata
+
+title = "Yanou IT Asset Reconciliation"
+deliverable = "Yanou_IT_Asset_Reconciliation.xlsx"
+revision = "2.9"
+
+sector = "Professional, Scientific, and Technical Services"
+occupation = "Accountants and Auditors"
+occupation_code = "13-2011.00"
+difficulty_tier = "hard"
+
+multimodal = false
+web_search_allowed = false
+time_estimate_hours = 5

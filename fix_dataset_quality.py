@@ -117,7 +117,8 @@ def diversify_regional_notes() -> None:
         tag = row.cells[1].text.strip()
         if tag in variants:
             row.cells[3].text = variants[tag]
-            row.cells[4].text = "Lead only — unverified"
+        # Uniform authority: never tip policy conflict (e.g. former RN-0132 §7 leak).
+        row.cells[4].text = "Lead only — unverified"
     doc.save(path)
     print("diversified regional_IT_notes.docx")
 
@@ -452,14 +453,23 @@ def rebuild_zips() -> None:
         "ITAM_control_matrix.png",
         "receiving_exception_scan_1ZMD00000082.png",
     ]
-    in_zip = ROOT / "Meridian_IT_Asset_Inputs.zip"
-    with zipfile.ZipFile(in_zip, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for name in inputs:
-            zf.write(ROOT / name, arcname=name)
-    out_zip = ROOT / "Meridian_IT_Asset_Reconciliation.zip"
-    with zipfile.ZipFile(out_zip, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        zf.write(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx", arcname="Meridian_IT_Asset_Reconciliation.xlsx")
-    print(f"rebuilt {in_zip.name} ({len(inputs)} files) and {out_zip.name}")
+    for zip_name in ("Meridian_IT_Asset_Inputs.zip", "Yanou_IT_Asset_Inputs.zip"):
+        in_zip = ROOT / zip_name
+        with zipfile.ZipFile(in_zip, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+            for name in inputs:
+                zf.write(ROOT / name, arcname=name)
+        print(f"rebuilt {in_zip.name} ({len(inputs)} files)")
+    for xlsx_name, zip_name in (
+        ("Meridian_IT_Asset_Reconciliation.xlsx", "Meridian_IT_Asset_Reconciliation.zip"),
+        ("Yanou_IT_Asset_Reconciliation.xlsx", "Yanou_IT_Asset_Reconciliation.zip"),
+    ):
+        xlsx = ROOT / xlsx_name
+        if not xlsx.exists():
+            continue
+        out_zip = ROOT / zip_name
+        with zipfile.ZipFile(out_zip, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+            zf.write(xlsx, arcname=xlsx_name)
+        print(f"rebuilt {out_zip.name}")
 
 
 def main() -> None:

@@ -1,4 +1,4 @@
-# Platform criterion paste — Yanou rev 2.7
+# Platform criterion paste — Yanou rev 2.9
 # No count cap. Weight in weight field only.
 
 P1 Deliverable filename | +5 | Objective | Style/Formatting
@@ -71,7 +71,7 @@ P23 Exception rows include action deadline | +3 | Objective | Content
 Exception rows include an action deadline.
 
 P24 Custody chains for certification-blocking assets | +3 | Objective | Content
-Provides custody-chain detail for each asset that has at least one open Exception Register row with Certification Impact = Blocks certification, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+Provides custody-chain detail for each high-risk / certification-blocking unresolved asset, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
 
 P25 Dashboard breakout by verified status | +4 | Objective | Content
 Summary dashboard includes asset counts and book value broken out by verified status.
@@ -113,7 +113,7 @@ N4 Dock image used as receiving clearance | -4 | Objective | Content
 Uses receiving_exception_scan_1ZMD00000082.png as proof MD-00082 was successfully received/cleared.
 
 N5 Untraceable transfer/return/approval/disposal IDs | -5 | Objective | Content
-The deliverable does not cite or use any transfer IDs, return receipts, approval IDs, or disposal certificates that cannot be traced to a source record.
+Cites or uses transfer IDs, return receipts, approval IDs, or disposal certificates that cannot be traced to a source record in the provided files.
 
 N6 Missing assets marked verified in use/stock | -4 | Objective | Content
 Treats unresolved MD-00089–MD-00100 assets as verified In Use or Available stock.

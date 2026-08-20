@@ -5,6 +5,8 @@ This repository contains the full working set of artifacts for the Yanou IT Asse
 - `Yanou_IT_Asset_Reconciliation.xlsx` (primary deliverable workbook)
 - `Yanou_IT_Asset_Reconciliation.zip` (submission bundle generated from the workbook)
 - `Yanou_IT_Asset_Inputs.zip` (input bundle used to generate the reconciliation)
+- `task.toml` (sector / occupation / difficulty metadata for platform upload)
+- `tests/check_outputs.py` (fail-closed gate: requires `Yanou_IT_Asset_Reconciliation.xlsx` by name and OOXML type)
 - Source inputs (CSV/XLSX/DOCX/PNG/PDF) used by the reconciliation workflow
 - Python scripts used to correct the dataset-quality failures:
   - `fix_golden_fidelity.py`
@@ -16,5 +18,7 @@ This repository contains the full working set of artifacts for the Yanou IT Asse
 
 The `.xlsx`/`.zip` artifacts are intentionally included for evaluation/verification runs.
 
-Note: the original `Meridian_*` filenames are also retained in this repo for compatibility with any automated graders that expect the original deliverable naming.
+Note: the original `Meridian_*` filenames are also retained in this repo for compatibility with any automated graders that expect the original deliverable naming. Graded deliverable name for upload remains `Yanou_IT_Asset_Reconciliation.xlsx`.
+
+Platform verifier note: input-integrity checks (writable inputs, snapshot failure) must fail closed (non-zero / reward 0). Do not warn-and-continue or fall back to a live mutable input directory.
 
