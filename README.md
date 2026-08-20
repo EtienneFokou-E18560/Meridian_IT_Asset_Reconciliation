@@ -8,11 +8,21 @@ This repository contains the full working set of artifacts for the Yanou IT Asse
 - `task.toml` (sector / occupation / difficulty metadata for platform upload)
 - `tests/check_outputs.py` (fail-closed gate: requires `Yanou_IT_Asset_Reconciliation.xlsx` by name and OOXML type)
 - Source inputs (CSV/XLSX/DOCX/PNG/PDF) used by the reconciliation workflow
-- Python scripts used to correct the dataset-quality failures:
-  - `fix_golden_fidelity.py`
-  - `fix_golden_narratives.py`
-  - `fix_dataset_quality.py`
-  - `fix_authorship.py`
+- Python repair scripts (`fix_oracle_fidelity.py`, `fix_authorship_columns.py`, etc.)
+
+## Sector and occupation
+
+- Sector: Professional, Scientific, and Technical Services
+- O*NET Occupation: 13-2011.00 Accountants and Auditors
+
+O*NET Tasks (paste one per line):
+
+```
+Examine inventory to verify journal and ledger entries.
+Review accounts for discrepancies and reconcile differences.
+Prepare, examine, or analyze accounting records, financial statements, or other financial reports.
+Report to management regarding the finances of establishment.
+```
 
 ## Repo contents
 
@@ -21,4 +31,3 @@ The `.xlsx`/`.zip` artifacts are intentionally included for evaluation/verificat
 Note: the original `Meridian_*` filenames are also retained in this repo for compatibility with any automated graders that expect the original deliverable naming. Graded deliverable name for upload remains `Yanou_IT_Asset_Reconciliation.xlsx`.
 
 Platform verifier note: input-integrity checks (writable inputs, snapshot failure) must fail closed (non-zero / reward 0). Do not warn-and-continue or fall back to a live mutable input directory.
-

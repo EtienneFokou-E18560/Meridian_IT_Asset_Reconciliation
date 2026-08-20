@@ -2,12 +2,25 @@
 
 title = "Yanou IT Asset Reconciliation"
 deliverable = "Yanou_IT_Asset_Reconciliation.xlsx"
-revision = "2.10"
+revision = "2.11"
 
 sector = "Professional, Scientific, and Technical Services"
 occupation = "Accountants and Auditors"
 occupation_code = "13-2011.00"
 difficulty_tier = "hard"
+
+# O*NET Tasks (Occupation-Specific Information; paste one per line)
+# Examine inventory to verify journal and ledger entries.
+# Review accounts for discrepancies and reconcile differences.
+# Prepare, examine, or analyze accounting records, financial statements, or other financial reports.
+# Report to management regarding the finances of establishment.
+
+onet_tasks = [
+  "Examine inventory to verify journal and ledger entries.",
+  "Review accounts for discrepancies and reconcile differences.",
+  "Prepare, examine, or analyze accounting records, financial statements, or other financial reports.",
+  "Report to management regarding the finances of establishment.",
+]
 
 multimodal = false
 web_search_allowed = false

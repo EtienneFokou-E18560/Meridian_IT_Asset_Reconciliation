@@ -1,10 +1,10 @@
-# Yanou IT Asset Reconciliation Rubric (rev 2.10 — PLATFORM PASTE)
+# Yanou IT Asset Reconciliation Rubric (rev 2.11 — PLATFORM PASTE)
 
-Rev 2.10: P23 rewritten as a complete declarative sentence for certification-blocking exception deadlines. Rev 2.9: P24 rewritten to instruction language (no Exception Register / Certification Impact tokens). Rev 2.8: N5 negative polarity fixed.
+Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; added N9 false FA-absence claim. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
-**Counts:** 33 positive + 8 negative = **41**.
+**Counts:** 33 positive + 9 negative = **42**.
 
 ---
 
@@ -13,28 +13,28 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 1. **Deliverable filename** (weight +5) — Produces Yanou_IT_Asset_Reconciliation.xlsx.  
    *Objective · Style/Formatting (identity; exclude from style share)*
 
-2. **Corrected register: verified custodian** (weight +5) — Corrected asset register includes a verified custodian for reviewed assets.  
+2. **Corrected register: verified custodian** (weight +5) — For reviewed assets, the corrected asset register populates a non-blank verified custodian value (not merely a column header).  
    *Objective · Content*
 
-3. **Corrected register: verified location** (weight +3) — Corrected asset register includes a verified location for reviewed assets.  
+3. **Corrected register: verified location** (weight +3) — For reviewed assets, the corrected asset register populates a non-blank verified location value.  
    *Objective · Content*
 
-4. **Corrected register: verified lifecycle status** (weight +3) — Corrected asset register includes a verified lifecycle status for reviewed assets.  
+4. **Corrected register: verified lifecycle status** (weight +3) — For reviewed assets, the corrected asset register populates a non-blank verified lifecycle status value.  
    *Objective · Content*
 
-5. **Corrected register: evidence source** (weight +3) — Corrected asset register includes an evidence source for reviewed assets.  
+5. **Corrected register: evidence source** (weight +3) — For reviewed assets, the corrected asset register populates a non-blank evidence source, and that text is consistent with the fixed-asset ledger extract: it must not claim there is no FA/ledger row for an asset tag that appears on the ledger; for MD-00130, MD-00131, and MD-00132 it may note ledger absence (with the under-threshold vs capital-qualifying distinction addressed elsewhere).  
    *Objective · Content*
 
-6. **Corrected register: last verified date** (weight +3) — Corrected asset register includes a last verified date for reviewed assets.  
+6. **Corrected register: last verified date** (weight +3) — For reviewed assets, the corrected asset register populates a non-blank last verified date.  
    *Objective · Content*
 
-7. **Corrected register: acquisition cost** (weight +3) — Corrected asset register includes acquisition cost for reviewed assets.  
+7. **Corrected register: acquisition cost** (weight +3) — For reviewed assets, the corrected asset register populates a numeric acquisition cost.  
    *Objective · Content*
 
-8. **Corrected register: remaining book value** (weight +3) — Corrected asset register includes remaining book value for reviewed assets.  
+8. **Corrected register: remaining book value** (weight +3) — For reviewed assets that have a net book value on the fixed-asset ledger extract, the corrected asset register populates remaining book value from that ledger figure (blank is acceptable only when the asset has no ledger row).  
    *Objective · Content*
 
-9. **Corrected register: confidence** (weight +3) — Corrected asset register includes confidence for reviewed assets.  
+9. **Corrected register: confidence** (weight +3) — For reviewed assets, the corrected asset register populates a non-blank confidence value.  
    *Objective · Content*
 
 10. **Certification not approved / Critical certification blockers retained** (weight +5) — States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval.  
@@ -64,16 +64,16 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 18. **RN-0132 under-threshold claim rejected** (weight +4) — Rejects regional note RN-0132 (or equivalent note claiming MD-00132 was expensed under threshold) as non-authoritative; does not clear MD-00132’s missing FA row on that basis.  
     *Objective · Content*
 
-19. **Exception rows include related-record citation(s)** (weight +3) — Each exception row includes at least one related-record citation drawn from: employee ID, ticket ID, transfer ID, PO number, tracking number, certificate ID, or ledger asset ID.  
+19. **Exception rows include related-record citation(s)** (weight +3) — Each exception row populates at least one related-record citation drawn from: employee ID, ticket ID, transfer ID, PO number, tracking number, certificate ID, or ledger asset ID (non-blank field value, not header-only).  
     *Objective · Content*
 
-20. **Exception rows include financial exposure** (weight +3) — Exception rows include financial exposure.  
+20. **Exception rows include financial exposure** (weight +3) — Each exception row populates a financial exposure value.  
     *Objective · Content*
 
-21. **Exception rows include required action** (weight +3) — Exception rows include required action.  
+21. **Exception rows include required action** (weight +3) — Each exception row populates a required action.  
     *Objective · Content*
 
-22. **Exception rows include owner by role** (weight +3) — Exception rows include owner by role.  
+22. **Exception rows include owner by role** (weight +3) — Each exception row populates an owner by role.  
     *Objective · Content*
 
 23. **Exception rows include action deadline** (weight +3) — Each certification-blocking unresolved exception row includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).  
@@ -129,8 +129,11 @@ N5. **Untraceable transfer/return/approval/disposal IDs** (weight -5) — Cites 
 N6. **Missing assets marked verified in use/stock** (weight -4) — Treats unresolved MD-00089–MD-00100 assets as verified In Use or Available stock.  
 *Objective · Content*
 
-N7. **Under-threshold absence treated as Critical capital gap** (weight -5) — Treats MD-00130 and/or MD-00131 ledger absence as a Critical certification blocker, or uses PO-2023-0022 capitalization_approved=Yes to force FA expectations for those under-threshold lines.  
+N7. **Under-threshold absence treated as Critical capital gap** (weight -5) — Treats MD-00130 and/or MD-00131 ledger absence as a Critical certification blocker, or uses a capitalization_approved=Yes purchase-order flag to force FA expectations for those under-threshold lines.  
 *Objective · Content*
 
 N8. **RN-0132 accepted to clear MD-00132** (weight -5) — Accepts the regional note that MD-00132 was expensed under threshold (or equivalent) and clears/omits the Critical missing FA-row finding for MD-00132.  
+*Objective · Content*
+
+N9. **False ledger-absence claim** (weight -5) — Claims that an asset has no fixed-asset ledger / FAR row when that asset tag appears on the provided fixed-asset ledger extract.  
 *Objective · Content*

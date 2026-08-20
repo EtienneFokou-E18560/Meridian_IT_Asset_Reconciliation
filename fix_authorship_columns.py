@@ -239,7 +239,24 @@ def transfer_clauses(
 
 
 def money_clauses(tag: str, po: str | None, fa: str | None) -> list[str]:
-    if po and fa and not str(fa).startswith("="):
+    """FA must come from Source Ledger map - never treat an XLOOKUP formula as missing."""
+    if fa and str(fa).startswith("="):
+        fa = None
+    if tag in ("MD-00130", "MD-00131"):
+        return [
+            f"PO {po} on file; under-threshold asset {tag} - no FAR row expected.",
+            f"{po} covers {tag} as an expense-class buy; FAR silence is expected under ITAM-001 §7.",
+            f"Purchasing {po} lists {tag}; capitalization not required - no FA line.",
+            f"{tag}: under $2,500 gate. {po} present; missing FA expected.",
+        ]
+    if tag == "MD-00132":
+        return [
+            f"PO {po} on file; no matching FAR row for {tag} - capital gap.",
+            f"{po} in hardware_purchase_orders.csv; FAR silent on capital-qualifying {tag}.",
+            f"Purchasing {po} without a capital line for {tag} ($6,470).",
+            f"{tag}: {po} approved but FAR extract has no row.",
+        ]
+    if po and fa:
         return [
             f"Procurement {po} maps to ledger {fa}.",
             f"{po} / {fa} support the cost basis.",
@@ -247,19 +264,17 @@ def money_clauses(tag: str, po: str | None, fa: str | None) -> list[str]:
             f"Cost path: {po} into {fa}.",
             f"{po} and {fa} agree on {tag}.",
             f"Ledger {fa} backs {po} for {tag}.",
+            f"FAR extract includes {fa} for {tag} via {po}.",
+            f"Capital trail {tag}: {po} -> {fa}.",
         ]
-    if po:
-        return [
-            f"PO {po} on file; no matching FAR row for {tag}.",
-            f"{po} in hardware_purchase_orders.csv; FAR silent on {tag}.",
-            f"Purchasing {po} without a capital line for {tag}.",
-        ]
-    if fa and not str(fa).startswith("="):
+    if fa:
         return [
             f"Fixed-asset extract includes {fa} for {tag}.",
             f"FAR row {fa} covers {tag}.",
             f"Ledger tag {fa} present for {tag}.",
         ]
+    if po:
+        return [f"PO {po} on file for {tag}."]
     return []
 
 
@@ -282,8 +297,11 @@ def build_evidence_source(a: dict, hr: dict, transfers: dict, row: int) -> str:
                 break
     trow = transfers.get(tr or "", {})
     apr = trow.get("approval_id") or gid(r"(APR-\d+)", str(a.get("src", "")))
-    po = gid(r"(PO-[\d-]+)", str(a.get("src", "")))
-    fa = a.get("fa") or gid(r"(FA-\d+)", str(a.get("src", "")))
+    po = a.get("po") or gid(r"(PO-[\d-]+)", str(a.get("src", "")))
+    fa = a.get("fa") if a.get("fa") and not str(a.get("fa")).startswith("=") else None
+    fa = fa or gid(r"(FA-\d+)", str(a.get("src", "")))
+    if str(fa or "").startswith("="):
+        fa = None
     tk = gid(r"((?:OFF|RET)-\d+)", str(a.get("src", "")))
     track = gid(r"(1ZMD\d+)", str(a.get("src", "")))
     st = a["ver_st"]
@@ -321,7 +339,7 @@ def build_evidence_source(a: dict, hr: dict, transfers: dict, row: int) -> str:
     if tag == "MD-00132":
         extras.append("RN-0132 under-threshold claim rejected; $6,470 exceeds capitalization gate with no FA row")
     if tag in ("MD-00130", "MD-00131"):
-        extras.append(f"${cost} below $2,500 — missing FA expected")
+        extras.append(f"${cost} below $2,500 - missing FA expected")
     if tag in ("MD-00114", "MD-00118"):
         extras.append("no verified disposal certificate located")
     if a["serial"] in ("MD-LA-050021", "MD-NE-050088"):
@@ -714,6 +732,21 @@ def rewrite_workbook(path: Path) -> None:
     ev_col = cols["Evidence Source"]
 
     assets: dict[str, dict] = {}
+    # Resolve FA IDs from Source Ledger (never from blank-cached XLOOKUP formulas).
+    sl = wb["Source Ledger"]
+    fa_by_tag: dict[str, str] = {}
+    for r in range(5, sl.max_row + 1):
+        t = sl.cell(r, 2).value
+        fa_id = sl.cell(r, 1).value
+        if t and fa_id:
+            fa_by_tag[str(t)] = str(fa_id)
+    po_by_tag: dict[str, str] = {}
+    for prow in load_csv("hardware_purchase_orders.csv"):
+        for t in re.split(r"[;\s]+", prow["asset_tags"]):
+            t = t.strip()
+            if t.startswith("MD-"):
+                po_by_tag[t] = prow["purchase_order"]
+
     for r in range(5, cr.max_row + 1):
         tag = cr.cell(r, 1).value
         if not tag:
@@ -729,10 +762,13 @@ def rewrite_workbook(path: Path) -> None:
             "ver_st": cr.cell(r, 10).value,
             "src": cr.cell(r, ev_col).value or "",
             "cost": crv.cell(r, 13).value or cr.cell(r, 13).value,
-            "fa": crv.cell(r, 15).value or cr.cell(r, 15).value,
+            "fa": fa_by_tag.get(str(tag)),
+            "po": po_by_tag.get(str(tag)),
             "conf": cr.cell(r, 17).value,
             "exids": cr.cell(r, 18).value or "",
         }
+        # Materialize Ledger Asset ID so it opens without Excel calc.
+        cr.cell(r, 15).value = fa_by_tag.get(str(tag)) or None
 
     used_ev: set[str] = set()
     for tag, a in assets.items():

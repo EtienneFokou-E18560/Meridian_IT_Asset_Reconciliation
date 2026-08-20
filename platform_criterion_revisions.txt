@@ -1,32 +1,32 @@
-# Platform criterion paste — Yanou rev 2.10
+# Platform criterion paste — Yanou rev 2.11
 # No count cap. Weight in weight field only.
 
 P1 Deliverable filename | +5 | Objective | Style/Formatting
 Produces Yanou_IT_Asset_Reconciliation.xlsx.
 
 P2 Corrected register: verified custodian | +5 | Objective | Content
-Corrected asset register includes a verified custodian for reviewed assets.
+For reviewed assets, the corrected asset register populates a non-blank verified custodian value (not merely a column header).
 
 P3 Corrected register: verified location | +3 | Objective | Content
-Corrected asset register includes a verified location for reviewed assets.
+For reviewed assets, the corrected asset register populates a non-blank verified location value.
 
 P4 Corrected register: verified lifecycle status | +3 | Objective | Content
-Corrected asset register includes a verified lifecycle status for reviewed assets.
+For reviewed assets, the corrected asset register populates a non-blank verified lifecycle status value.
 
 P5 Corrected register: evidence source | +3 | Objective | Content
-Corrected asset register includes an evidence source for reviewed assets.
+For reviewed assets, the corrected asset register populates a non-blank evidence source, and that text is consistent with the fixed-asset ledger extract: it must not claim there is no FA/ledger row for an asset tag that appears on the ledger; for MD-00130, MD-00131, and MD-00132 it may note ledger absence (with the under-threshold vs capital-qualifying distinction addressed elsewhere).
 
 P6 Corrected register: last verified date | +3 | Objective | Content
-Corrected asset register includes a last verified date for reviewed assets.
+For reviewed assets, the corrected asset register populates a non-blank last verified date.
 
 P7 Corrected register: acquisition cost | +3 | Objective | Content
-Corrected asset register includes acquisition cost for reviewed assets.
+For reviewed assets, the corrected asset register populates a numeric acquisition cost.
 
 P8 Corrected register: remaining book value | +3 | Objective | Content
-Corrected asset register includes remaining book value for reviewed assets.
+For reviewed assets that have a net book value on the fixed-asset ledger extract, the corrected asset register populates remaining book value from that ledger figure (blank is acceptable only when the asset has no ledger row).
 
 P9 Corrected register: confidence | +3 | Objective | Content
-Corrected asset register includes confidence for reviewed assets.
+For reviewed assets, the corrected asset register populates a non-blank confidence value.
 
 P10 Certification not approved / Critical certification blockers retained | +5 | Subjective | Content
 States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval.
@@ -56,16 +56,16 @@ P18 RN-0132 under-threshold claim rejected | +4 | Objective | Content
 Rejects regional note RN-0132 (or equivalent note claiming MD-00132 was expensed under threshold) as non-authoritative; does not clear MD-00132’s missing FA row on that basis.
 
 P19 Exception rows include related-record citation(s) | +3 | Objective | Content
-Each exception row includes at least one related-record citation drawn from: employee ID, ticket ID, transfer ID, PO number, tracking number, certificate ID, or ledger asset ID.
+Each exception row populates at least one related-record citation drawn from: employee ID, ticket ID, transfer ID, PO number, tracking number, certificate ID, or ledger asset ID (non-blank field value, not header-only).
 
 P20 Exception rows include financial exposure | +3 | Objective | Content
-Exception rows include financial exposure.
+Each exception row populates a financial exposure value.
 
 P21 Exception rows include required action | +3 | Objective | Content
-Exception rows include required action.
+Each exception row populates a required action.
 
 P22 Exception rows include owner by role | +3 | Objective | Content
-Exception rows include owner by role.
+Each exception row populates an owner by role.
 
 P23 Exception rows include action deadline | +3 | Objective | Content
 Each certification-blocking unresolved exception row includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).
@@ -119,7 +119,10 @@ N6 Missing assets marked verified in use/stock | -4 | Objective | Content
 Treats unresolved MD-00089–MD-00100 assets as verified In Use or Available stock.
 
 N7 Under-threshold absence treated as Critical capital gap | -5 | Objective | Content
-Treats MD-00130 and/or MD-00131 ledger absence as a Critical certification blocker, or uses PO-2023-0022 capitalization_approved=Yes to force FA expectations for those under-threshold lines.
+Treats MD-00130 and/or MD-00131 ledger absence as a Critical certification blocker, or uses a capitalization_approved=Yes purchase-order flag to force FA expectations for those under-threshold lines.
 
 N8 RN-0132 accepted to clear MD-00132 | -5 | Objective | Content
 Accepts the regional note that MD-00132 was expensed under threshold (or equivalent) and clears/omits the Critical missing FA-row finding for MD-00132.
+
+N9 False ledger-absence claim | -5 | Objective | Content
+Claims that an asset has no fixed-asset ledger / FAR row when that asset tag appears on the provided fixed-asset ledger extract.
