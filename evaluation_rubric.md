@@ -1,10 +1,10 @@
-# Yanou IT Asset Reconciliation Rubric (rev 2.13 — PLATFORM PASTE)
+# Yanou IT Asset Reconciliation Rubric (rev 2.14 — PLATFORM PASTE)
 
-Rev 2.13: P7/P8/P9/P20/P27 name expected computed values (acq sum $332,115; RBV aggregate $61,526.60; FA-000034/MD-00034 RBV $479.88; confidence {High, Medium, Low}; EX-0001 exposure $85; category counts Laptop 32 / Mobile Device 33 / Monitor 34 / Network Asset 33). Rev 2.12: P10 formally defines Critical certification blocker; P12/P23/P24 reference that definition; P24 replaces unanchored subjective risk wording with that definition plus named tags MD-00068/74/76/82/84/114/118/132. Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; added N9 false FA-absence claim. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
+Rev 2.14: Split former P10 into P10 (certification NOT APPROVED hold) and P11 (Critical certification blocker definition) for platform paste length; P12/P24/P25 reference criterion 11 for the definition. Rev 2.13: P7/P8/P9/P20/P27 name expected computed values (acq sum $332,115; RBV aggregate $61,526.60; FA-000034/MD-00034 RBV $479.88; confidence {High, Medium, Low}; EX-0001 exposure $85; category counts Laptop 32 / Mobile Device 33 / Monitor 34 / Network Asset 33). Rev 2.12: P10 formally defines Critical certification blocker; P12/P23/P24 reference that definition; P24 replaces unanchored subjective risk wording with that definition plus named tags MD-00068/74/76/82/84/114/118/132. Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; added N9 false FA-absence claim. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
-**Counts:** 33 positive + 9 negative = **42**.
+**Counts:** 34 positive + 9 negative = **43**.
 
 ---
 
@@ -37,76 +37,79 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 9. **Corrected register: confidence** (weight +3) — Corrected asset register confidence values are populated for reviewed assets using the closed set {High, Medium, Low} (non-blank); values must reflect evidence strength rather than an empty or free-text placeholder.  
    *Objective · Content*
 
-10. **Certification not approved / Critical certification blockers retained** (weight +5) — States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval. A Critical certification blocker is an unresolved asset that meets any of: (a) shipment serial mismatch; (b) Missing / Cannot Locate; (c) retired/pending-disposal without a verified disposal certificate; (d) overdue / label-only return lacking carrier acceptance + delivery + receiving-scan proof; or (e) capital-qualifying asset (acquisition cost ≥ $2,500) missing from the fixed-asset ledger.  
+10. **Certification not approved while Critical blockers remain** (weight +3) — States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval.  
     *Subjective · Content*
 
-11. **Certification page sign-off lines** (weight +4) — Includes a certification/sign-off page with sign-off lines for the IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.  
+11. **Critical certification blocker definition** (weight +2) — Defines a Critical certification blocker as an unresolved asset that meets any of: (a) shipment serial mismatch; (b) Missing / Cannot Locate; (c) retired/pending-disposal without a verified disposal certificate; (d) overdue / label-only return lacking carrier acceptance + delivery + receiving-scan proof; or (e) capital-qualifying asset (acquisition cost ≥ $2,500) missing from the fixed-asset ledger.  
     *Objective · Content*
 
-12. **Certification page accept / escalate / block structure** (weight +4) — The certification page distinguishes what can be accepted (or accepted with conditions), what must escalate, and what blocks signing (Critical certification blockers as defined in criterion 10).  
+12. **Certification page sign-off lines** (weight +4) — Includes a certification/sign-off page with sign-off lines for the IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.  
     *Objective · Content*
 
-13. **Evidence precedence documented** (weight +4) — The deliverable documents a precedence order consistent with policy (ledger / verified disposal certificates / carrier acceptance+delivery+receiving-scan over approved transfers over HR over ticket status over technician notes and dock/exception images) and shows at least one rejected lower-precedence claim with the higher-precedence record that overruled it.  
+13. **Certification page accept / escalate / block structure** (weight +4) — The certification page distinguishes what can be accepted (or accepted with conditions), what must escalate, and what blocks signing (Critical certification blockers as defined in criterion 11).  
     *Objective · Content*
 
-14. **MD-00082 shipment mismatch held** (weight +4) — Marks MD-00082 as In Transit - Exception / shipment mismatch / equivalent unresolved custody, citing tracking 1ZMD00000082 and serial mismatch (MISMATCH-0082 vs MD-MO-050082), and does not clear it to Available.  
+14. **Evidence precedence documented** (weight +4) — The deliverable documents a precedence order consistent with policy (ledger / verified disposal certificates / carrier acceptance+delivery+receiving-scan over approved transfers over HR over ticket status over technician notes and dock/exception images) and shows at least one rejected lower-precedence claim with the higher-precedence record that overruled it.  
     *Objective · Content*
 
-15. **Missing assets MD-00089–MD-00100 (threshold)** (weight +4) — Classifies at least 10 of the 12 assets MD-00089 through MD-00100 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.  
+15. **MD-00082 shipment mismatch held** (weight +4) — Marks MD-00082 as In Transit - Exception / shipment mismatch / equivalent unresolved custody, citing tracking 1ZMD00000082 and serial mismatch (MISMATCH-0082 vs MD-MO-050082), and does not clear it to Available.  
     *Objective · Content*
 
-16. **Duplicate serials flagged** (weight +3) — Flags duplicate serial MD-LA-050021 across MD-00021 and MD-00025, and duplicate serial MD-NE-050088 across MD-00088 and MD-00092.  
+16. **Missing assets MD-00089–MD-00100 (threshold)** (weight +4) — Classifies at least 10 of the 12 assets MD-00089 through MD-00100 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.  
     *Objective · Content*
 
-17. **Unapproved transfers flagged** (weight +3) — Flags missing approval on transfers TR-00058, TR-00059, TR-00064, TR-00065, and TR-00127.  
+17. **Duplicate serials flagged** (weight +3) — Flags duplicate serial MD-LA-050021 across MD-00021 and MD-00025, and duplicate serial MD-NE-050088 across MD-00088 and MD-00092.  
     *Objective · Content*
 
-18. **RN-0132 under-threshold claim rejected** (weight +4) — Rejects regional note RN-0132 (or equivalent note claiming MD-00132 was expensed under threshold) as non-authoritative; does not clear MD-00132’s missing FA row on that basis.  
+18. **Unapproved transfers flagged** (weight +3) — Flags missing approval on transfers TR-00058, TR-00059, TR-00064, TR-00065, and TR-00127.  
     *Objective · Content*
 
-19. **Exception rows include related-record citation(s)** (weight +3) — Each exception row populates at least one related-record citation drawn from: employee ID, ticket ID, transfer ID, PO number, tracking number, certificate ID, or ledger asset ID (non-blank field value, not header-only).  
+19. **RN-0132 under-threshold claim rejected** (weight +4) — Rejects regional note RN-0132 (or equivalent note claiming MD-00132 was expensed under threshold) as non-authoritative; does not clear MD-00132’s missing FA row on that basis.  
     *Objective · Content*
 
-20. **Exception rows include financial exposure** (weight +3) — Each exception row populates a financial exposure value that matches the finding math, including EX-0001 financial exposure of $85 (non-blank, not header-only).  
+20. **Exception rows include related-record citation(s)** (weight +3) — Each exception row populates at least one related-record citation drawn from: employee ID, ticket ID, transfer ID, PO number, tracking number, certificate ID, or ledger asset ID (non-blank field value, not header-only).  
     *Objective · Content*
 
-21. **Exception rows include required action** (weight +3) — Each exception row populates a required action.  
+21. **Exception rows include financial exposure** (weight +3) — Each exception row populates a financial exposure value that matches the finding math, including EX-0001 financial exposure of $85 (non-blank, not header-only).  
     *Objective · Content*
 
-22. **Exception rows include owner by role** (weight +3) — Each exception row populates an owner by role.  
+22. **Exception rows include required action** (weight +3) — Each exception row populates a required action.  
     *Objective · Content*
 
-23. **Exception rows include action deadline** (weight +3) — Each unresolved exception row for a Critical certification blocker (as defined in criterion 10) includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).  
+23. **Exception rows include owner by role** (weight +3) — Each exception row populates an owner by role.  
     *Objective · Content*
 
-24. **Custody chains for Critical certification blockers** (weight +3) — Provides custody-chain detail for each unresolved Critical certification blocker (as defined in criterion 10), including at least MD-00068, MD-00074, MD-00076, MD-00082, MD-00084, MD-00114, MD-00118, and MD-00132, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.  
+24. **Exception rows include action deadline** (weight +3) — Each unresolved exception row for a Critical certification blocker (as defined in criterion 11) includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).  
     *Objective · Content*
 
-25. **Dashboard breakout by verified status** (weight +4) — Summary dashboard includes asset counts and book value broken out by verified status.  
+25. **Custody chains for Critical certification blockers** (weight +3) — Provides custody-chain detail for each unresolved Critical certification blocker (as defined in criterion 11), including at least MD-00068, MD-00074, MD-00076, MD-00082, MD-00084, MD-00114, MD-00118, and MD-00132, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.  
     *Objective · Content*
 
-26. **Dashboard breakout by verified location** (weight +3) — Summary dashboard includes asset counts and book value broken out by verified location.  
+26. **Dashboard breakout by verified status** (weight +4) — Summary dashboard includes asset counts and book value broken out by verified status.  
     *Objective · Content*
 
-27. **Dashboard breakout by device category** (weight +3) — Summary dashboard includes asset counts and book value broken out by device category with correct counts from the corrected register: Laptop 32, Mobile Device 33, Monitor 34, Network Asset 33 (counts ±0).  
+27. **Dashboard breakout by verified location** (weight +3) — Summary dashboard includes asset counts and book value broken out by verified location.  
     *Objective · Content*
 
-28. **Dashboard breakout by exception type** (weight +3) — Summary dashboard includes a breakout by exception type (count and financial exposure or book value).  
+28. **Dashboard breakout by device category** (weight +3) — Summary dashboard includes asset counts and book value broken out by device category with correct counts from the corrected register: Laptop 32, Mobile Device 33, Monitor 34, Network Asset 33 (counts ±0).  
     *Objective · Content*
 
-29. **Ledger reconciliation explains expected vs Critical gaps** (weight +5) — Reconciles corrected inventory to the ledger and explains remaining differences with an explicit distinction between expected under-threshold FA absence (MD-00130/MD-00131) and Critical capital-qualifying absence (MD-00132), plus cost-basis mismatches and disposal-status disagreements.  
+29. **Dashboard breakout by exception type** (weight +3) — Summary dashboard includes a breakout by exception type (count and financial exposure or book value).  
     *Objective · Content*
 
-30. **Overdue returns without receiving proof block certification** (weight +4) — Treats overdue / label-only returns that lack carrier acceptance + delivery + receiving-scan proof as Critical certification blockers (for example MD-00068).  
+30. **Ledger reconciliation explains expected vs Critical gaps** (weight +5) — Reconciles corrected inventory to the ledger and explains remaining differences with an explicit distinction between expected under-threshold FA absence (MD-00130/MD-00131) and Critical capital-qualifying absence (MD-00132), plus cost-basis mismatches and disposal-status disagreements.  
     *Objective · Content*
 
-31. **Shipment serial mismatches treated as Critical certification blockers** (weight +4) — Treats unresolved shipment serial mismatches as Critical certification blockers for at least 3 of these 4 assets: MD-00074, MD-00076, MD-00082, and MD-00084.  
+31. **Overdue returns without receiving proof block certification** (weight +4) — Treats overdue / label-only returns that lack carrier acceptance + delivery + receiving-scan proof as Critical certification blockers (for example MD-00068).  
     *Objective · Content*
 
-32. **Missing disposal certificates block certification** (weight +4) — Treats retired/pending-disposal assets lacking a verified disposal certificate as Critical certification blockers (MD-00114 and MD-00118).  
+32. **Shipment serial mismatches treated as Critical certification blockers** (weight +4) — Treats unresolved shipment serial mismatches as Critical certification blockers for at least 3 of these 4 assets: MD-00074, MD-00076, MD-00082, and MD-00084.  
     *Objective · Content*
 
-33. **Capital-asset ledger gaps block certification** (weight +4) — Treats capital-qualifying assets (acquisition cost ≥ $2,500) that are missing from the fixed-asset ledger as Critical certification blockers.  
+33. **Missing disposal certificates block certification** (weight +4) — Treats retired/pending-disposal assets lacking a verified disposal certificate as Critical certification blockers (MD-00114 and MD-00118).  
+    *Objective · Content*
+
+34. **Capital-asset ledger gaps block certification** (weight +4) — Treats capital-qualifying assets (acquisition cost ≥ $2,500) that are missing from the fixed-asset ledger as Critical certification blockers.  
     *Objective · Content*
 
 ## Negative criteria
