@@ -1,6 +1,6 @@
-# Yanou IT Asset Reconciliation Rubric (rev 2.14 — PLATFORM PASTE)
+# Yanou IT Asset Reconciliation Rubric (rev 2.15 — PLATFORM PASTE)
 
-Rev 2.14: Split former P10 into P10 (certification NOT APPROVED hold) and P11 (Critical certification blocker definition) for platform paste length; P12/P24/P25 reference criterion 11 for the definition. Rev 2.13: P7/P8/P9/P20/P27 name expected computed values (acq sum $332,115; RBV aggregate $61,526.60; FA-000034/MD-00034 RBV $479.88; confidence {High, Medium, Low}; EX-0001 exposure $85; category counts Laptop 32 / Mobile Device 33 / Monitor 34 / Network Asset 33). Rev 2.12: P10 formally defines Critical certification blocker; P12/P23/P24 reference that definition; P24 replaces unanchored subjective risk wording with that definition plus named tags MD-00068/74/76/82/84/114/118/132. Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; added N9 false FA-absence claim. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
+Rev 2.15: Remove cross-criterion references from criterion bodies (P13/P24/P25 no longer say “as defined in criterion 11”); Critical certification blocker remains a defined term via P11 alone. Rev 2.14: Split former P10 into P10 (certification NOT APPROVED hold) and P11 (Critical certification blocker definition) for platform paste length; P12/P24/P25 reference criterion 11 for the definition. Rev 2.13: P7/P8/P9/P20/P27 name expected computed values (acq sum $332,115; RBV aggregate $61,526.60; FA-000034/MD-00034 RBV $479.88; confidence {High, Medium, Low}; EX-0001 exposure $85; category counts Laptop 32 / Mobile Device 33 / Monitor 34 / Network Asset 33). Rev 2.12: P10 formally defines Critical certification blocker; P12/P23/P24 reference that definition; P24 replaces unanchored subjective risk wording with that definition plus named tags MD-00068/74/76/82/84/114/118/132. Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; added N9 false FA-absence claim. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
@@ -46,7 +46,7 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 12. **Certification page sign-off lines** (weight +4) — Includes a certification/sign-off page with sign-off lines for the IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.  
     *Objective · Content*
 
-13. **Certification page accept / escalate / block structure** (weight +4) — The certification page distinguishes what can be accepted (or accepted with conditions), what must escalate, and what blocks signing (Critical certification blockers as defined in criterion 11).  
+13. **Certification page accept / escalate / block structure** (weight +4) — The certification page distinguishes what can be accepted (or accepted with conditions), what must escalate, and what blocks signing (Critical certification blockers).  
     *Objective · Content*
 
 14. **Evidence precedence documented** (weight +4) — The deliverable documents a precedence order consistent with policy (ledger / verified disposal certificates / carrier acceptance+delivery+receiving-scan over approved transfers over HR over ticket status over technician notes and dock/exception images) and shows at least one rejected lower-precedence claim with the higher-precedence record that overruled it.  
@@ -79,10 +79,10 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 23. **Exception rows include owner by role** (weight +3) — Each exception row populates an owner by role.  
     *Objective · Content*
 
-24. **Exception rows include action deadline** (weight +3) — Each unresolved exception row for a Critical certification blocker (as defined in criterion 11) includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).  
+24. **Exception rows include action deadline** (weight +3) — Each unresolved exception row for a Critical certification blocker includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).  
     *Objective · Content*
 
-25. **Custody chains for Critical certification blockers** (weight +3) — Provides custody-chain detail for each unresolved Critical certification blocker (as defined in criterion 11), including at least MD-00068, MD-00074, MD-00076, MD-00082, MD-00084, MD-00114, MD-00118, and MD-00132, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.  
+25. **Custody chains for Critical certification blockers** (weight +3) — Provides custody-chain detail for each unresolved Critical certification blocker, including at least MD-00068, MD-00074, MD-00076, MD-00082, MD-00084, MD-00114, MD-00118, and MD-00132, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.  
     *Objective · Content*
 
 26. **Dashboard breakout by verified status** (weight +4) — Summary dashboard includes asset counts and book value broken out by verified status.  
