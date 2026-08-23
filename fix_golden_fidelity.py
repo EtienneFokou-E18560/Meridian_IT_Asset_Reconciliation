@@ -429,12 +429,27 @@ def populate_gold() -> None:
 
     combo = sum(DELTAS.values())
     delta_txt = ", ".join(f"{k} ${v}" for k, v in DELTAS.items())
-    lr["A19"] = (
-        f"3) Seven assets have ledger-over-register acquisition cost variances "
+    combo_missing = 700 + 1175 + 6470
+    lr["A17"] = (
+        "1) Three assets (MD-00130, MD-00131, MD-00132) appear on the operational register "
+        f"but have no fixed-asset ledger row. Combined register acquisition cost = ${combo_missing}. "
+        "MD-00130 ($700) and MD-00131 ($1175) are under the $2,500 capitalization threshold so FA "
+        "absence is expected; MD-00132 ($6470) is capital-qualifying and remains a Critical gap "
+        "(RN-0132 rejected)."
+    )
+    lr["A18"] = (
+        f"2) Seven assets have ledger-over-register acquisition cost variances "
         f"({delta_txt}). Combined ledger cost excess = ${combo:,.0f}. "
         f"PO approved amounts tie to the inventory lines; Finance should align the FAR. "
         f"Per §9 these are High remediation items, not sole Critical blockers."
     )
+    lr["A19"] = (
+        "3) Eight disposal certificates clear operational status to Disposed with $0 NBV on ledger. "
+        "Two recycler transfers (MD-00114, MD-00118) lack verified certificates; ledger already shows "
+        "Disposed/$0 while operational status remains Retired/Pending Disposal. Active ledger NBV "
+        "otherwise ties to corrected register remaining book value for assets present on both files."
+    )
+    lr["A20"] = None
 
     for r in range(24, 36):
         tag = lr.cell(r, 1).value
@@ -468,10 +483,10 @@ def populate_gold() -> None:
     for r in range(1, ei.max_row + 1):
         v = ei.cell(r, 2).value
         if isinstance(v, str) and "v3.2" in v:
-            ei.cell(r, 2).value = v.replace("v3.2", "v3.3")
+            pass  # keep Evidence Index on PDF Version 3.2
         v1 = ei.cell(r, 1).value
         if isinstance(v1, str) and "v3.2" in v1:
-            ei.cell(r, 1).value = v1.replace("v3.2", "v3.3")
+            pass
 
     cert = wb["Certification"]
     for r in range(1, cert.max_row + 1):

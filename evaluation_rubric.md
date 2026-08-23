@@ -1,10 +1,10 @@
-# Yanou IT Asset Reconciliation Rubric (rev 2.11 — PLATFORM PASTE)
+# Yanou IT Asset Reconciliation Rubric (rev 2.12 — PLATFORM PASTE)
 
-Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; added N9 false FA-absence claim. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
+Rev 2.12: dropped redundant negative mirrors of P10/P15/P18/P31. Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; remaining N5 penalizes false FAR-absence claims. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
-**Counts:** 33 positive + 9 negative = **42**.
+**Counts:** 33 positive + 5 negative = **38**.
 
 ---
 
@@ -76,7 +76,7 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 22. **Exception rows include owner by role** (weight +3) — Each exception row populates an owner by role.  
     *Objective · Content*
 
-23. **Exception rows include action deadline** (weight +3) — Each certification-blocking unresolved exception row includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).  
+23. **Exception rows include action deadline** (weight +3) — Each certification-blocking unresolved exception row includes a **populated** resolution action deadline (specific date by which the escalation owner must complete the required action), not merely a deadline column header.  
     *Objective · Content*
 
 24. **Custody chains for certification-blocking assets** (weight +3) — Provides custody-chain detail for each high-risk / certification-blocking unresolved asset, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.  
@@ -111,29 +111,17 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 
 ## Negative criteria
 
-N1. **Unconditional certification approval** (weight -5) — Approves/certifies the quarterly inventory as complete despite Critical certification blockers.  
+N1. **Label-created treated as returned** (weight -5) — Marks Label Created shipments as Available/returned/completed without carrier acceptance + delivery + receiving scan evidence.  
 *Objective · Content*
 
-N2. **Label-created treated as returned** (weight -5) — Marks Label Created shipments as Available/returned/completed without carrier acceptance + delivery + receiving scan evidence.  
+N2. **Dock image used as receiving clearance** (weight -4) — Uses receiving_exception_scan_1ZMD00000082.png as proof MD-00082 was successfully received/cleared.  
 *Objective · Content*
 
-N3. **Clears serial mismatches / fails to treat as blockers** (weight -5) — Fails to treat unresolved shipment serial mismatches as Critical certification blockers for at least 3 of these 4 assets — MD-00074, MD-00076, MD-00082, and MD-00084 — or clears those mismatches to Available / completed return.  
+N3. **Untraceable transfer/return/approval/disposal IDs** (weight -5) — Cites or uses transfer IDs, return receipts, approval IDs, or disposal certificates that cannot be traced to a source record in the provided files.  
 *Objective · Content*
 
-N4. **Dock image used as receiving clearance** (weight -4) — Uses receiving_exception_scan_1ZMD00000082.png as proof MD-00082 was successfully received/cleared.  
+N4. **Under-threshold absence treated as Critical capital gap** (weight -5) — Treats MD-00130 and/or MD-00131 ledger absence as a Critical certification blocker, or uses a capitalization_approved=Yes purchase order to force FA expectations for those under-threshold lines.  
 *Objective · Content*
 
-N5. **Untraceable transfer/return/approval/disposal IDs** (weight -5) — Cites or uses transfer IDs, return receipts, approval IDs, or disposal certificates that cannot be traced to a source record in the provided files.  
-*Objective · Content*
-
-N6. **Missing assets marked verified in use/stock** (weight -4) — Treats unresolved MD-00089–MD-00100 assets as verified In Use or Available stock.  
-*Objective · Content*
-
-N7. **Under-threshold absence treated as Critical capital gap** (weight -5) — Treats MD-00130 and/or MD-00131 ledger absence as a Critical certification blocker, or uses a capitalization_approved=Yes purchase-order flag to force FA expectations for those under-threshold lines.  
-*Objective · Content*
-
-N8. **RN-0132 accepted to clear MD-00132** (weight -5) — Accepts the regional note that MD-00132 was expensed under threshold (or equivalent) and clears/omits the Critical missing FA-row finding for MD-00132.  
-*Objective · Content*
-
-N9. **False ledger-absence claim** (weight -5) — Claims that an asset has no fixed-asset ledger / FAR row when that asset tag appears on the provided fixed-asset ledger extract.  
+N5. **False fixed-asset ledger absence** (weight -5) — Claims fixed-asset ledger absence (no FA / FAR silent / no matching FAR row) for an asset tag that appears on the provided fixed-asset ledger extract.  
 *Objective · Content*
