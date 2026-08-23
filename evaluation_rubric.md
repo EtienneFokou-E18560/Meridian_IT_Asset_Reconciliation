@@ -1,6 +1,6 @@
-# Yanou IT Asset Reconciliation Rubric (rev 2.12 — PLATFORM PASTE)
+# Yanou IT Asset Reconciliation Rubric (rev 2.13 — PLATFORM PASTE)
 
-Rev 2.12: P10 formally defines Critical certification blocker; P12/P23/P24 reference that definition; P24 replaces unanchored subjective risk wording with that definition plus named tags MD-00068/74/76/82/84/114/118/132. Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; added N9 false FA-absence claim. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
+Rev 2.13: P7/P8/P9/P20/P27 name expected computed values (acq sum $332,115; RBV aggregate $61,526.60; FA-000034/MD-00034 RBV $479.88; confidence {High, Medium, Low}; EX-0001 exposure $85; category counts Laptop 32 / Mobile Device 33 / Monitor 34 / Network Asset 33). Rev 2.12: P10 formally defines Critical certification blocker; P12/P23/P24 reference that definition; P24 replaces unanchored subjective risk wording with that definition plus named tags MD-00068/74/76/82/84/114/118/132. Rev 2.11: P2–P9 and P19–P23 require populated values (not header-only); P5 Evidence Source must be consistent with ledger presence; added N9 false FA-absence claim. Rev 2.10: P23 declarative deadline sentence. Rev 2.9: P24 instruction language.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
@@ -28,13 +28,13 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 6. **Corrected register: last verified date** (weight +3) — For reviewed assets, the corrected asset register populates a non-blank last verified date.  
    *Objective · Content*
 
-7. **Corrected register: acquisition cost** (weight +3) — For reviewed assets, the corrected asset register populates a numeric acquisition cost.  
+7. **Corrected register: acquisition cost** (weight +3) — Corrected asset register acquisition costs are populated and mathematically consistent with source evidence: the sum of acquisition costs for reviewed assets equals $332,115 (±$1), and each reviewed asset row has a non-blank numeric/currency acquisition cost (not merely a cost column header).  
    *Objective · Content*
 
-8. **Corrected register: remaining book value** (weight +3) — For reviewed assets that have a net book value on the fixed-asset ledger extract, the corrected asset register populates remaining book value from that ledger figure (blank is acceptable only when the asset has no ledger row).  
+8. **Corrected register: remaining book value** (weight +3) — Corrected asset register remaining book values are populated and correct where ledger NBVs exist: MD-00034/FA-000034 remaining book value equals $479.88 (acquisition $930 − accumulated depreciation $450.12), and the aggregate remaining book value across reviewed assets equals $61,526.60 (±$0.05); blank is acceptable only when the asset has no ledger row.  
    *Objective · Content*
 
-9. **Corrected register: confidence** (weight +3) — For reviewed assets, the corrected asset register populates a non-blank confidence value.  
+9. **Corrected register: confidence** (weight +3) — Corrected asset register confidence values are populated for reviewed assets using the closed set {High, Medium, Low} (non-blank); values must reflect evidence strength rather than an empty or free-text placeholder.  
    *Objective · Content*
 
 10. **Certification not approved / Critical certification blockers retained** (weight +5) — States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval. A Critical certification blocker is an unresolved asset that meets any of: (a) shipment serial mismatch; (b) Missing / Cannot Locate; (c) retired/pending-disposal without a verified disposal certificate; (d) overdue / label-only return lacking carrier acceptance + delivery + receiving-scan proof; or (e) capital-qualifying asset (acquisition cost ≥ $2,500) missing from the fixed-asset ledger.  
@@ -67,7 +67,7 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 19. **Exception rows include related-record citation(s)** (weight +3) — Each exception row populates at least one related-record citation drawn from: employee ID, ticket ID, transfer ID, PO number, tracking number, certificate ID, or ledger asset ID (non-blank field value, not header-only).  
     *Objective · Content*
 
-20. **Exception rows include financial exposure** (weight +3) — Each exception row populates a financial exposure value.  
+20. **Exception rows include financial exposure** (weight +3) — Each exception row populates a financial exposure value that matches the finding math, including EX-0001 financial exposure of $85 (non-blank, not header-only).  
     *Objective · Content*
 
 21. **Exception rows include required action** (weight +3) — Each exception row populates a required action.  
@@ -88,7 +88,7 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 26. **Dashboard breakout by verified location** (weight +3) — Summary dashboard includes asset counts and book value broken out by verified location.  
     *Objective · Content*
 
-27. **Dashboard breakout by device category** (weight +3) — Summary dashboard includes asset counts and book value broken out by device category.  
+27. **Dashboard breakout by device category** (weight +3) — Summary dashboard includes asset counts and book value broken out by device category with correct counts from the corrected register: Laptop 32, Mobile Device 33, Monitor 34, Network Asset 33 (counts ±0).  
     *Objective · Content*
 
 28. **Dashboard breakout by exception type** (weight +3) — Summary dashboard includes a breakout by exception type (count and financial exposure or book value).  

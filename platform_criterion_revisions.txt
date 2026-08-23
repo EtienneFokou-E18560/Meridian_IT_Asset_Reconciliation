@@ -1,6 +1,6 @@
-# Platform criterion paste — Yanou rev 2.12
+# Platform criterion paste — Yanou rev 2.13
 # No count cap. Weight in weight field only.
-# Rev 2.12: P10 defines Critical certification blocker; P12/P23/P24 reference it;
+# Rev 2.13: P10 defines Critical certification blocker; P12/P23/P24 reference it;
 # P24 replaces unanchored subjective risk wording with that definition plus named tags MD-00068/74/76/82/84/114/118/132.
 
 P1 Deliverable filename | +5 | Objective | Style/Formatting
