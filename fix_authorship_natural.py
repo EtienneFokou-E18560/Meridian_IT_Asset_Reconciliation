@@ -209,7 +209,7 @@ def exception_assess(
     exid: str,
 ) -> str:
     if exid == "EX-0014":
-        po = nz(kv.get("PO"), "PO-2023-0006")
+        po = nz(kv.get("PO"), "PO-2024-0007")
         fa = nz(kv.get("Ledger"), "FA-000034")
         rc = nz(kv.get("RegisterCost"), "790.0")
         lc = nz(kv.get("LedgerCost"), "930.0")
@@ -219,7 +219,7 @@ def exception_assess(
         )
 
     if exid == "EX-0098":
-        po = nz(kv.get("PO"), "PO-2024-0015")
+        po = nz(kv.get("PO"), "PO-2025-0016")
         fa = nz(kv.get("Ledger"), "FA-000085")
         rc = nz(kv.get("RegisterCost"), "1895.0")
         lc = nz(kv.get("LedgerCost"), "2090.0")
@@ -301,7 +301,7 @@ def exception_assess(
     if typ == "Inventory-to-Ledger Difference":
         if exid == "EX-0001":
             return (
-                f"Pulled PO-2024-0003 and FA-000017 for {tag}: register ${rc} vs ledger ${lc}. "
+                f"Pulled {nz(kv.get('PO'), 'PO-2025-0004')} and FA-000017 for {tag}: register ${rc} vs ledger ${lc}. "
                 f"FA-000017 accumulated depreciation $2160 exceeds acquisition $2070 by $90."
             )
         if not lc or tag == "MD-00132":
@@ -795,7 +795,10 @@ def rewrite_workbook(path: Path) -> None:
     tickets = {r["ticket_number"]: r for r in load_csv("service_desk_offboarding.csv")}
     po_by_tag: dict[str, str] = {}
     for prow in load_csv("hardware_purchase_orders.csv"):
-        for t in re.split(r"[;\s]+", prow["asset_tags"]):
+        if prow.get("asset_tag") and str(prow["asset_tag"]).startswith("MD-"):
+            po_by_tag[str(prow["asset_tag"]).strip()] = prow["purchase_order"]
+            continue
+        for t in re.split(r"[;\s]+", prow.get("asset_tags") or ""):
             t = t.strip()
             if t.startswith("MD-"):
                 po_by_tag[t] = prow["purchase_order"]
