@@ -1,6 +1,6 @@
 # Yanou IT Asset Reconciliation Rubric (rev 2.19 — PLATFORM PASTE)
 
-Rev 2.20: Golden fidelity — LR PO citations aligned to hardware_purchase_orders.csv; LR control totals and Dashboard breakouts carry OOXML cached values; Certification blocker table; Critical certification blocker language on disposal/shipment exceptions; MD-00034 evidence NBV resolved (no raw XLOOKUP text). Rev 2.19: Lead criteria 7/8/9 with named expected values and correctness checks (not presence-only); update criterion 27 category counts to Laptop 40 / Mobile Device 36 / Monitor 28 / Network Asset 28. Rev 2.16: Align flat platform criterion IDs — Critical certification blocker definition is criterion 39 (after N1–N5); former N6–N9 are criteria 40–43. Positives without the definition are 1–33; N1–N5 are 34–38. Rev 2.15: Remove cross-criterion references from criterion bodies. Rev 2.14: Split former P10 into NOT APPROVED hold + Critical blocker definition for platform paste length. Rev 2.13: P7/P8/P9/P20/P27 name expected computed values. Rev 2.12: Critical certification blocker definition introduced; named tags MD-00068/74/76/82/84/114/118/132 on custody criterion. Rev 2.11: populated-value requirements; N9 false FA-absence claim. Rev 2.10: deadline sentence. Rev 2.9: custody instruction language.
+Rev 2.21: Rewrite criteria 7/8/9 as pure declarative facts (remove grader-facing “fails” / “is not sufficient” scaffolding). Rev 2.20: Golden fidelity — LR PO citations aligned to hardware_purchase_orders.csv; LR control totals and Dashboard breakouts carry OOXML cached values; Certification blocker table; Critical certification blocker language on disposal/shipment exceptions; MD-00034 evidence NBV resolved (no raw XLOOKUP text). Rev 2.19: Lead criteria 7/8/9 with named expected values and correctness checks (not presence-only); update criterion 27 category counts to Laptop 40 / Mobile Device 36 / Monitor 28 / Network Asset 28. Rev 2.16: Align flat platform criterion IDs — Critical certification blocker definition is criterion 39 (after N1–N5); former N6–N9 are criteria 40–43. Positives without the definition are 1–33; N1–N5 are 34–38. Rev 2.15: Remove cross-criterion references from criterion bodies. Rev 2.14: Split former P10 into NOT APPROVED hold + Critical blocker definition for platform paste length. Rev 2.13: P7/P8/P9/P20/P27 name expected computed values. Rev 2.12: Critical certification blocker definition introduced; named tags MD-00068/74/76/82/84/114/118/132 on custody criterion. Rev 2.11: populated-value requirements; N9 false FA-absence claim. Rev 2.10: deadline sentence. Rev 2.9: custody instruction language.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
@@ -32,14 +32,14 @@ Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights i
 6. **Corrected register: last verified date** (weight +3) — For reviewed assets, the corrected asset register populates a non-blank last verified date.  
    *Objective · Content*
 
-7. **Corrected register: acquisition cost** (weight +3) — Expected value: sum of corrected-register acquisition costs for reviewed assets equals $332,115 (±$1). Correctness check: each reviewed asset row has a non-blank numeric/currency acquisition cost matching source evidence (not merely a cost column header; presence alone without the $332,115 total fails).  
-   *Objective · Content*
+7. **Corrected register: acquisition cost** (weight +3) — Each reviewed asset row has a non-blank numeric/currency acquisition cost matching source evidence, and the sum of corrected-register acquisition costs for reviewed assets equals $332,115 (±$1).  
+*Objective · Content*
 
-8. **Corrected register: remaining book value** (weight +3) — Expected values: MD-00034/FA-000034 remaining book value equals $479.88 (acquisition $930 − accumulated depreciation $450.12), and aggregate remaining book value across reviewed assets equals $61,526.60 (±$0.05). Correctness check: where a ledger NBV exists, remaining book value is non-blank and matches the ledger figure; blank is acceptable only when the asset has no ledger row (presence alone without the named totals fails).  
-   *Objective · Content*
+8. **Corrected register: remaining book value** (weight +3) — Where a ledger NBV exists, remaining book value is non-blank and matches the ledger figure (blank only when no ledger row exists); MD-00034/FA-000034 remaining book value equals $479.88 (acquisition $930 − accumulated depreciation $450.12), and aggregate remaining book value across reviewed assets equals $61,526.60 (±$0.05).  
+*Objective · Content*
 
-9. **Corrected register: confidence** (weight +3) — Expected value: every reviewed asset has confidence exactly in the closed set {High, Medium, Low}. Correctness check: confidence is non-blank and drawn only from that set (empty, free-text, or values outside {High, Medium, Low} fail; presence of an arbitrary non-blank string is not sufficient).  
-   *Objective · Content*
+9. **Corrected register: confidence** (weight +3) — Every reviewed asset has a non-blank confidence value drawn only from the closed set {High, Medium, Low}.  
+*Objective · Content*
 
 10. **Certification not approved while Critical blockers remain** (weight +3) — States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval.  
    *Subjective · Content*

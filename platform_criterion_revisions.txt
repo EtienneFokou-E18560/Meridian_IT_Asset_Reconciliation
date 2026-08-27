@@ -1,7 +1,8 @@
-# Platform criterion paste — Yanou rev 2.19
+# Platform criterion paste — Yanou rev 2.21
 # Paste in this order so platform IDs match: 1–33 positives, 34–38 N1–N5,
 # 39 Critical certification blocker definition, 40–43 N6–N9.
 # No count cap. Weight in weight field only.
+# Rev 2.21: C7/C8/C9 declarative only (no “fails” / “is not sufficient” scaffolding).
 
 C1 Deliverable filename | +5 | Objective | Style/Formatting
 Produces Yanou_IT_Asset_Reconciliation.xlsx.
@@ -22,13 +23,13 @@ C6 Corrected register: last verified date | +3 | Objective | Content
 For reviewed assets, the corrected asset register populates a non-blank last verified date.
 
 C7 Corrected register: acquisition cost | +3 | Objective | Content
-Expected value: sum of corrected-register acquisition costs for reviewed assets equals $332,115 (±$1). Correctness check: each reviewed asset row has a non-blank numeric/currency acquisition cost matching source evidence (not merely a cost column header; presence alone without the $332,115 total fails).
+Each reviewed asset row has a non-blank numeric/currency acquisition cost matching source evidence, and the sum of corrected-register acquisition costs for reviewed assets equals $332,115 (±$1).
 
 C8 Corrected register: remaining book value | +3 | Objective | Content
-Expected values: MD-00034/FA-000034 remaining book value equals $479.88 (acquisition $930 − accumulated depreciation $450.12), and aggregate remaining book value across reviewed assets equals $61,526.60 (±$0.05). Correctness check: where a ledger NBV exists, remaining book value is non-blank and matches the ledger figure; blank is acceptable only when the asset has no ledger row (presence alone without the named totals fails).
+Where a ledger NBV exists, remaining book value is non-blank and matches the ledger figure (blank only when no ledger row exists); MD-00034/FA-000034 remaining book value equals $479.88 (acquisition $930 − accumulated depreciation $450.12), and aggregate remaining book value across reviewed assets equals $61,526.60 (±$0.05).
 
 C9 Corrected register: confidence | +3 | Objective | Content
-Expected value: every reviewed asset has confidence exactly in the closed set {High, Medium, Low}. Correctness check: confidence is non-blank and drawn only from that set (empty, free-text, or values outside {High, Medium, Low} fail; presence of an arbitrary non-blank string is not sufficient).
+Every reviewed asset has a non-blank confidence value drawn only from the closed set {High, Medium, Low}.
 
 C10 Certification not approved while Critical blockers remain | +3 | Subjective | Content
 States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval.
