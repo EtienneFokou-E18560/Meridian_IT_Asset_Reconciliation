@@ -1,183 +1,243 @@
 # Platform criterion revisions — Meridian / Yanou IT Asset Reconciliation
-# Revision: 2.27 — paste ALL 60 (replace prior list). Weight = 1 each.
-# Geranium 2.27: atomic splits for former C5/C7/C8; C12 disposition split; answer keys retained.
+# Revision: 2.28 — paste ALL 60 with Weight (+/−). Positives sum +100; negatives −5 each.
+# Perfect clean submission = 100%. Do NOT set every weight to 1.
 
 1. Inventory Number Fidelity
+Weight: +2
 The Corrected Register Inventory Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Inventory Number string on both sides for that asset).
 
 2. Serial Number Fidelity
+Weight: +2
 The Corrected Register Serial Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Serial Number string on both sides for that asset).
 
 3. Vendor Fidelity
+Weight: +2
 The Corrected Register Vendor column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Vendor string on both sides for that asset).
 
 4. PO Number Fidelity
+Weight: +2
 The Corrected Register PO Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same PO Number string on both sides for that asset).
 
 5. Evidence Source Populated
+Weight: +3
 Every Corrected Register row that represents a Fixed Assets asset has a non-blank Evidence Source cell.
 
 6. Evidence Source — No False Fixed Assets Absence
+Weight: +2
 Evidence Source does not claim Fixed Assets has no row for an Inventory Number that actually exists in Fixed Assets (for example, it does not say Fixed Assets has no matching Inventory Number for MD-00001 when MD-00001 is present in Fixed Assets).
 
 7. Evidence Source — Under-Threshold Cost Assets
+Weight: +2
 For MD-00130, MD-00131, and MD-00132, Evidence Source states that the cost difference is under the $100 threshold (or equivalent under-threshold wording) and does not treat those three assets as Cost Mismatch exceptions requiring escalation.
 
 8. Acquisition Cost — Per-Row Match
+Weight: +3
 For every Corrected Register row that represents a Fixed Assets asset, Acquisition Cost equals that asset’s Acquisition Cost in Fixed Assets.
 
 9. Acquisition Cost — Inventory Total
+Weight: +3
 The sum of Acquisition Cost across all Corrected Register Inventory rows equals $332,115.
 
 10. Remaining Book Value — Per-Row Match
+Weight: +3
 For every Corrected Register row that represents a Fixed Assets asset: if Fixed Assets lists Remaining Book Value for that asset, Corrected Register Remaining Book Value matches it; if Fixed Assets has no Remaining Book Value for that asset, Corrected Register Remaining Book Value is blank.
 
 11. Remaining Book Value — MD-00034
+Weight: +3
 MD-00034 Remaining Book Value equals $479.88.
 
 12. Remaining Book Value — Corrected Register Aggregate
+Weight: +3
 The sum of Remaining Book Value across all Corrected Register rows that have a Remaining Book Value equals $61,526.60.
 
 13. Status Fidelity
+Weight: +2
 The Corrected Register Status column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Status string on both sides for that asset).
 
 14. Location Fidelity
+Weight: +2
 The Corrected Register Location column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Location string on both sides for that asset).
 
 15. Department Fidelity
+Weight: +2
 The Corrected Register Department column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Department string on both sides for that asset).
 
 16. Missing Asset — MD-00017
+Weight: +1
 MD-00017 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 17. Missing Asset — MD-00029
+Weight: +1
 MD-00029 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 18. Missing Asset — MD-00041
+Weight: +1
 MD-00041 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 19. Missing Asset — MD-00053
+Weight: +1
 MD-00053 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 20. Missing Asset — MD-00068
+Weight: +1
 MD-00068 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 21. Missing Asset — MD-00079
+Weight: +1
 MD-00079 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 22. Missing Asset — MD-00088
+Weight: +1
 MD-00088 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 23. Missing Asset — MD-00097
+Weight: +1
 MD-00097 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 24. Missing Asset — MD-00108
+Weight: +1
 MD-00108 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 25. Missing Asset — MD-00119
+Weight: +1
 MD-00119 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 26. Missing Asset — MD-00125
+Weight: +1
 MD-00125 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 27. Missing Asset — MD-00128
+Weight: +1
 MD-00128 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
 28. Inter-Department Transfer — MD-00003
+Weight: +1
 MD-00003 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
 29. Inter-Department Transfer — MD-00015
+Weight: +1
 MD-00015 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
 30. Inter-Department Transfer — MD-00027
+Weight: +1
 MD-00027 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
 31. Inter-Department Transfer — MD-00039
+Weight: +1
 MD-00039 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
 32. Inter-Department Transfer — MD-00052
+Weight: +1
 MD-00052 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
 33. Custody Gap — MD-00004
+Weight: +1
 MD-00004 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 34. Custody Gap — MD-00016
+Weight: +1
 MD-00016 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 35. Custody Gap — MD-00028
+Weight: +1
 MD-00028 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 36. Custody Gap — MD-00040
+Weight: +1
 MD-00040 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 37. Custody Gap — MD-00054
+Weight: +1
 MD-00054 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 38. Custody Gap — MD-00066
+Weight: +1
 MD-00066 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 39. Custody Gap — MD-00078
+Weight: +1
 MD-00078 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 40. Custody Gap — MD-00089
+Weight: +1
 MD-00089 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 41. Dashboard Category Counts
+Weight: +3
 Dashboard category counts equal Laptop 40, Mobile 36, Monitor 28, and Network Asset 28.
 
 42. Critical Certification Blockers Present
+Weight: +3
 The workbook identifies the critical certification blockers required before sign-off (cost mismatches that exceed threshold, missing assets, and other blocker-class findings called out in Certification / Exception Register).
 
 43. Exception Identity
+Weight: +2
 Each Exception Register finding row has a unique Exception ID and an Exception Type that correctly classifies the finding (for example Missing Asset, Cost Mismatch, Inter-Department Transfer, Custody Gap).
 
 44. Exception Disposition
+Weight: +2
 Each Exception Register finding row states a clear recommended Action and an Owner (role or named party) responsible for follow-up.
 
 45. Exception Severity
+Weight: +2
 Each Exception Register finding row has a Severity appropriate to the finding class (for example Critical for certification blockers such as over-threshold cost mismatches and missing assets; lower severity for non-blocking items).
 
 46. Exception Source References
+Weight: +2
 Each Exception Register finding row cites the source systems or evidence used (for example Fixed Assets, ITAM, Purchase Orders, HR) so a reviewer can trace the finding.
 
 47. Exception Register Financial Fields
+Weight: +2
 Exception Register financial fields for cost-related findings are populated from Fixed Assets / Purchase Orders amounts (not invented figures), including Acquisition Cost and variance where applicable.
 
 48. Location Reconciliation Cross-Check
+Weight: +3
 Location Reconciliation compares Corrected Register locations to floor-plan / location evidence and flags material location disagreements that require follow-up.
 
 49. Certification Sign-Off Structure
+Weight: +3
 A Certification Sign-Off worksheet exists and includes Name, Signature, and Date fields for the certifying party.
 
 50. Certification Completeness Gate
+Weight: +3
 Certification content states that sign-off is blocked (or not complete) while critical blockers remain open — it does not present the register as fully certified while those blockers are unresolved.
 
 51. Under-Threshold Cost Gaps — Accept
+Weight: +3
 MD-00130, MD-00131, and MD-00132 cost differences are treated as accept / no-escalation (under the $100 threshold), not as Cost Mismatch exceptions that block certification.
 
 52. Over-Threshold Cost Mismatches — Escalate
+Weight: +3
 Over-threshold cost mismatches (the Cost Mismatch exception set) are escalated / listed as exceptions requiring remediation before clean certification.
 
 53. Missing Assets — Block Certification
+Weight: +3
 Missing assets are treated as certification blockers (listed such that certification remains incomplete until addressed).
 
 54. No Fabricated Inventory Numbers
+Weight: +3
 Corrected Register does not invent Inventory Numbers that do not appear in Fixed Assets or ITAM source extracts.
 
 55. No Silent Drop of Fixed Assets Rows
+Weight: +2
 Every Inventory Number present in Fixed Assets appears in Corrected Register (no Fixed Assets asset silently omitted from the corrected inventory).
 
 56. Negative — Blank Evidence Source Allowed
+Weight: -5
 FAIL the submission if Corrected Register Evidence Source is left blank for assets that exist in Fixed Assets.
 
 57. Negative — Wrong Golden Category Counts
+Weight: -5
 FAIL the submission if Dashboard category counts are presented as Laptop 32, Mobile 33, Monitor 34, Network Asset 33 (or any set other than Laptop 40, Mobile 36, Monitor 28, Network Asset 28).
 
 58. Negative — Under-Threshold Treated as Cost Mismatch Exceptions
+Weight: -5
 FAIL the submission if MD-00130, MD-00131, or MD-00132 are listed as Cost Mismatch exceptions requiring escalation despite under-threshold differences.
 
 59. Negative — Certification Signed Off With Open Blockers
+Weight: -5
 FAIL the submission if Certification Sign-Off is presented as complete / signed off while critical blockers (over-threshold cost mismatches or missing assets) remain open.
 
 60. Negative — Fabricated PO or Cost Figures
+Weight: -5
 FAIL the submission if Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset. ---

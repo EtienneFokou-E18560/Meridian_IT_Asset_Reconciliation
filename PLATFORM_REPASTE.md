@@ -1,6 +1,14 @@
-# Platform re-paste checklist — Yanou rev 2.27
+# Platform re-paste checklist — Yanou rev 2.28
 
 Replace the **entire** platform criteria list with `platform_criterion_revisions.txt` (IDs 1–60). Do not merge with the failed 2.26 paste.
+
+## Weights (required)
+
+Do **not** paste every criterion as Weight 1 — that cannot score 100%.
+
+- Positive criteria (#1–#55): weights **+1 / +2 / +3** summing to **+100**
+- Negative criteria (#56–#60): **−5** each (penalties when the prohibited pattern is present)
+- Perfect clean submission = **100%**
 
 ## Why 2.26 failed (Geranium re-analysis)
 
