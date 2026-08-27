@@ -1,5 +1,10 @@
-# Platform criterion paste — Yanou rev 2.23 (≤60 cap)
+# Platform criterion paste — Yanou rev 2.26 (≤60 cap)
 # Paste in order 1–60. Weight in weight field only.
+# RE-PASTE REQUIRED: platform must use this full set. Do NOT keep pre-2.23
+# dashboard criteria (old IDs 24–27 / category counts 32/33/34/33 / location
+# breakout). Current dashboard criteria are #47 status, #48 category
+# (Laptop 40 / Mobile Device 36 / Monitor 28 / Network Asset 28), #49 exception type.
+# Rev 2.26: C11 Certification worksheet Name/Signature/Date; C5 lead with populated Evidence Source.
 # Kept quality-review atomic splits; restored C7–C9 expected values + capital-gap blocker.
 # Dropped to fit 60: Critical-blocker definition, dashboard-by-location,
 # RN-0132-accepted negative, false-ledger-absence negative.
@@ -17,7 +22,7 @@ C4 Corrected register: verified lifecycle status | +3 | Objective | Content
 For reviewed assets, the corrected asset register populates a non-blank verified lifecycle status value.
 
 C5 Corrected register: evidence source | +3 | Objective | Content
-For reviewed assets, the corrected asset register populates a non-blank evidence source, and that text is consistent with the fixed-asset ledger extract: it must not claim there is no FA/ledger row for an asset tag that appears on the ledger; for MD-00130, MD-00131, and MD-00132 it may note ledger absence (with the under-threshold vs capital-qualifying distinction addressed elsewhere).
+For reviewed assets, the corrected asset register populates a non-blank evidence source for each reviewed asset. That evidence text does not claim there is no FA/ledger row for an asset tag that appears on the fixed-asset ledger extract; for MD-00130, MD-00131, and MD-00132 it may note ledger absence (under-threshold vs capital-qualifying distinction addressed in ledger reconciliation / RN-0132 / capital-gap criteria).
 
 C6 Corrected register: last verified date | +3 | Objective | Content
 For reviewed assets, the corrected asset register populates a non-blank last verified date.
@@ -34,8 +39,8 @@ Every reviewed asset has a non-blank confidence value drawn only from the closed
 C10 Certification not approved while Critical blockers remain | +3 | Subjective | Content
 States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval.
 
-C11 Certification page sign-off lines | +4 | Objective | Content
-Includes a certification/sign-off page with sign-off lines for the IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.
+C11 Certification worksheet sign-off lines | +4 | Objective | Content
+The Certification worksheet includes sign-off rows for the IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor, each with Name, Signature, and Date columns.
 
 C12 Certification page accept / escalate / block structure | +4 | Objective | Content
 The certification page distinguishes what can be accepted (or accepted with conditions), what must escalate, and what blocks signing (Critical certification blockers).
