@@ -201,7 +201,7 @@ def rebuild_policy_pdf() -> None:
     small = ParagraphStyle("S", parent=styles["Normal"], fontSize=8, leading=10, textColor=colors.HexColor("#333333"))
     story = []
     story.append(Paragraph("IT Asset Management Policy", title))
-    story.append(Paragraph("Yanou & Partners IT Services | Policy ITAM-001 | Version 3.3 | Effective 2026-01-01", small))
+    story.append(Paragraph("Yanou & Partners IT Services | Policy ITAM-001 | Version 3.2 | Effective 2026-01-01", small))
     story.append(Spacer(1, 0.12 * inch))
     sections = [
         (
@@ -266,7 +266,20 @@ def rebuild_policy_pdf() -> None:
         (
             "11. Evidence and retention",
             "Evidence must identify the asset tag, serial number where applicable, transaction ID, date, and source system. Technician notes "
-            "and images are retained as leads with the reconciliation package.",
+            "and images are retained as leads with the reconciliation package. Reconciliation packets are retained for seven years or longer "
+            "when Finance or Internal Audit requires extended retention for capital assets.",
+        ),
+        (
+            "12. Procurement and receiving",
+            "Purchasing must reference asset tags on capital orders. Central Receiving records inbound scans that match tag and serial before "
+            "custody is assigned. Partial shipments and carrier exceptions stay in a held status until receiving reconciles the inbound file "
+            "to the purchase order and the asset register.",
+        ),
+        (
+            "13. Physical inventory and audit support",
+            "IT Operations runs cycle counts at major sites each quarter and documents variances as exceptions with owner, deadline, and "
+            "financial exposure. Internal Audit may request custody chains for any capital asset; chains must cite transaction IDs rather "
+            "than informal notes alone.",
         ),
     ]
     for heading, text in sections:
