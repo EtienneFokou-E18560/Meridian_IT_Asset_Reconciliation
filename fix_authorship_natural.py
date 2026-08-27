@@ -434,6 +434,8 @@ def build_evidence_source(a: dict, hr: dict, transfers: dict, row: int) -> str:
     if str(fa or "").startswith("="):
         fa = None
     nbv = a.get("nbv")
+    if nbv is None or (isinstance(nbv, str) and ("XLOOKUP" in nbv or str(nbv).startswith("="))):
+        nbv = a.get("ledger_nbv")
     seed = row * 7919 + sum(ord(c) for c in tag)
 
     leads = [
@@ -726,6 +728,47 @@ def extend_formula_cache(path: Path, cache: dict[tuple[str, str], float]) -> Non
     cache[("Dashboard", "B8")] = float(ex_count)
     cache[("Dashboard", "B13")] = float(len(custody_tags))
 
+    si = wbv["Source Inventory"]
+    cat_by_tag: dict[str, str] = {}
+    for r in rows:
+        tag = str(crv.cell(r, 1).value)
+        cat_by_tag[tag] = str(si.cell(r, 3).value or crv.cell(r, 3).value or "")
+
+    for r in range(19, 23):
+        label = wbv["Dashboard"].cell(r, 5).value
+        if not label:
+            continue
+        cnt = sum(1 for row in rows if cat_by_tag.get(str(crv.cell(row, 1).value)) == label)
+        nbv = sum(
+            float(crv.cell(row, 14).value or cache.get(("Corrected Register", f"N{row}"), 0) or 0)
+            for row in rows
+            if cat_by_tag.get(str(crv.cell(row, 1).value)) == label
+        )
+        cache[("Dashboard", f"F{r}")] = float(cnt)
+        cache[("Dashboard", f"G{r}")] = round(nbv, 2)
+
+    sl = wbv["Source Ledger"]
+    sl_cost = {}
+    sl_nbv_map = {}
+    sl_status = {}
+    for sr in range(5, sl.max_row + 1):
+        t = sl.cell(sr, 2).value
+        if t:
+            sl_cost[str(t)] = float(sl.cell(sr, 5).value or 0)
+            sl_nbv_map[str(t)] = float(sl.cell(sr, 7).value or 0)
+            sl_status[str(t)] = sl.cell(sr, 8).value
+
+    reg_sum = sum(float(crv.cell(r, 13).value or 0) for r in rows)
+    led_sum = sum(sl_cost.values())
+    cache[("Ledger Reconciliation", "B5")] = round(reg_sum, 2)
+    cache[("Ledger Reconciliation", "B6")] = round(led_sum, 2)
+    cache[("Ledger Reconciliation", "B7")] = round(reg_sum - led_sum, 2)
+    cache[("Ledger Reconciliation", "B8")] = round(sum_n, 2)
+    cache[("Ledger Reconciliation", "B9")] = round(
+        sum(sl_nbv_map[t] for t in sl_nbv_map if sl_status.get(t) == "Active"), 2
+    )
+    cache[("Ledger Reconciliation", "B10")] = round(sum(sl_nbv_map.values()), 2)
+
     # COUNTIF breakouts by verified status (column J) and location (column I)
     for r in range(19, 27):
         label = wbv["Dashboard"].cell(r, 1).value
@@ -812,11 +855,16 @@ def rewrite_workbook(path: Path) -> None:
     sl = wb["Source Ledger"]
 
     fa_by_tag: dict[str, str] = {}
+    ledger_nbv_by_tag: dict[str, float] = {}
     for r in range(5, sl.max_row + 1):
         t = sl.cell(r, 2).value
         fa_id = sl.cell(r, 1).value
         if t and fa_id:
             fa_by_tag[str(t)] = str(fa_id)
+        if t:
+            acq = float(sl.cell(r, 5).value or 0)
+            dep = float(sl.cell(r, 6).value or 0)
+            ledger_nbv_by_tag[str(t)] = round(acq - dep, 2)
 
     assets: dict[str, dict] = {}
     cols = {cr.cell(4, c).value: c for c in range(1, cr.max_column + 1)}
@@ -836,7 +884,13 @@ def rewrite_workbook(path: Path) -> None:
             "ver_st": cr.cell(r, 10).value,
             "src": cr.cell(r, ev_col).value or "",
             "cost": crv.cell(r, 13).value or cr.cell(r, 13).value,
-            "nbv": crv.cell(r, 14).value or cr.cell(r, 14).value,
+            "nbv": (
+                crv.cell(r, 14).value
+                if crv.cell(r, 14).value is not None
+                and not str(crv.cell(r, 14).value).startswith("=")
+                else ledger_nbv_by_tag.get(str(tag))
+            ),
+            "ledger_nbv": ledger_nbv_by_tag.get(str(tag)),
             "fa": fa_by_tag.get(str(tag)),
             "po": po_by_tag.get(str(tag)),
             "conf": cr.cell(r, 17).value,
