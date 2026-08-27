@@ -1,6 +1,6 @@
 # Yanou IT Asset Reconciliation Rubric (rev 2.23 — PLATFORM PASTE, ≤60)
 
-Rev 2.23: Fit platform 60-criterion cap while keeping the quality-review “excellent” atomic splits; restore C7–C9 expected values; restore capital-gap Critical blocker; drop Critical-blocker definition, dashboard-by-location, RN-0132-accepted negative, and false-ledger-absence negative to fit. Rev 2.22: Remove golden-only EX-0001/$85; atomic Missing/transfer/custody splits; raise custody weight; drop serial-mismatch double-count.
+Rev 2.24: Materialize Dashboard breakout counts/book values (and LR control totals) as typed literals so oracle/judge readers that ignore formula caches still see populated tables. Rev 2.23: Fit platform 60-criterion cap while keeping the quality-review “excellent” atomic splits; restore C7–C9 expected values; restore capital-gap Critical blocker; drop Critical-blocker definition, dashboard-by-location, RN-0132-accepted negative, and false-ledger-absence negative to fit. Rev 2.22: Remove golden-only EX-0001/$85; atomic Missing/transfer/custody splits; raise custody weight; drop serial-mismatch double-count.
 
 Score `Yanou_IT_Asset_Reconciliation.xlsx` from the deliverable alone. Weights in weight field only.
 
