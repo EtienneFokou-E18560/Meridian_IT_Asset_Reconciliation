@@ -6,7 +6,8 @@ Replace the **entire** platform criteria list with `platform_criterion_revisions
 
 Do **not** paste every criterion as Weight 1 — that cannot score 100%.
 
-- Positive criteria (#1–#55): weights **+1 / +2 / +3** summing to **+100**
+- **#1** must quote the exact basename `Yanou_IT_Asset_Reconciliation.xlsx`
+- Positive criteria (#2–#55): weights **+1 / +2 / +3** summing to **+100**
 - Negative criteria (#56–#60): **−5** each (penalties when the prohibited pattern is present)
 - Perfect clean submission = **100%**
 
