@@ -1,6 +1,6 @@
 # Evaluation Rubric — Meridian IT Asset Reconciliation
 
-**Revision:** 2.31 (no cross-criterion references in criteria text)  
+**Revision:** 2.32 (filename at #15; C11 de-subsumed from C10)  
 **Weight model:** Positive criteria sum to **+100**. Negative (anti-cheating) criteria are **penalties** (−5 each).  
 **Scoring:** Each criterion is independently Pass or Fail.  
 - Pass a **positive** criterion → add its points.  
@@ -12,9 +12,9 @@
 **Weight bands:**
 | Band | Score | Criteria |
 |------|------:|----------|
-| Deliverable filename | +2 | 1 |
-| Answer keys / high-stakes gates | +3 | 6, 9–13, 42–43, 49–55 |
-| Core fidelity / exception structure | +2 | 2–5, 7–8, 14–16, 44–48, 56 |
+| Deliverable filename | +2 | 15 |
+| Answer keys / high-stakes gates | +3 | 5–7, 9–13, 42–43, 49–55 |
+| Core fidelity / exception structure | +2 | 1–4, 8, 14, 16, 44–48, 55 |
 | Atomic missing / transfer / custody | +1 | 17–41 |
 | Anti-cheating penalties | −5 | 56–60 |
 
@@ -23,65 +23,65 @@
 ## Criteria (paste with the stated Weight)
 
 
-1. Deliverable Filename [+2]
-Weight: +2
-The submission is delivered as a workbook named exactly Yanou_IT_Asset_Reconciliation.xlsx (case-sensitive, no _Final/_v2/(1)/spacing variants).
-
-2. Inventory Number Fidelity [+2]
+1. Inventory Number Fidelity [+2]
 Weight: +2
 The Corrected Register Inventory Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Inventory Number string on both sides for that asset).
 
-3. Serial Number Fidelity [+2]
+2. Serial Number Fidelity [+2]
 Weight: +2
 The Corrected Register Serial Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Serial Number string on both sides for that asset).
 
-4. Vendor Fidelity [+2]
+3. Vendor Fidelity [+2]
 Weight: +2
 The Corrected Register Vendor column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Vendor string on both sides for that asset).
 
-5. PO Number Fidelity [+2]
+4. PO Number Fidelity [+2]
 Weight: +2
 The Corrected Register PO Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same PO Number string on both sides for that asset).
 
-6. Evidence Source Populated [+3]
+5. Evidence Source Populated [+3]
 Weight: +3
 Every Corrected Register row that represents a Fixed Assets asset has a non-blank Evidence Source cell.
 
-7. Evidence Source — No False Fixed Assets Absence [+2]
+6. Evidence Source — No False Fixed Assets Absence [+2]
 Weight: +2
 Evidence Source does not claim Fixed Assets has no row for an Inventory Number that actually exists in Fixed Assets (for example, it does not say Fixed Assets has no matching Inventory Number for MD-00001 when MD-00001 is present in Fixed Assets).
 
-8. Evidence Source — Under-Threshold Cost Assets [+2]
+7. Evidence Source — Under-Threshold Cost Assets [+2]
 Weight: +2
 For MD-00130, MD-00131, and MD-00132, Evidence Source states that the cost difference is under the $100 threshold (or equivalent under-threshold wording) and does not treat those three assets as Cost Mismatch exceptions requiring escalation.
 
-9. Acquisition Cost — Per-Row Match [+3]
+8. Acquisition Cost — Per-Row Match [+3]
 Weight: +3
 For every Corrected Register row that represents a Fixed Assets asset, Acquisition Cost equals that asset’s Acquisition Cost in Fixed Assets.
 
-10. Acquisition Cost — Inventory Total [+3]
+9. Acquisition Cost — Inventory Total [+3]
 Weight: +3
 The sum of Acquisition Cost across all Corrected Register Inventory rows equals $332,115.
 
-11. Remaining Book Value — Per-Row Match [+3]
+10. Remaining Book Value — Per-Row Match [+3]
 Weight: +3
 For every Corrected Register row that represents a Fixed Assets asset: if Fixed Assets lists Remaining Book Value for that asset, Corrected Register Remaining Book Value matches it; if Fixed Assets has no Remaining Book Value for that asset, Corrected Register Remaining Book Value is blank.
 
-12. Remaining Book Value — MD-00034 [+3]
+11. Ledger Reconciliation — MD-00034 NBV [+3]
 Weight: +3
-MD-00034 Remaining Book Value equals $479.88.
+Ledger Reconciliation includes MD-00034 in the asset-level finance differences table and shows Ledger NBV or Register/Reconciled NBV as $479.88 for FA-000034.
 
-13. Remaining Book Value — Corrected Register Aggregate [+3]
+12. Remaining Book Value — Corrected Register Aggregate [+3]
 Weight: +3
 The sum of Remaining Book Value across all Corrected Register rows that have a Remaining Book Value equals $61,526.60.
 
-14. Status Fidelity [+2]
+13. Status Fidelity [+2]
 Weight: +2
 The Corrected Register Status column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Status string on both sides for that asset).
 
-15. Location Fidelity [+2]
+14. Location Fidelity [+2]
 Weight: +2
 The Corrected Register Location column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Location string on both sides for that asset).
+
+15. Deliverable Filename [+2]
+Weight: +2
+The submission is delivered as a workbook named exactly Yanou_IT_Asset_Reconciliation.xlsx (case-sensitive, no _Final/_v2/(1)/spacing variants).
 
 16. Missing Asset — MD-00017 [+1]
 Weight: +1
@@ -268,7 +268,8 @@ FAIL the submission if Exception Register or Corrected Register uses Purchase Or
 ## Paste checklist
 
 - Paste **all 60** criteria with their **Weight** values (not flat 1).
-- Criterion **#1** must quote the exact basename `Yanou_IT_Asset_Reconciliation.xlsx`.
+- Criterion **#15** must quote the exact basename `Yanou_IT_Asset_Reconciliation.xlsx`.
+- Criterion **#11** tests Ledger Reconciliation MD-00034 NBV (not duplicate of #10 Corrected Register per-row RBV).
 - Confirm positive weights sum to **+100** and negatives are **−5** each.
 - Re-upload golden `Yanou_IT_Asset_Reconciliation.xlsx` from this branch after pasting.
 
