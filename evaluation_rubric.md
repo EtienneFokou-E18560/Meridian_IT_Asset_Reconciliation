@@ -1,22 +1,9 @@
 # Evaluation Rubric — Meridian IT Asset Reconciliation
 
-**Revision:** 2.32 (filename at #15; C11 de-subsumed from C10)  
-**Weight model:** Positive criteria sum to **+100**. Negative (anti-cheating) criteria are **penalties** (−5 each).  
-**Scoring:** Each criterion is independently Pass or Fail.  
-- Pass a **positive** criterion → add its points.  
-- Trigger a **negative** criterion (prohibited pattern present) → subtract its points.  
-- Perfect clean submission = **100%** (all positives pass, no negatives triggered).  
-**Atomicity:** One observable check per criterion.  
+**Revision:** 2.33 (prompt mapping, negative polarity, objectivity)  
+**Weight model:** Positive criteria sum to **+100**. Negative criteria are **penalties** (−5 each), stated as declarative violation facts (no “FAIL the submission if”).  
+**Scoring:** Pass a positive criterion → add its points. A negative criterion triggered → subtract its points. Perfect clean submission = **100%**.  
 **Platform limit:** Exactly **60** criteria (55 positive + 5 negative).
-
-**Weight bands:**
-| Band | Score | Criteria |
-|------|------:|----------|
-| Deliverable filename | +2 | 15 |
-| Answer keys / high-stakes gates | +3 | 5–7, 9–13, 42–43, 49–55 |
-| Core fidelity / exception structure | +2 | 1–4, 8, 14, 16, 44–48, 55 |
-| Atomic missing / transfer / custody | +1 | 17–41 |
-| Anti-cheating penalties | −5 | 56–60 |
 
 ---
 
@@ -131,93 +118,93 @@ MD-00125 appears in Fixed Assets and does not appear in ITAM; it is listed as Mi
 Weight: +1
 MD-00128 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-28. Inter-Department Transfer — MD-00003 [+1]
-Weight: +1
-MD-00003 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
-
-29. Inter-Department Transfer — MD-00015 [+1]
+28. Inter-Department Transfer — MD-00015 [+1]
 Weight: +1
 MD-00015 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
-30. Inter-Department Transfer — MD-00027 [+1]
+29. Inter-Department Transfer — MD-00027 [+1]
 Weight: +1
 MD-00027 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
-31. Inter-Department Transfer — MD-00039 [+1]
+30. Inter-Department Transfer — MD-00039 [+1]
 Weight: +1
 MD-00039 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
-32. Inter-Department Transfer — MD-00052 [+1]
-Weight: +1
-MD-00052 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
-
-33. Custody Gap — MD-00004 [+1]
-Weight: +1
-MD-00004 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
-
-34. Custody Gap — MD-00016 [+1]
-Weight: +1
-MD-00016 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
-
-35. Custody Gap — MD-00028 [+1]
+31. Custody Gap — MD-00028 [+1]
 Weight: +1
 MD-00028 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-36. Custody Gap — MD-00040 [+1]
+32. Custody Gap — MD-00040 [+1]
 Weight: +1
 MD-00040 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-37. Custody Gap — MD-00054 [+1]
+33. Custody Gap — MD-00054 [+1]
 Weight: +1
 MD-00054 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-38. Custody Gap — MD-00066 [+1]
+34. Custody Gap — MD-00066 [+1]
 Weight: +1
 MD-00066 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-39. Custody Gap — MD-00078 [+1]
+35. Custody Gap — MD-00078 [+1]
 Weight: +1
 MD-00078 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-40. Custody Gap — MD-00089 [+1]
+36. Custody Gap — MD-00089 [+1]
 Weight: +1
 MD-00089 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-41. Dashboard Category Counts [+3]
+37. Dashboard Category Counts [+3]
 Weight: +3
 Dashboard category counts equal Laptop 40, Mobile 36, Monitor 28, and Network Asset 28.
 
-42. Critical Certification Blockers Present [+3]
+38. Critical Certification Blockers Present [+3]
 Weight: +3
 The workbook identifies the critical certification blockers required before sign-off (cost mismatches that exceed threshold, missing assets, and other blocker-class findings called out in Certification / Exception Register).
 
-43. Exception Identity [+2]
+39. Custody Chain — High-Risk Unresolved Assets [+3]
+Weight: +3
+A Custody Chain worksheet lists high-risk unresolved assets and traces chain-of-custody events for each with record references (for example equipment_transfer_log.csv transfer IDs, service_desk_offboarding.csv ticket IDs, device_return_shipments.csv tracking numbers, and dock-scan or image leads where cited).
+
+40. Ledger Reconciliation — Open Gap Explanations [+2]
+Weight: +2
+A Ledger Reconciliation worksheet reconciles operational inventory to the fixed-asset ledger and includes a narrative section stating the documented reason each remaining unreconciled gap is still open (for example missing ledger row, acquisition cost mismatch, or missing disposal evidence).
+
+41. Exception Identity [+2]
 Weight: +2
 Each Exception Register finding row has a unique Exception ID and an Exception Type that correctly classifies the finding (for example Missing Asset, Cost Mismatch, Inter-Department Transfer, Custody Gap).
 
-44. Exception Disposition [+2]
-Weight: +2
-Each Exception Register finding row states a clear recommended Action and an Owner (role or named party) responsible for follow-up.
+42. Exception Recommended Action [+1]
+Weight: +1
+Each Exception Register finding row has a non-blank Recommended Action naming a concrete next step (for example initiate return shipment, open transfer ticket, capitalize asset).
 
-45. Exception Severity [+2]
-Weight: +2
-Each Exception Register finding row has a Severity appropriate to the finding class (for example Critical for certification blockers such as over-threshold cost mismatches and missing assets; lower severity for non-blocking items).
+43. Exception Owner [+1]
+Weight: +1
+Each Exception Register finding row has a non-blank Owner field naming a responsible role or named party.
 
-46. Exception Source References [+2]
+44. Exception Severity Mapping [+2]
+Weight: +2
+Each Exception Register finding row assigns Severity using this mapping: Critical for over-threshold cost mismatches and missing assets; Low or Informational for below-capitalization ledger absence; Medium for inter-department transfers and custody gaps unless listed as a certification blocker.
+
+45. Exception Source References [+2]
 Weight: +2
 Each Exception Register finding row cites the source systems or evidence used (for example Fixed Assets, ITAM, Purchase Orders, HR) so a reviewer can trace the finding.
 
-47. Exception Register Financial Fields [+2]
+46. Location Reconciliation Cross-Check [+3]
+Weight: +3
+Location Reconciliation flags every asset whose Corrected Register Location string differs from the floor-plan / location evidence location string for that asset.
+
+47. Certification Sign-Off Field Structure [+2]
 Weight: +2
-Exception Register financial fields for cost-related findings are populated from Fixed Assets / Purchase Orders amounts (not invented figures), including Acquisition Cost and variance where applicable.
+Certification Sign-Off includes Name, Signature, and Date column headers for each signatory row.
 
-48. Location Reconciliation Cross-Check [+3]
-Weight: +3
-Location Reconciliation compares Corrected Register locations to floor-plan / location evidence and flags material location disagreements that require follow-up.
+48. Certification Four Named Signatory Roles [+1]
+Weight: +1
+Certification includes separate sign-off rows for IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.
 
-49. Certification Sign-Off Structure [+3]
-Weight: +3
-A Certification Sign-Off worksheet exists and includes Name, Signature, and Date fields for the certifying party.
+49. Certification Accept Escalate Block Sections [+1]
+Weight: +1
+Certification includes separate labeled sections for records accepted for the draft, assets requiring escalation before approval, and conditions that block sign-off.
 
 50. Certification Completeness Gate [+3]
 Weight: +3
@@ -243,43 +230,33 @@ Corrected Register does not invent Inventory Numbers that do not appear in Fixed
 Weight: +2
 Every Inventory Number present in Fixed Assets appears in Corrected Register (no Fixed Assets asset silently omitted from the corrected inventory).
 
-56. Negative — Blank Evidence Source Allowed [-5]
+56. Blank Evidence Source on Fixed Assets Rows [-5]
 Weight: -5
-FAIL the submission if Corrected Register Evidence Source is left blank for assets that exist in Fixed Assets.
+Corrected Register Evidence Source is left blank for assets that exist in Fixed Assets.
 
-57. Negative — Wrong Golden Category Counts [-5]
+57. Wrong Dashboard Category Counts [-5]
 Weight: -5
-FAIL the submission if Dashboard category counts are presented as Laptop 32, Mobile 33, Monitor 34, Network Asset 33 (or any set other than Laptop 40, Mobile 36, Monitor 28, Network Asset 28).
+Dashboard category counts are presented as a set other than Laptop 40, Mobile 36, Monitor 28, Network Asset 28.
 
-58. Negative — Under-Threshold Treated as Cost Mismatch Exceptions [-5]
+58. Under-Threshold Listed as Cost Mismatch Exceptions [-5]
 Weight: -5
-FAIL the submission if MD-00130, MD-00131, or MD-00132 are listed as Cost Mismatch exceptions requiring escalation despite under-threshold differences.
+MD-00130, MD-00131, or MD-00132 are listed as Cost Mismatch exceptions requiring escalation despite under-threshold differences.
 
-59. Negative — Certification Signed Off With Open Blockers [-5]
+59. Certification Signed Off With Open Blockers [-5]
 Weight: -5
-FAIL the submission if Certification Sign-Off is presented as complete / signed off while critical blockers (over-threshold cost mismatches or missing assets) remain open.
+Certification Sign-Off is presented as complete / signed off while critical blockers (over-threshold cost mismatches or missing assets) remain open.
 
-60. Negative — Fabricated PO or Cost Figures [-5]
+60. Fabricated PO or Cost Figures [-5]
 Weight: -5
-FAIL the submission if Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset. ---
+Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset.
 
 ---
 
 ## Paste checklist
 
-- Paste **all 60** criteria with their **Weight** values (not flat 1).
-- Criterion **#15** must quote the exact basename `Yanou_IT_Asset_Reconciliation.xlsx`.
-- Criterion **#11** tests Ledger Reconciliation MD-00034 NBV (not duplicate of #10 Corrected Register per-row RBV).
-- Confirm positive weights sum to **+100** and negatives are **−5** each.
-- Re-upload golden `Yanou_IT_Asset_Reconciliation.xlsx` from this branch after pasting.
-
-## Score math
-
-| Bucket | Count | Points |
-|--------|------:|-------:|
-| Positive (+3) | 15 | +45 |
-| Positive (+2) | 15 | +30 |
-| Positive (+1) | 25 | +25 |
-| **Positive total (max)** | **55** | **+100** |
-| Negative (−5) | 5 | −25 if all triggered |
-| **Perfect clean score** | | **100%** |
+- Paste **all 60** with stated weights. Positives sum **+100**; negatives **−5** each.
+- **#15** quotes `Yanou_IT_Asset_Reconciliation.xlsx` exactly.
+- **#39–#40** map custody trail and ledger-rec prompt requirements.
+- **#49–#51** map certification signatory and three-part content requirements.
+- Negatives (**#56–#60**) are declarative violation facts — no grader-instruction prefix.
+- Re-upload golden from this branch after pasting.
