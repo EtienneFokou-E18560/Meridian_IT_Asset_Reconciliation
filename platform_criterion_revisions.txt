@@ -1,66 +1,66 @@
 # Platform criterion revisions — Meridian / Yanou IT Asset Reconciliation
-# Revision: 2.29 — paste ALL 60 with Weight (+/−). C51 = ER disposition (not duplicate of C7).
-# Positives sum +100; negatives −5 each. Perfect clean submission = 100%.
+# Revision: 2.30 — paste ALL 60. Criterion #1 quotes Yanou_IT_Asset_Reconciliation.xlsx exactly.
+# Positives sum +100; negatives −5 each.
 
-1. Inventory Number Fidelity
+1. Deliverable Filename
+Weight: +2
+The submission is delivered as a workbook named exactly Yanou_IT_Asset_Reconciliation.xlsx (case-sensitive, no _Final/_v2/(1)/spacing variants).
+
+2. Inventory Number Fidelity
 Weight: +2
 The Corrected Register Inventory Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Inventory Number string on both sides for that asset).
 
-2. Serial Number Fidelity
+3. Serial Number Fidelity
 Weight: +2
 The Corrected Register Serial Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Serial Number string on both sides for that asset).
 
-3. Vendor Fidelity
+4. Vendor Fidelity
 Weight: +2
 The Corrected Register Vendor column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Vendor string on both sides for that asset).
 
-4. PO Number Fidelity
+5. PO Number Fidelity
 Weight: +2
 The Corrected Register PO Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same PO Number string on both sides for that asset).
 
-5. Evidence Source Populated
+6. Evidence Source Populated
 Weight: +3
 Every Corrected Register row that represents a Fixed Assets asset has a non-blank Evidence Source cell.
 
-6. Evidence Source — No False Fixed Assets Absence
+7. Evidence Source — No False Fixed Assets Absence
 Weight: +2
 Evidence Source does not claim Fixed Assets has no row for an Inventory Number that actually exists in Fixed Assets (for example, it does not say Fixed Assets has no matching Inventory Number for MD-00001 when MD-00001 is present in Fixed Assets).
 
-7. Evidence Source — Under-Threshold Cost Assets
+8. Evidence Source — Under-Threshold Cost Assets
 Weight: +2
 For MD-00130, MD-00131, and MD-00132, Evidence Source states that the cost difference is under the $100 threshold (or equivalent under-threshold wording) and does not treat those three assets as Cost Mismatch exceptions requiring escalation.
 
-8. Acquisition Cost — Per-Row Match
+9. Acquisition Cost — Per-Row Match
 Weight: +3
 For every Corrected Register row that represents a Fixed Assets asset, Acquisition Cost equals that asset’s Acquisition Cost in Fixed Assets.
 
-9. Acquisition Cost — Inventory Total
+10. Acquisition Cost — Inventory Total
 Weight: +3
 The sum of Acquisition Cost across all Corrected Register Inventory rows equals $332,115.
 
-10. Remaining Book Value — Per-Row Match
+11. Remaining Book Value — Per-Row Match
 Weight: +3
 For every Corrected Register row that represents a Fixed Assets asset: if Fixed Assets lists Remaining Book Value for that asset, Corrected Register Remaining Book Value matches it; if Fixed Assets has no Remaining Book Value for that asset, Corrected Register Remaining Book Value is blank.
 
-11. Remaining Book Value — MD-00034
+12. Remaining Book Value — MD-00034
 Weight: +3
 MD-00034 Remaining Book Value equals $479.88.
 
-12. Remaining Book Value — Corrected Register Aggregate
+13. Remaining Book Value — Corrected Register Aggregate
 Weight: +3
 The sum of Remaining Book Value across all Corrected Register rows that have a Remaining Book Value equals $61,526.60.
 
-13. Status Fidelity
+14. Status Fidelity
 Weight: +2
 The Corrected Register Status column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Status string on both sides for that asset).
 
-14. Location Fidelity
+15. Location Fidelity
 Weight: +2
 The Corrected Register Location column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Location string on both sides for that asset).
-
-15. Department Fidelity
-Weight: +2
-The Corrected Register Department column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Department string on both sides for that asset).
 
 16. Missing Asset — MD-00017
 Weight: +1
@@ -202,9 +202,9 @@ A Certification Sign-Off worksheet exists and includes Name, Signature, and Date
 Weight: +3
 Certification content states that sign-off is blocked (or not complete) while critical blockers remain open — it does not present the register as fully certified while those blockers are unresolved.
 
-51. Under-Threshold Cost Gaps — Accept
+51. Exception Register — MD-00130/131 Non-Blockers
 Weight: +3
-MD-00130, MD-00131, and MD-00132 cost differences are treated as accept / no-escalation (under the $100 threshold), not as Cost Mismatch exceptions that block certification.
+MD-00130 and MD-00131 each appear in Exception Register with an exception Type that classifies the missing ledger row as below capitalization / under-threshold (for example Below Capitalization Threshold), Severity is non-Critical (for example Low or Informational), and the finding is not presented as a certification blocker — this tests Exception Register disposition separately from Corrected Register Evidence Source (Criterion 7).
 
 52. Over-Threshold Cost Mismatches — Escalate
 Weight: +3
@@ -240,4 +240,4 @@ FAIL the submission if Certification Sign-Off is presented as complete / signed 
 
 60. Negative — Fabricated PO or Cost Figures
 Weight: -5
-FAIL the submission if Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset. --- ---
+FAIL the submission if Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset. ---
