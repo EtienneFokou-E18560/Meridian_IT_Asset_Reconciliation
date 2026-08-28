@@ -1,6 +1,6 @@
 # Platform criterion revisions — Meridian / Yanou IT Asset Reconciliation
-# Revision: 2.28 — paste ALL 60 with Weight (+/−). Positives sum +100; negatives −5 each.
-# Perfect clean submission = 100%. Do NOT set every weight to 1.
+# Revision: 2.29 — paste ALL 60 with Weight (+/−). C51 = ER disposition (not duplicate of C7).
+# Positives sum +100; negatives −5 each. Perfect clean submission = 100%.
 
 1. Inventory Number Fidelity
 Weight: +2
@@ -240,4 +240,4 @@ FAIL the submission if Certification Sign-Off is presented as complete / signed 
 
 60. Negative — Fabricated PO or Cost Figures
 Weight: -5
-FAIL the submission if Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset. ---
+FAIL the submission if Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset. --- ---

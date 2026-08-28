@@ -1,6 +1,6 @@
 # Evaluation Rubric — Meridian IT Asset Reconciliation
 
-**Revision:** 2.28 (+/− scoring weights)  
+**Revision:** 2.29 (+/− scoring weights; C51 de-subsumed from C7)  
 **Weight model:** Positive criteria sum to **+100**. Negative (anti-cheating) criteria are **penalties** (−5 each).  
 **Scoring:** Each criterion is independently Pass or Fail.  
 - Pass a **positive** criterion → add its points.  
@@ -223,9 +223,9 @@ A Certification Sign-Off worksheet exists and includes Name, Signature, and Date
 Weight: +3
 Certification content states that sign-off is blocked (or not complete) while critical blockers remain open — it does not present the register as fully certified while those blockers are unresolved.
 
-51. Under-Threshold Cost Gaps — Accept [+3]
+51. Exception Register — MD-00130/131 Non-Blockers [+3]
 Weight: +3
-MD-00130, MD-00131, and MD-00132 cost differences are treated as accept / no-escalation (under the $100 threshold), not as Cost Mismatch exceptions that block certification.
+MD-00130 and MD-00131 each appear in Exception Register with an exception Type that classifies the missing ledger row as below capitalization / under-threshold (for example Below Capitalization Threshold), Severity is non-Critical (for example Low or Informational), and the finding is not presented as a certification blocker — this tests Exception Register disposition separately from Corrected Register Evidence Source (Criterion 7).
 
 52. Over-Threshold Cost Mismatches — Escalate [+3]
 Weight: +3
@@ -261,7 +261,7 @@ FAIL the submission if Certification Sign-Off is presented as complete / signed 
 
 60. Negative — Fabricated PO or Cost Figures [-5]
 Weight: -5
-FAIL the submission if Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset. ---
+FAIL the submission if Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset.
 
 ---
 
