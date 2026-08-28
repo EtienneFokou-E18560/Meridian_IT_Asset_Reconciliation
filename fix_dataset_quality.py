@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fix Meridian dataset quality: formulas, remove SYNTHETIC banners, diversify notes/dates."""
+"""Fix Yanou dataset quality: formulas, remove SYNTHETIC banners, diversify notes/dates."""
 from __future__ import annotations
 
 import random
@@ -259,7 +259,7 @@ def add_source_ledger_sheet(wb) -> tuple[int, int]:
 
 
 def formulize_workbook() -> None:
-    path = ROOT / "Meridian_IT_Asset_Reconciliation.xlsx"
+    path = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
     wb = load_workbook(path)
     led_first, led_last = add_source_ledger_sheet(wb)
 
@@ -420,7 +420,7 @@ def formulize_workbook() -> None:
 
 
 def census_formulas() -> None:
-    wb = load_workbook(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    wb = load_workbook(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
     print("\n=== Formula census ===")
     for name in wb.sheetnames:
         ws = wb[name]
@@ -453,14 +453,13 @@ def rebuild_zips() -> None:
         "ITAM_control_matrix.png",
         "receiving_exception_scan_1ZMD00000082.png",
     ]
-    for zip_name in ("Meridian_IT_Asset_Inputs.zip", "Yanou_IT_Asset_Inputs.zip"):
+    for zip_name in ("Yanou_IT_Asset_Inputs.zip",):
         in_zip = ROOT / zip_name
         with zipfile.ZipFile(in_zip, "w", compression=zipfile.ZIP_DEFLATED) as zf:
             for name in inputs:
                 zf.write(ROOT / name, arcname=name)
         print(f"rebuilt {in_zip.name} ({len(inputs)} files)")
     for xlsx_name, zip_name in (
-        ("Meridian_IT_Asset_Reconciliation.xlsx", "Meridian_IT_Asset_Reconciliation.zip"),
         ("Yanou_IT_Asset_Reconciliation.xlsx", "Yanou_IT_Asset_Reconciliation.zip"),
     ):
         xlsx = ROOT / xlsx_name

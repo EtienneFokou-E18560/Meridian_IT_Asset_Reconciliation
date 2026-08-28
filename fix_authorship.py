@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strip LLM-authorship tells from Meridian inputs and rebuild the packet zip."""
+"""Strip LLM-authorship tells from Yanou inputs and rebuild the packet zip."""
 from __future__ import annotations
 
 import csv
@@ -320,7 +320,7 @@ def rebuild_zip() -> None:
         "ITAM_control_matrix.png",
         "receiving_exception_scan_1ZMD00000082.png",
     ]
-    zpath = ROOT / "Meridian_IT_Asset_Inputs.zip"
+    zpath = ROOT / "Yanou_IT_Asset_Inputs.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         for n in inputs:
             zf.write(ROOT / n, n)

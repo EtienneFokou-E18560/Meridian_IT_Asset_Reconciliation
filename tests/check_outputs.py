@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fail-closed deliverable gate: require Yanou_IT_Asset_Reconciliation.xlsx by name and OOXML type.
 
-Does not pass on aggregate output size alone, and does not accept Meridian_* as the graded name.
+Does not pass on aggregate output size alone.
 """
 from __future__ import annotations
 

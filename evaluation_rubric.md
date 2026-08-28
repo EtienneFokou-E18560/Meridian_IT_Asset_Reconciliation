@@ -1,4 +1,4 @@
-# Evaluation Rubric — Meridian IT Asset Reconciliation
+# Evaluation Rubric — Yanou IT Asset Reconciliation
 
 **Revision:** 2.33 (prompt mapping, negative polarity, objectivity)  
 **Weight model:** Positive criteria sum to **+100**. Negative criteria are **penalties** (−5 each), stated as declarative violation facts (no “FAIL the submission if”).  

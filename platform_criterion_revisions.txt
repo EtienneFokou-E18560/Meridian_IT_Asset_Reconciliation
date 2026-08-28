@@ -1,4 +1,4 @@
-# Platform criterion revisions — Meridian / Yanou IT Asset Reconciliation
+# Platform criterion revisions — Yanou IT Asset Reconciliation
 # Revision: 2.33 — prompt mapping, declarative negatives, objectivity fixes.
 
 1. Inventory Number Fidelity

@@ -13,13 +13,13 @@ from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parent
 COMPANY = "Yanou & Partners IT Services"
-WORKBOOK = ROOT / "Meridian_IT_Asset_Reconciliation.xlsx"
+WORKBOOK = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
 YANOU_WORKBOOK = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
-BASE_COMMIT = "3b0e0f1"
+BASE_COMMIT = "d74d196"
 
 
 def restore_clean_workbook() -> None:
-    data = subprocess.check_output(["git", "show", f"{BASE_COMMIT}:Meridian_IT_Asset_Reconciliation.xlsx"])
+    data = subprocess.check_output(["git", "show", f"{BASE_COMMIT}:Yanou_IT_Asset_Reconciliation.xlsx"])
     WORKBOOK.write_bytes(data)
     print("restored workbook from", BASE_COMMIT)
 
@@ -74,7 +74,7 @@ def rewrite_policy_control_rows(wb) -> None:
 
 
 def rename_company_in_workbook(wb) -> None:
-    old_names = ["Copr IT Services", "Copr & Partners IT Services", "Meridian Data Services"]
+    old_names = ["Copr IT Services", "Copr & Partners IT Services"]
     changed = 0
     for ws in wb.worksheets:
         for row in ws.iter_rows():
@@ -129,8 +129,6 @@ def fix_regional_notes() -> None:
     path = ROOT / "regional_IT_notes.docx"
     doc = Document(path)
     for p in doc.paragraphs:
-        if "Meridian Data Services" in p.text:
-            p.text = p.text.replace("Meridian Data Services", COMPANY)
         if "Copr IT Services" in p.text:
             p.text = p.text.replace("Copr IT Services", COMPANY)
         if "Copr & Partners IT Services" in p.text:

@@ -28,6 +28,4 @@ Report to management regarding the finances of establishment.
 
 The `.xlsx`/`.zip` artifacts are intentionally included for evaluation/verification runs.
 
-Note: the original `Meridian_*` filenames are also retained in this repo for compatibility with any automated graders that expect the original deliverable naming. Graded deliverable name for upload remains `Yanou_IT_Asset_Reconciliation.xlsx`.
-
 Platform verifier note: input-integrity checks (writable inputs, snapshot failure) must fail closed (non-zero / reward 0). Do not warn-and-continue or fall back to a live mutable input directory.

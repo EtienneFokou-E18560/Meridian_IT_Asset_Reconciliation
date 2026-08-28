@@ -25,7 +25,6 @@ from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parent
 WORKBOOK = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
-MERIDIAN = ROOT / "Meridian_IT_Asset_Reconciliation.xlsx"
 
 SHIPMENT = {"MD-00074", "MD-00076", "MD-00082", "MD-00084"}
 DISPOSAL = {"MD-00114", "MD-00118"}
@@ -988,11 +987,8 @@ def load_regional() -> dict[str, str]:
 
 
 def rebuild_zips() -> None:
-    shutil.copy2(WORKBOOK, MERIDIAN)
     with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(WORKBOOK, "Yanou_IT_Asset_Reconciliation.xlsx")
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(MERIDIAN, "Meridian_IT_Asset_Reconciliation.xlsx")
 
 
 def main() -> None:
