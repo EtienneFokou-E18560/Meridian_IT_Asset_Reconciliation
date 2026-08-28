@@ -1,5 +1,5 @@
 # Platform criterion revisions — Meridian / Yanou IT Asset Reconciliation
-# Revision: 2.30 — paste ALL 60. Criterion #1 quotes Yanou_IT_Asset_Reconciliation.xlsx exactly.
+# Revision: 2.31 — paste ALL 60. No cross-criterion references inside criterion text.
 # Positives sum +100; negatives −5 each.
 
 1. Deliverable Filename
@@ -204,7 +204,7 @@ Certification content states that sign-off is blocked (or not complete) while cr
 
 51. Exception Register — MD-00130/131 Non-Blockers
 Weight: +3
-MD-00130 and MD-00131 each appear in Exception Register with an exception Type that classifies the missing ledger row as below capitalization / under-threshold (for example Below Capitalization Threshold), Severity is non-Critical (for example Low or Informational), and the finding is not presented as a certification blocker — this tests Exception Register disposition separately from Corrected Register Evidence Source (Criterion 7).
+MD-00130 and MD-00131 each appear in Exception Register with an exception Type that classifies the missing ledger row as below capitalization / under-threshold (for example Below Capitalization Threshold), Severity is non-Critical (for example Low or Informational), and Required Action is informational or no-escalation (not presented as a certification blocker).
 
 52. Over-Threshold Cost Mismatches — Escalate
 Weight: +3

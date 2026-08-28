@@ -1,6 +1,6 @@
 # Evaluation Rubric — Meridian IT Asset Reconciliation
 
-**Revision:** 2.30 (deliverable filename criterion)  
+**Revision:** 2.31 (no cross-criterion references in criteria text)  
 **Weight model:** Positive criteria sum to **+100**. Negative (anti-cheating) criteria are **penalties** (−5 each).  
 **Scoring:** Each criterion is independently Pass or Fail.  
 - Pass a **positive** criterion → add its points.  
@@ -225,7 +225,7 @@ Certification content states that sign-off is blocked (or not complete) while cr
 
 51. Exception Register — MD-00130/131 Non-Blockers [+3]
 Weight: +3
-MD-00130 and MD-00131 each appear in Exception Register with an exception Type that classifies the missing ledger row as below capitalization / under-threshold (for example Below Capitalization Threshold), Severity is non-Critical (for example Low or Informational), and the finding is not presented as a certification blocker — this tests Exception Register disposition separately from Corrected Register Evidence Source (Criterion 7).
+MD-00130 and MD-00131 each appear in Exception Register with an exception Type that classifies the missing ledger row as below capitalization / under-threshold (for example Below Capitalization Threshold), Severity is non-Critical (for example Low or Informational), and Required Action is informational or no-escalation (not presented as a certification blocker).
 
 52. Over-Threshold Cost Mismatches — Escalate [+3]
 Weight: +3
