@@ -1,64 +1,64 @@
 # Platform criterion revisions — Yanou IT Asset Reconciliation
-# Revision: 2.33 — prompt mapping, declarative negatives, objectivity fixes.
+# Revision: 2.34 — no dual-polarity penalties; custody/ledger/cert completeness weights.
 
 1. Inventory Number Fidelity
-Weight: +2
+Weight: +1
 The Corrected Register Inventory Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Inventory Number string on both sides for that asset).
 
 2. Serial Number Fidelity
-Weight: +2
+Weight: +1
 The Corrected Register Serial Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Serial Number string on both sides for that asset).
 
 3. Vendor Fidelity
-Weight: +2
+Weight: +1
 The Corrected Register Vendor column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Vendor string on both sides for that asset).
 
 4. PO Number Fidelity
-Weight: +2
+Weight: +1
 The Corrected Register PO Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same PO Number string on both sides for that asset).
 
 5. Evidence Source Populated
-Weight: +3
+Weight: +2
 Every Corrected Register row that represents a Fixed Assets asset has a non-blank Evidence Source cell.
 
 6. Evidence Source — No False Fixed Assets Absence
-Weight: +2
+Weight: +1
 Evidence Source does not claim Fixed Assets has no row for an Inventory Number that actually exists in Fixed Assets (for example, it does not say Fixed Assets has no matching Inventory Number for MD-00001 when MD-00001 is present in Fixed Assets).
 
 7. Evidence Source — Under-Threshold Cost Assets
-Weight: +2
+Weight: +1
 For MD-00130, MD-00131, and MD-00132, Evidence Source states that the cost difference is under the $100 threshold (or equivalent under-threshold wording) and does not treat those three assets as Cost Mismatch exceptions requiring escalation.
 
 8. Acquisition Cost — Per-Row Match
-Weight: +3
+Weight: +2
 For every Corrected Register row that represents a Fixed Assets asset, Acquisition Cost equals that asset’s Acquisition Cost in Fixed Assets.
 
 9. Acquisition Cost — Inventory Total
-Weight: +3
+Weight: +2
 The sum of Acquisition Cost across all Corrected Register Inventory rows equals $332,115.
 
 10. Remaining Book Value — Per-Row Match
-Weight: +3
+Weight: +2
 For every Corrected Register row that represents a Fixed Assets asset: if Fixed Assets lists Remaining Book Value for that asset, Corrected Register Remaining Book Value matches it; if Fixed Assets has no Remaining Book Value for that asset, Corrected Register Remaining Book Value is blank.
 
 11. Ledger Reconciliation — MD-00034 NBV
-Weight: +3
+Weight: +2
 Ledger Reconciliation includes MD-00034 in the asset-level finance differences table and shows Ledger NBV or Register/Reconciled NBV as $479.88 for FA-000034.
 
 12. Remaining Book Value — Corrected Register Aggregate
-Weight: +3
+Weight: +2
 The sum of Remaining Book Value across all Corrected Register rows that have a Remaining Book Value equals $61,526.60.
 
 13. Status Fidelity
-Weight: +2
+Weight: +1
 The Corrected Register Status column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Status string on both sides for that asset).
 
 14. Location Fidelity
-Weight: +2
+Weight: +1
 The Corrected Register Location column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Location string on both sides for that asset).
 
 15. Deliverable Filename
-Weight: +2
+Weight: +1
 The submission is delivered as a workbook named exactly Yanou_IT_Asset_Reconciliation.xlsx (case-sensitive, no _Final/_v2/(1)/spacing variants).
 
 16. Missing Asset — MD-00017
@@ -146,97 +146,97 @@ Weight: +1
 MD-00089 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
 37. Dashboard Category Counts
-Weight: +3
+Weight: +1
 Dashboard category counts equal Laptop 40, Mobile 36, Monitor 28, and Network Asset 28.
 
 38. Critical Certification Blockers Present
-Weight: +3
+Weight: +2
 The workbook identifies the critical certification blockers required before sign-off (cost mismatches that exceed threshold, missing assets, and other blocker-class findings called out in Certification / Exception Register).
 
-39. Custody Chain — High-Risk Unresolved Assets
-Weight: +3
-A Custody Chain worksheet lists high-risk unresolved assets and traces chain-of-custody events for each with record references (for example equipment_transfer_log.csv transfer IDs, service_desk_offboarding.csv ticket IDs, device_return_shipments.csv tracking numbers, and dock-scan or image leads where cited).
+39. Custody Chain — High-Risk Assets Listed
+Weight: +4
+A Custody Chain worksheet lists the high-risk unresolved assets under review (assets with open Critical or high-risk dispositions such as Missing, Return Overdue, shipment mismatch, or missing disposal evidence).
 
-40. Ledger Reconciliation — Open Gap Explanations
-Weight: +2
+40. Custody Chain — Chronological Events
+Weight: +4
+For each high-risk unresolved asset on the Custody Chain worksheet, custody is reconstructed as dated events in chronological order (for example Purchase, Assignment/Transfer, Offboarding, Return, Reconciliation Conclusion).
+
+41. Custody Chain — Record-Level References
+Weight: +4
+Each Custody Chain event cites a record-level reference from the source extracts (for example a transfer ID from equipment_transfer_log.csv, an offboarding ticket ID from service_desk_offboarding.csv, a tracking number from device_return_shipments.csv, or a dock-scan / image lead filename where used).
+
+42. Ledger Reconciliation — Open Gap Explanations
+Weight: +12
 A Ledger Reconciliation worksheet reconciles operational inventory to the fixed-asset ledger and includes a narrative section stating the documented reason each remaining unreconciled gap is still open (for example missing ledger row, acquisition cost mismatch, or missing disposal evidence).
 
-41. Exception Identity
-Weight: +2
+43. Exception Identity
+Weight: +1
 Each Exception Register finding row has a unique Exception ID and an Exception Type that correctly classifies the finding (for example Missing Asset, Cost Mismatch, Inter-Department Transfer, Custody Gap).
 
-42. Exception Recommended Action
+44. Exception Recommended Action
 Weight: +1
 Each Exception Register finding row has a non-blank Recommended Action naming a concrete next step (for example initiate return shipment, open transfer ticket, capitalize asset).
 
-43. Exception Owner
+45. Exception Owner
 Weight: +1
 Each Exception Register finding row has a non-blank Owner field naming a responsible role or named party.
 
-44. Exception Severity Mapping
-Weight: +2
+46. Exception Severity Mapping
+Weight: +1
 Each Exception Register finding row assigns Severity using this mapping: Critical for over-threshold cost mismatches and missing assets; Low or Informational for below-capitalization ledger absence; Medium for inter-department transfers and custody gaps unless listed as a certification blocker.
 
-45. Exception Source References
-Weight: +2
+47. Exception Source References
+Weight: +1
 Each Exception Register finding row cites the source systems or evidence used (for example Fixed Assets, ITAM, Purchase Orders, HR) so a reviewer can trace the finding.
 
-46. Location Reconciliation Cross-Check
-Weight: +3
+48. Location Reconciliation Cross-Check
+Weight: +2
 Location Reconciliation flags every asset whose Corrected Register Location string differs from the floor-plan / location evidence location string for that asset.
 
-47. Certification Sign-Off Field Structure
-Weight: +2
-Certification Sign-Off includes Name, Signature, and Date column headers for each signatory row.
+49. Certification Sign-Off Field Structure
+Weight: +4
+A Certification worksheet includes Name, Signature, and Date column headers for each signatory row.
 
-48. Certification Four Named Signatory Roles
-Weight: +1
+50. Certification Four Named Signatory Roles
+Weight: +3
 Certification includes separate sign-off rows for IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.
 
-49. Certification Accept Escalate Block Sections
-Weight: +1
+51. Certification Accept Escalate Block Sections
+Weight: +3
 Certification includes separate labeled sections for records accepted for the draft, assets requiring escalation before approval, and conditions that block sign-off.
 
-50. Certification Completeness Gate
-Weight: +3
+52. Certification Completeness Gate
+Weight: +4
 Certification content states that sign-off is blocked (or not complete) while critical blockers remain open — it does not present the register as fully certified while those blockers are unresolved.
 
-51. Exception Register — MD-00130/131 Non-Blockers
-Weight: +3
+53. Exception Register — MD-00130/131 Non-Blockers
+Weight: +2
 MD-00130 and MD-00131 each appear in Exception Register with an exception Type that classifies the missing ledger row as below capitalization / under-threshold (for example Below Capitalization Threshold), Severity is non-Critical (for example Low or Informational), and Required Action is informational or no-escalation (not presented as a certification blocker).
 
-52. Over-Threshold Cost Mismatches — Escalate
-Weight: +3
+54. Over-Threshold Cost Mismatches — Escalate
+Weight: +2
 Over-threshold cost mismatches (the Cost Mismatch exception set) are escalated / listed as exceptions requiring remediation before clean certification.
 
-53. Missing Assets — Block Certification
-Weight: +3
+55. Missing Assets — Block Certification
+Weight: +2
 Missing assets are treated as certification blockers (listed such that certification remains incomplete until addressed).
 
-54. No Fabricated Inventory Numbers
-Weight: +3
+56. No Fabricated Inventory Numbers
+Weight: +2
 Corrected Register does not invent Inventory Numbers that do not appear in Fixed Assets or ITAM source extracts.
 
-55. No Silent Drop of Fixed Assets Rows
-Weight: +2
+57. No Silent Drop of Fixed Assets Rows
+Weight: +1
 Every Inventory Number present in Fixed Assets appears in Corrected Register (no Fixed Assets asset silently omitted from the corrected inventory).
 
-56. Blank Evidence Source on Fixed Assets Rows
-Weight: -5
-Corrected Register Evidence Source is left blank for assets that exist in Fixed Assets.
-
-57. Wrong Dashboard Category Counts
-Weight: -5
-Dashboard category counts are presented as a set other than Laptop 40, Mobile 36, Monitor 28, Network Asset 28.
-
-58. Under-Threshold Listed as Cost Mismatch Exceptions
-Weight: -5
-MD-00130, MD-00131, or MD-00132 are listed as Cost Mismatch exceptions requiring escalation despite under-threshold differences.
+58. Evidence Source Cites Concrete Source IDs
+Weight: +1
+Each non-blank Corrected Register Evidence Source cell cites at least one concrete source identifier (for example a PO number, Fixed Assets ledger ID, transfer ID, offboarding ticket ID, or shipment tracking number).
 
 59. Certification Signed Off With Open Blockers
 Weight: -5
 Certification Sign-Off is presented as complete / signed off while critical blockers (over-threshold cost mismatches or missing assets) remain open.
 
-60. Fabricated PO or Cost Figures
+60. Invented Non-Source Custody Or Disposal Records
 Weight: -5
-Exception Register or Corrected Register uses Purchase Order numbers or dollar amounts that do not appear in the Fixed Assets / Purchase Orders source extracts for that asset.
+Exception Register, Corrected Register, or Custody Chain invents transfer IDs, offboarding ticket IDs, return-shipment tracking numbers, or disposal certificate IDs that do not appear in equipment_transfer_log.csv, service_desk_offboarding.csv, device_return_shipments.csv, or asset_disposal_records.csv.
