@@ -101,7 +101,7 @@ def main() -> None:
     tickets = {r["ticket_number"]: r for r in load_csv("service_desk_offboarding.csv")}
     xfers_by_tag = {r["asset_tag"]: r for r in load_csv("equipment_transfer_log.csv")}
 
-    wb = load_workbook(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    wb = load_workbook(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
     cr = wb["Corrected Register"]
     er = wb["Exception Register"]
     cc = wb["Custody Chain"]
@@ -134,9 +134,9 @@ def main() -> None:
     rewrite_evidence(cr, assets, hr, transfers, tickets, used)
     rewrite_custody(cc, assets, hr, transfers, tickets, xfers_by_tag, used)
 
-    wb.save(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx", "Meridian_IT_Asset_Reconciliation.xlsx")
+    wb.save(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
+    with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.write(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx", "Yanou_IT_Asset_Reconciliation.xlsx")
     report(used)
 
 
@@ -971,7 +971,7 @@ def report(used) -> None:
         # used is a set of unique strings we wrote; re-read file for actual dups
         print(f"{name}: unique generated {len(used[name])}")
 
-    wb = load_workbook(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx", data_only=True)
+    wb = load_workbook(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx", data_only=True)
     er, cr, cc = wb["Exception Register"], wb["Corrected Register"], wb["Custody Chain"]
 
     def col_stats(ws, col, start=5):

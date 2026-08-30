@@ -308,7 +308,7 @@ def parse_ids(src: str) -> dict:
 
 
 def diversify_evidence() -> None:
-    wb = load_workbook(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    wb = load_workbook(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
     cr = wb["Corrected Register"]
     n = 0
     for r in range(5, cr.max_row + 1):
@@ -323,7 +323,7 @@ def diversify_evidence() -> None:
             pass
         cr.cell(r, 11).value = new
         n += 1
-    wb.save(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    wb.save(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
     print("evidence rewritten", n)
 
 
@@ -342,11 +342,11 @@ def rebuild_zips() -> None:
         "ITAM_control_matrix.png",
         "receiving_exception_scan_1ZMD00000082.png",
     ]
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Inputs.zip", "w", zipfile.ZIP_DEFLATED) as zf:
+    with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Inputs.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         for n in inputs:
             zf.write(ROOT / n, n)
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.write(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
     print("zips refreshed")
 
 

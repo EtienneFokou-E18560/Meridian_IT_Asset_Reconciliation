@@ -1,185 +1,242 @@
-# Platform criterion paste — Yanou rev 2.23 (≤60 cap)
-# Paste in order 1–60. Weight in weight field only.
-# Kept quality-review atomic splits; restored C7–C9 expected values + capital-gap blocker.
-# Dropped to fit 60: Critical-blocker definition, dashboard-by-location,
-# RN-0132-accepted negative, false-ledger-absence negative.
+# Platform criterion revisions — Yanou IT Asset Reconciliation
+# Revision: 2.34 — no dual-polarity penalties; custody/ledger/cert completeness weights.
 
-C1 Deliverable filename | +5 | Objective | Style/Formatting
-Produces Yanou_IT_Asset_Reconciliation.xlsx.
+1. Inventory Number Fidelity
+Weight: +1
+The Corrected Register Inventory Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Inventory Number string on both sides for that asset).
 
-C2 Corrected register: verified custodian | +5 | Objective | Content
-For reviewed assets, the corrected asset register populates a non-blank verified custodian value (not merely a column header).
+2. Serial Number Fidelity
+Weight: +1
+The Corrected Register Serial Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Serial Number string on both sides for that asset).
 
-C3 Corrected register: verified location | +3 | Objective | Content
-For reviewed assets, the corrected asset register populates a non-blank verified location value.
+3. Vendor Fidelity
+Weight: +1
+The Corrected Register Vendor column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Vendor string on both sides for that asset).
 
-C4 Corrected register: verified lifecycle status | +3 | Objective | Content
-For reviewed assets, the corrected asset register populates a non-blank verified lifecycle status value.
+4. PO Number Fidelity
+Weight: +1
+The Corrected Register PO Number column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same PO Number string on both sides for that asset).
 
-C5 Corrected register: evidence source | +3 | Objective | Content
-For reviewed assets, the corrected asset register populates a non-blank evidence source, and that text is consistent with the fixed-asset ledger extract: it must not claim there is no FA/ledger row for an asset tag that appears on the ledger; for MD-00130, MD-00131, and MD-00132 it may note ledger absence (with the under-threshold vs capital-qualifying distinction addressed elsewhere).
+5. Evidence Source Populated
+Weight: +2
+Every Corrected Register row that represents a Fixed Assets asset has a non-blank Evidence Source cell.
 
-C6 Corrected register: last verified date | +3 | Objective | Content
-For reviewed assets, the corrected asset register populates a non-blank last verified date.
+6. Evidence Source — No False Fixed Assets Absence
+Weight: +1
+Evidence Source does not claim Fixed Assets has no row for an Inventory Number that actually exists in Fixed Assets (for example, it does not say Fixed Assets has no matching Inventory Number for MD-00001 when MD-00001 is present in Fixed Assets).
 
-C7 Corrected register: acquisition cost | +3 | Objective | Content
-Each reviewed asset row has a non-blank numeric/currency acquisition cost matching source evidence, and the sum of corrected-register acquisition costs for reviewed assets equals $332,115 (±$1).
+7. Evidence Source — Under-Threshold Cost Assets
+Weight: +1
+For MD-00130, MD-00131, and MD-00132, Evidence Source states that the cost difference is under the $100 threshold (or equivalent under-threshold wording) and does not treat those three assets as Cost Mismatch exceptions requiring escalation.
 
-C8 Corrected register: remaining book value | +3 | Objective | Content
-Where a ledger NBV exists, remaining book value is non-blank and matches the ledger figure (blank only when no ledger row exists); MD-00034/FA-000034 remaining book value equals $479.88 (acquisition $930 − accumulated depreciation $450.12), and aggregate remaining book value across reviewed assets equals $61,526.60 (±$0.05).
+8. Acquisition Cost — Per-Row Match
+Weight: +2
+For every Corrected Register row that represents a Fixed Assets asset, Acquisition Cost equals that asset’s Acquisition Cost in Fixed Assets.
 
-C9 Corrected register: confidence | +3 | Objective | Content
-Every reviewed asset has a non-blank confidence value drawn only from the closed set {High, Medium, Low}.
+9. Acquisition Cost — Inventory Total
+Weight: +2
+The sum of Acquisition Cost across all Corrected Register Inventory rows equals $332,115.
 
-C10 Certification not approved while Critical blockers remain | +3 | Subjective | Content
-States the quarterly inventory is NOT APPROVED (or equivalent hold) while Critical certification blockers remain; does not give an unconditional approval.
+10. Remaining Book Value — Per-Row Match
+Weight: +2
+For every Corrected Register row that represents a Fixed Assets asset: if Fixed Assets lists Remaining Book Value for that asset, Corrected Register Remaining Book Value matches it; if Fixed Assets has no Remaining Book Value for that asset, Corrected Register Remaining Book Value is blank.
 
-C11 Certification page sign-off lines | +4 | Objective | Content
-Includes a certification/sign-off page with sign-off lines for the IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.
+11. Ledger Reconciliation — MD-00034 NBV
+Weight: +2
+Ledger Reconciliation includes MD-00034 in the asset-level finance differences table and shows Ledger NBV or Register/Reconciled NBV as $479.88 for FA-000034.
 
-C12 Certification page accept / escalate / block structure | +4 | Objective | Content
-The certification page distinguishes what can be accepted (or accepted with conditions), what must escalate, and what blocks signing (Critical certification blockers).
+12. Remaining Book Value — Corrected Register Aggregate
+Weight: +2
+The sum of Remaining Book Value across all Corrected Register rows that have a Remaining Book Value equals $61,526.60.
 
-C13 Evidence precedence documented | +4 | Objective | Content
-The deliverable documents a precedence order consistent with policy (ledger / verified disposal certificates / carrier acceptance+delivery+receiving-scan over approved transfers over HR over ticket status over technician notes and dock/exception images) and shows at least one rejected lower-precedence claim with the higher-precedence record that overruled it.
+13. Status Fidelity
+Weight: +1
+The Corrected Register Status column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Status string on both sides for that asset).
 
-C14 MD-00082 shipment mismatch held | +4 | Objective | Content
-Marks MD-00082 as In Transit - Exception / shipment mismatch / equivalent unresolved custody, citing tracking 1ZMD00000082 and serial mismatch (MISMATCH-0082 vs MD-MO-050082), and does not clear it to Available.
+14. Location Fidelity
+Weight: +1
+The Corrected Register Location column matches the Fixed Assets extract for every asset that appears in Fixed Assets (same Location string on both sides for that asset).
 
-C15 Missing asset MD-00089 | +1 | Objective | Content
-Classifies MD-00089 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+15. Deliverable Filename
+Weight: +1
+The submission is delivered as a workbook named exactly Yanou_IT_Asset_Reconciliation.xlsx (case-sensitive, no _Final/_v2/(1)/spacing variants).
 
-C16 Missing asset MD-00090 | +1 | Objective | Content
-Classifies MD-00090 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+16. Missing Asset — MD-00017
+Weight: +1
+MD-00017 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C17 Missing asset MD-00091 | +1 | Objective | Content
-Classifies MD-00091 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+17. Missing Asset — MD-00029
+Weight: +1
+MD-00029 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C18 Missing asset MD-00092 | +1 | Objective | Content
-Classifies MD-00092 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+18. Missing Asset — MD-00041
+Weight: +1
+MD-00041 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C19 Missing asset MD-00093 | +1 | Objective | Content
-Classifies MD-00093 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+19. Missing Asset — MD-00053
+Weight: +1
+MD-00053 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C20 Missing asset MD-00094 | +1 | Objective | Content
-Classifies MD-00094 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+20. Missing Asset — MD-00068
+Weight: +1
+MD-00068 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C21 Missing asset MD-00095 | +1 | Objective | Content
-Classifies MD-00095 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+21. Missing Asset — MD-00079
+Weight: +1
+MD-00079 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C22 Missing asset MD-00096 | +1 | Objective | Content
-Classifies MD-00096 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+22. Missing Asset — MD-00088
+Weight: +1
+MD-00088 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C23 Missing asset MD-00097 | +1 | Objective | Content
-Classifies MD-00097 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+23. Missing Asset — MD-00097
+Weight: +1
+MD-00097 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C24 Missing asset MD-00098 | +1 | Objective | Content
-Classifies MD-00098 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+24. Missing Asset — MD-00108
+Weight: +1
+MD-00108 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C25 Missing asset MD-00099 | +1 | Objective | Content
-Classifies MD-00099 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+25. Missing Asset — MD-00119
+Weight: +1
+MD-00119 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C26 Missing asset MD-00100 | +1 | Objective | Content
-Classifies MD-00100 as Missing / Cannot Locate (or equivalent), not as verified Available/In Use stock.
+26. Missing Asset — MD-00125
+Weight: +1
+MD-00125 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C27 Duplicate serials flagged | +4 | Objective | Content
-Flags duplicate serial MD-LA-050021 across MD-00021 and MD-00025, and duplicate serial MD-NE-050088 across MD-00088 and MD-00092.
+27. Missing Asset — MD-00128
+Weight: +1
+MD-00128 appears in Fixed Assets and does not appear in ITAM; it is listed as Missing (or equivalent missing disposition) in Exception Register and/or Corrected Register.
 
-C28 Unapproved transfer TR-00058 | +1 | Objective | Content
-Flags missing approval on transfer TR-00058.
+28. Inter-Department Transfer — MD-00015
+Weight: +1
+MD-00015 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
-C29 Unapproved transfer TR-00059 | +1 | Objective | Content
-Flags missing approval on transfer TR-00059.
+29. Inter-Department Transfer — MD-00027
+Weight: +1
+MD-00027 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
-C30 Unapproved transfer TR-00064 | +1 | Objective | Content
-Flags missing approval on transfer TR-00064.
+30. Inter-Department Transfer — MD-00039
+Weight: +1
+MD-00039 shows an ITAM vs Fixed Assets department disagreement and is identified as an inter-department transfer (or equivalent transfer disposition) in Exception Register and/or Corrected Register.
 
-C31 Unapproved transfer TR-00065 | +1 | Objective | Content
-Flags missing approval on transfer TR-00065.
+31. Custody Gap — MD-00028
+Weight: +1
+MD-00028 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-C32 Unapproved transfer TR-00127 | +1 | Objective | Content
-Flags missing approval on transfer TR-00127.
+32. Custody Gap — MD-00040
+Weight: +1
+MD-00040 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-C33 RN-0132 under-threshold claim rejected | +4 | Objective | Content
-Rejects regional note RN-0132 (or equivalent note claiming MD-00132 was expensed under threshold) as non-authoritative; does not clear MD-00132's missing FA row on that basis.
+33. Custody Gap — MD-00054
+Weight: +1
+MD-00054 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-C34 Exception rows include related-record citation(s) | +3 | Objective | Content
-Each exception row populates at least one related-record citation drawn from: employee ID, ticket ID, transfer ID, PO number, tracking number, certificate ID, or ledger asset ID (non-blank field value, not header-only).
+34. Custody Gap — MD-00066
+Weight: +1
+MD-00066 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-C35 Exception rows include financial exposure | +3 | Objective | Content
-Each exception row populates a financial exposure value calculated from acquisition costs and book values (non-blank, not header-only).
+35. Custody Gap — MD-00078
+Weight: +1
+MD-00078 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-C36 Exception rows include required action | +3 | Objective | Content
-Each exception row populates a required action.
+36. Custody Gap — MD-00089
+Weight: +1
+MD-00089 has a custody / assigned-user gap relative to policy expectations and is identified with a custody-related disposition in Exception Register and/or Corrected Register.
 
-C37 Exception rows include owner by role | +3 | Objective | Content
-Each exception row populates an owner by role.
+37. Dashboard Category Counts
+Weight: +1
+Dashboard category counts equal Laptop 40, Mobile 36, Monitor 28, and Network Asset 28.
 
-C38 Exception rows include action deadline | +3 | Objective | Content
-Each unresolved exception row for a Critical certification blocker includes a populated resolution action deadline (specific date by which the escalation owner must complete the required action).
+38. Critical Certification Blockers Present
+Weight: +2
+The workbook identifies the critical certification blockers required before sign-off (cost mismatches that exceed threshold, missing assets, and other blocker-class findings called out in Certification / Exception Register).
 
-C39 Custody chain: MD-00068 | +2 | Objective | Content
-Provides custody-chain detail for MD-00068, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+39. Custody Chain — High-Risk Assets Listed
+Weight: +4
+A Custody Chain worksheet lists the high-risk unresolved assets under review (assets with open Critical or high-risk dispositions such as Missing, Return Overdue, shipment mismatch, or missing disposal evidence).
 
-C40 Custody chain: MD-00074 | +2 | Objective | Content
-Provides custody-chain detail for MD-00074, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+40. Custody Chain — Chronological Events
+Weight: +4
+For each high-risk unresolved asset on the Custody Chain worksheet, custody is reconstructed as dated events in chronological order (for example Purchase, Assignment/Transfer, Offboarding, Return, Reconciliation Conclusion).
 
-C41 Custody chain: MD-00076 | +2 | Objective | Content
-Provides custody-chain detail for MD-00076, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+41. Custody Chain — Record-Level References
+Weight: +4
+Each Custody Chain event cites a record-level reference from the source extracts (for example a transfer ID from equipment_transfer_log.csv, an offboarding ticket ID from service_desk_offboarding.csv, a tracking number from device_return_shipments.csv, or a dock-scan / image lead filename where used).
 
-C42 Custody chain: MD-00082 | +2 | Objective | Content
-Provides custody-chain detail for MD-00082, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+42. Ledger Reconciliation — Open Gap Explanations
+Weight: +12
+A Ledger Reconciliation worksheet reconciles operational inventory to the fixed-asset ledger and includes a narrative section stating the documented reason each remaining unreconciled gap is still open (for example missing ledger row, acquisition cost mismatch, or missing disposal evidence).
 
-C43 Custody chain: MD-00084 | +2 | Objective | Content
-Provides custody-chain detail for MD-00084, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+43. Exception Identity
+Weight: +1
+Each Exception Register finding row has a unique Exception ID and an Exception Type that correctly classifies the finding (for example Missing Asset, Cost Mismatch, Inter-Department Transfer, Custody Gap).
 
-C44 Custody chain: MD-00114 | +2 | Objective | Content
-Provides custody-chain detail for MD-00114, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+44. Exception Recommended Action
+Weight: +1
+Each Exception Register finding row has a non-blank Recommended Action naming a concrete next step (for example initiate return shipment, open transfer ticket, capitalize asset).
 
-C45 Custody chain: MD-00118 | +2 | Objective | Content
-Provides custody-chain detail for MD-00118, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+45. Exception Owner
+Weight: +1
+Each Exception Register finding row has a non-blank Owner field naming a responsible role or named party.
 
-C46 Custody chain: MD-00132 | +2 | Objective | Content
-Provides custody-chain detail for MD-00132, covering purchase/assignment/transfer and later offboarding, shipment, receipt, loss, or disposal events.
+46. Exception Severity Mapping
+Weight: +1
+Each Exception Register finding row assigns Severity using this mapping: Critical for over-threshold cost mismatches and missing assets; Low or Informational for below-capitalization ledger absence; Medium for inter-department transfers and custody gaps unless listed as a certification blocker.
 
-C47 Dashboard breakout by verified status | +3 | Objective | Content
-Summary dashboard includes asset counts and book value broken out by verified status.
+47. Exception Source References
+Weight: +1
+Each Exception Register finding row cites the source systems or evidence used (for example Fixed Assets, ITAM, Purchase Orders, HR) so a reviewer can trace the finding.
 
-C48 Dashboard breakout by device category | +3 | Objective | Content
-Summary dashboard includes asset counts and book value broken out by device category with correct counts from the corrected register: Laptop 40, Mobile Device 36, Monitor 28, Network Asset 28 (counts ±0).
+48. Location Reconciliation Cross-Check
+Weight: +2
+Location Reconciliation flags every asset whose Corrected Register Location string differs from the floor-plan / location evidence location string for that asset.
 
-C49 Dashboard breakout by exception type | +3 | Objective | Content
-Summary dashboard includes a breakout by exception type (count and financial exposure or book value).
+49. Certification Sign-Off Field Structure
+Weight: +4
+A Certification worksheet includes Name, Signature, and Date column headers for each signatory row.
 
-C50 Ledger reconciliation explains expected vs Critical gaps | +5 | Objective | Content
-Reconciles corrected inventory to the ledger and explains remaining differences with an explicit distinction between expected under-threshold FA absence (MD-00130/MD-00131) and Critical capital-qualifying absence (MD-00132), plus cost-basis mismatches and disposal-status disagreements.
+50. Certification Four Named Signatory Roles
+Weight: +3
+Certification includes separate sign-off rows for IT Operations Manager, Finance Controller, HR Operations Lead, and Internal Auditor.
 
-C51 Overdue returns without receiving proof block certification | +4 | Objective | Content
-Treats overdue / label-only returns that lack carrier acceptance + delivery + receiving-scan proof as Critical certification blockers (for example MD-00068).
+51. Certification Accept Escalate Block Sections
+Weight: +3
+Certification includes separate labeled sections for records accepted for the draft, assets requiring escalation before approval, and conditions that block sign-off.
 
-C52 Shipment serial mismatches treated as Critical certification blockers | +4 | Objective | Content
-Treats unresolved shipment serial mismatches as Critical certification blockers for at least 3 of these 4 assets: MD-00074, MD-00076, MD-00082, and MD-00084.
+52. Certification Completeness Gate
+Weight: +4
+Certification content states that sign-off is blocked (or not complete) while critical blockers remain open — it does not present the register as fully certified while those blockers are unresolved.
 
-C53 Missing disposal certificates block certification | +4 | Objective | Content
-Treats retired/pending-disposal assets lacking a verified disposal certificate as Critical certification blockers (MD-00114 and MD-00118).
+53. Exception Register — MD-00130/131 Non-Blockers
+Weight: +2
+MD-00130 and MD-00131 each appear in Exception Register with an exception Type that classifies the missing ledger row as below capitalization / under-threshold (for example Below Capitalization Threshold), Severity is non-Critical (for example Low or Informational), and Required Action is informational or no-escalation (not presented as a certification blocker).
 
-C54 Capital-asset ledger gaps block certification | +4 | Objective | Content
-Treats capital-qualifying assets (acquisition cost ≥ $2,500) that are missing from the fixed-asset ledger as Critical certification blockers.
+54. Over-Threshold Cost Mismatches — Escalate
+Weight: +2
+Over-threshold cost mismatches (the Cost Mismatch exception set) are escalated / listed as exceptions requiring remediation before clean certification.
 
-C55 N1 Unconditional certification approval | -5 | Objective | Content
-Approves/certifies the quarterly inventory as complete despite Critical certification blockers.
+55. Missing Assets — Block Certification
+Weight: +2
+Missing assets are treated as certification blockers (listed such that certification remains incomplete until addressed).
 
-C56 N2 Label-created treated as returned | -5 | Objective | Content
-Marks Label Created shipments as Available/returned/completed without carrier acceptance + delivery + receiving scan evidence.
+56. No Fabricated Inventory Numbers
+Weight: +2
+Corrected Register does not invent Inventory Numbers that do not appear in Fixed Assets or ITAM source extracts.
 
-C57 N3 Dock image used as receiving clearance | -5 | Objective | Content
-Uses receiving_exception_scan_1ZMD00000082.png as proof MD-00082 was successfully received/cleared.
+57. No Silent Drop of Fixed Assets Rows
+Weight: +1
+Every Inventory Number present in Fixed Assets appears in Corrected Register (no Fixed Assets asset silently omitted from the corrected inventory).
 
-C58 N4 Untraceable transfer/return/approval/disposal IDs | -5 | Objective | Content
-Cites or uses transfer IDs, return receipts, approval IDs, or disposal certificates that cannot be traced to a source record in the provided files.
+58. Evidence Source Cites Concrete Source IDs
+Weight: +1
+Each non-blank Corrected Register Evidence Source cell cites at least one concrete source identifier (for example a PO number, Fixed Assets ledger ID, transfer ID, offboarding ticket ID, or shipment tracking number).
 
-C59 N5 Missing assets marked verified in use/stock | -4 | Objective | Content
-Treats unresolved MD-00089–MD-00100 assets as verified In Use or Available stock.
+59. Certification Signed Off With Open Blockers
+Weight: -5
+Certification Sign-Off is presented as complete / signed off while critical blockers (over-threshold cost mismatches or missing assets) remain open.
 
-C60 N6 Under-threshold absence treated as Critical capital gap | -5 | Objective | Content
-Treats MD-00130 and/or MD-00131 ledger absence as a Critical certification blocker, or uses a capitalization_approved=Yes purchase-order flag to force FA expectations for those under-threshold lines.
+60. Invented Non-Source Custody Or Disposal Records
+Weight: -5
+Exception Register, Corrected Register, or Custody Chain invents transfer IDs, offboarding ticket IDs, return-shipment tracking numbers, or disposal certificate IDs that do not appear in equipment_transfer_log.csv, service_desk_offboarding.csv, device_return_shipments.csv, or asset_disposal_records.csv.

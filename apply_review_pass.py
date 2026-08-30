@@ -14,7 +14,6 @@ from openpyxl.styles import Alignment, Font
 
 ROOT = Path(__file__).resolve().parent
 WB = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
-MERIDIAN = ROOT / "Meridian_IT_Asset_Reconciliation.xlsx"
 
 
 def load_csv(name: str) -> list[dict]:
@@ -936,11 +935,8 @@ def stop_version_regression() -> None:
 
 
 def rebuild_zips() -> None:
-    shutil.copy2(WB, MERIDIAN)
     with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(WB, WB.name)
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(MERIDIAN, MERIDIAN.name)
     print("zips rebuilt")
 
 

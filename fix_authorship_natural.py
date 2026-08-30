@@ -15,7 +15,6 @@ from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parent
 WORKBOOK = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
-MERIDIAN = ROOT / "Meridian_IT_Asset_Reconciliation.xlsx"
 
 
 def load_csv(name: str) -> list[dict]:
@@ -438,16 +437,18 @@ def build_evidence_source(a: dict, hr: dict, transfers: dict, row: int) -> str:
         nbv = a.get("ledger_nbv")
     seed = row * 7919 + sum(ord(c) for c in tag)
 
-    leads = [
-        f"Cross-checked {tag} ({serial}, {model}) against HR, transfers, and ledger extracts",
-        f"Reconciliation packet cites {tag} with acquisition {cost_s} and custody {st} at {loc}",
-        f"Files reviewed for {tag}: {model}, basis {cost_s}, operating site {loc}, status {st}",
-        f"Asset {tag} — {model} — reconciled to {st} in {loc} on {cost_s} acquisition",
-        f"Working conclusion for {tag} ({serial}): {st} at {loc}; cost {cost_s}",
-    ]
-    lead = leads[slot(seed, mod=len(leads))]
-
     fragments: list[str] = []
+
+    # Always start with a concrete fact clause (not a template lead pool).
+    seed_mode = slot(tag, row, "evlead", mod=5)
+    starters = [
+        f"{tag} / {serial}: {model} at {loc} marked {st}; acquisition {cost_s}",
+        f"{po} supports {tag} ({model}) at {cost_s}; verified {st} in {loc}" if po else f"{tag} ({model}) at {loc}: {st}; {cost_s}",
+        f"{fa} lists NBV ${nbv} for {tag}; site {loc}, status {st}" if fa and nbv is not None else f"Register row {tag} shows {st} at {loc} on {cost_s}",
+        f"Serial {serial} on {tag} reconciled to {st}/{loc}; basis {cost_s}",
+        f"{model} ({tag}) remains {st} in {loc}; cost {cost_s}",
+    ]
+    fragments.append(starters[seed_mode])
 
     if eid and hrst:
         who = f"{name} ({eid})" if name else eid
@@ -512,7 +513,7 @@ def build_evidence_source(a: dict, hr: dict, transfers: dict, row: int) -> str:
         extras.append(f"duplicate serial {serial} flagged on the register")
 
     ordered = shuffle_fragments(fragments + extras, seed)
-    return join_fragments([lead] + ordered)
+    return join_fragments(ordered)
 
 
 # --- Custody Chain detail ---
@@ -818,17 +819,13 @@ def rebuild_zips() -> None:
         "ITAM_control_matrix.png",
         "receiving_exception_scan_1ZMD00000082.png",
     ]
-    for zip_name in ("Yanou_IT_Asset_Inputs.zip", "Meridian_IT_Asset_Inputs.zip"):
+    for zip_name in ("Yanou_IT_Asset_Inputs.zip",):
         with zipfile.ZipFile(ROOT / zip_name, "w", zipfile.ZIP_DEFLATED) as zf:
             for name in inputs:
                 zf.write(ROOT / name, arcname=name)
         print("rebuilt", zip_name)
-
-    shutil.copy2(WORKBOOK, MERIDIAN)
     with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(WORKBOOK, "Yanou_IT_Asset_Reconciliation.xlsx")
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(MERIDIAN, "Meridian_IT_Asset_Reconciliation.xlsx")
     print("output zips rebuilt")
 
 
