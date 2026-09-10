@@ -28,12 +28,10 @@ NEW_COMPANY = "Yanou & Partners IT Services"
 def replace_company_text_in_prompt() -> None:
     p = ROOT / "task_prompt.txt"
     txt = p.read_text()
-    txt2 = txt.replace("Meridian Data Services", NEW_COMPANY)
-    if txt2 != txt:
-        p.write_text(txt2)
-        print("task_prompt: company renamed")
+    if NEW_COMPANY in txt:
+        print("task_prompt: company already Yanou")
     else:
-        print("task_prompt: no company string found to replace")
+        print("task_prompt: review company string manually if needed")
 
 
 def replace_company_text_in_workbook(xlsx: Path) -> None:
@@ -43,8 +41,13 @@ def replace_company_text_in_workbook(xlsx: Path) -> None:
         for row in ws.iter_rows():
             for cell in row:
                 v = cell.value
-                if isinstance(v, str) and "Meridian Data Services" in v:
-                    cell.value = v.replace("Meridian Data Services", NEW_COMPANY)
+                if isinstance(v, str) and "Copr IT Services" in v:
+                    cell.value = v.replace("Copr IT Services", NEW_COMPANY).replace(
+                        "Copr & Partners IT Services", NEW_COMPANY
+                    )
+                    changed += 1
+                elif isinstance(v, str) and "Copr & Partners IT Services" in v:
+                    cell.value = v.replace("Copr & Partners IT Services", NEW_COMPANY)
                     changed += 1
     wb.save(xlsx)
     print("workbook: company replaced in", changed, "cells")
@@ -195,7 +198,7 @@ def break_synthetic_category_even_split() -> None:
     print("Inventory category tweak:", tag, old, "->", "Monitor")
 
     # Mirror into Corrected Register Category column
-    golden = ROOT / "Meridian_IT_Asset_Reconciliation.xlsx"
+    golden = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
     wb_g = load_workbook(golden)
     cr = wb_g["Corrected Register"]
     cat_col = None
@@ -369,10 +372,10 @@ def rebuild_zips_only() -> None:
 def main() -> None:
     # 1) rename company
     replace_company_text_in_prompt()
-    replace_company_text_in_workbook(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    replace_company_text_in_workbook(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
 
     # 2) break dashboard cross-tab by aligning Verified Status
-    fix_dashboard_cross_tab_by_status(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    fix_dashboard_cross_tab_by_status(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
 
     # 3) synthetic de-suspicion in inputs + mirror into output
     break_synthetic_category_even_split()
@@ -382,10 +385,10 @@ def main() -> None:
     run_fidelity_recompute()
 
     # 5) fix evidence-cited acquisition cost figures
-    fix_evidence_assessment_cited_costs(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    fix_evidence_assessment_cited_costs(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
 
     # 6) restore formulas + cached numeric values
-    reinstate_formulas_and_cache_numeric(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    reinstate_formulas_and_cache_numeric(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
 
     # rebuild output zip from updated xlsx
     # (fix_golden_fidelity already rebuilds the zips, but we changed formulas after that)

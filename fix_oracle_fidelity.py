@@ -13,7 +13,6 @@ from openpyxl.styles import Font, PatternFill
 
 ROOT = Path(__file__).resolve().parent
 WORKBOOK = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
-MERIDIAN = ROOT / "Meridian_IT_Asset_Reconciliation.xlsx"
 
 HEADER_DARK = "3B2F2A"
 HEADER_MID = "5C4A3A"
@@ -367,18 +366,13 @@ def rebuild_zips() -> None:
         "ITAM_control_matrix.png",
         "receiving_exception_scan_1ZMD00000082.png",
     ]
-    for zip_name in ("Yanou_IT_Asset_Inputs.zip", "Meridian_IT_Asset_Inputs.zip"):
+    for zip_name in ("Yanou_IT_Asset_Inputs.zip",):
         with zipfile.ZipFile(ROOT / zip_name, "w", zipfile.ZIP_DEFLATED) as zf:
             for name in inputs:
                 zf.write(ROOT / name, arcname=name)
         print("rebuilt", zip_name)
-
-    shutil.copy2(WORKBOOK, MERIDIAN)
-    patch_xlsx_metadata(MERIDIAN)
     with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(WORKBOOK, "Yanou_IT_Asset_Reconciliation.xlsx")
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(MERIDIAN, "Meridian_IT_Asset_Reconciliation.xlsx")
     print("rebuilt deliverable zips")
 
 

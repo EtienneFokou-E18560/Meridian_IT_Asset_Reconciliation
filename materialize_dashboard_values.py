@@ -12,7 +12,6 @@ from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parent
 WORKBOOK = ROOT / "Yanou_IT_Asset_Reconciliation.xlsx"
-MERIDIAN = ROOT / "Meridian_IT_Asset_Reconciliation.xlsx"
 
 
 def num(v) -> float:
@@ -238,11 +237,8 @@ def materialize_ledger_totals(wb) -> None:
 
 
 def rebuild_zips() -> None:
-    shutil.copy2(WORKBOOK, MERIDIAN)
     with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(WORKBOOK, "Yanou_IT_Asset_Reconciliation.xlsx")
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(MERIDIAN, "Meridian_IT_Asset_Reconciliation.xlsx")
     print("rebuilt deliverable zips")
 
 

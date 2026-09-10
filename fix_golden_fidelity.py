@@ -272,7 +272,7 @@ def populate_gold() -> None:
             "status": led.cell(r, lh["Ledger Status"]).value,
         }
 
-    wb = load_workbook(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    wb = load_workbook(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
     if "Source Ledger" in wb.sheetnames:
         src = wb["Source Ledger"]
         sh = {src.cell(4, c).value: c for c in range(1, src.max_column + 1)}
@@ -507,7 +507,7 @@ def populate_gold() -> None:
                 if isinstance(v, str) and "$175" in v:
                     meth.cell(r, c).value = v.replace("systematic $175 ", "").replace("$175 ", "")
 
-    wb.save(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    wb.save(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
     print("gold quantitative cells populated")
 
 
@@ -526,16 +526,16 @@ def rebuild_zips() -> None:
         "ITAM_control_matrix.png",
         "receiving_exception_scan_1ZMD00000082.png",
     ]
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Inputs.zip", "w", zipfile.ZIP_DEFLATED) as zf:
+    with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Inputs.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         for n in inputs:
             zf.write(ROOT / n, n)
-    with zipfile.ZipFile(ROOT / "Meridian_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx", "Meridian_IT_Asset_Reconciliation.xlsx")
+    with zipfile.ZipFile(ROOT / "Yanou_IT_Asset_Reconciliation.zip", "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.write(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx", "Yanou_IT_Asset_Reconciliation.xlsx")
     print("zips rebuilt")
 
 
 def verify() -> None:
-    wb = load_workbook(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx", data_only=True)
+    wb = load_workbook(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx", data_only=True)
     dash, cr, er, lr = wb["Dashboard"], wb["Corrected Register"], wb["Exception Register"], wb["Ledger Reconciliation"]
 
     def blanks(ws, col, start=5):
@@ -576,7 +576,7 @@ def verify() -> None:
     print("PO vs inventory mismatches", mismatches)
 
     # formula leftover census on key cols
-    wb2 = load_workbook(ROOT / "Meridian_IT_Asset_Reconciliation.xlsx")
+    wb2 = load_workbook(ROOT / "Yanou_IT_Asset_Reconciliation.xlsx")
     fcount = 0
     for ws in (wb2["Dashboard"], wb2["Exception Register"], wb2["Ledger Reconciliation"], wb2["Corrected Register"]):
         for row in ws.iter_rows():
