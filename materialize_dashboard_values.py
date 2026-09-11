@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""DISABLED: flattens Dashboard formulas. See .do_not_materialize_dashboard.
+"""
+print("materialize_dashboard_values.py is disabled; formulas+caches are authoritative.")
+raise SystemExit(0)
+
+#!/usr/bin/env python3
 """Materialize Dashboard (and LR control) formula outputs as typed values for oracle/judge tools."""
 
 from __future__ import annotations
